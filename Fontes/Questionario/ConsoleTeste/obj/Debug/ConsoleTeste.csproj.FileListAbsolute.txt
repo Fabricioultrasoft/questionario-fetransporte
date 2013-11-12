@@ -1,0 +1,14 @@
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.exe.config
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.exe
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.exe
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Aplicacao.dll
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Repositorio.dll
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.dll
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Aplicacao.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Repositorio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.xml
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.csprojResolveAssemblyReference.cache
