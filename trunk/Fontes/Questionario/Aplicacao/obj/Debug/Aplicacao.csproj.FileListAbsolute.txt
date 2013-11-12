@@ -1,0 +1,11 @@
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.xml

@@ -1,0 +1,5 @@
+F:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
+F:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb

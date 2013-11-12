@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Aplicacao.dto.DtoSindicato>
+@{
+    ViewBag.Title = "Sindicato";
+}
+
+<h2>Sindicato</h2>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sindicato in @Model)
+        {
+            <tr>
+                <td>@sindicato.SindicatoID</td>
+                <td>@sindicato.NomeSindicato</td>
+            </tr>
+        }
+    </tbody>
+</table>
