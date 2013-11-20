@@ -12,3 +12,6 @@ F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Repositorio.
 F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.pdb
 F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.xml
 F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.csprojResolveAssemblyReference.cache
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.exe.config
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.exe
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.pdb

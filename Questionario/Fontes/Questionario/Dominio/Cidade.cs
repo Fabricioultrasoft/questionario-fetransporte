@@ -16,6 +16,6 @@ namespace Dominio
         [StringLength(100, ErrorMessage = "")]
         public String Descricao { get; set; }
 
-        public IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
+        public Estado Estado { get; set; }
     }
 }

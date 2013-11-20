@@ -31,14 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +77,26 @@
     <Compile Include="Migrations\201308080024283_007.Designer.cs">
       <DependentUpon>201308080024283_007.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311201812492_008.cs" />
+    <Compile Include="Migrations\201311201812492_008.Designer.cs">
+      <DependentUpon>201311201812492_008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311201821285_009.cs" />
+    <Compile Include="Migrations\201311201821285_009.Designer.cs">
+      <DependentUpon>201311201821285_009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311201824024_010.cs" />
+    <Compile Include="Migrations\201311201824024_010.Designer.cs">
+      <DependentUpon>201311201824024_010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311201825244_011.cs" />
+    <Compile Include="Migrations\201311201825244_011.Designer.cs">
+      <DependentUpon>201311201825244_011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311201827524_012.cs" />
+    <Compile Include="Migrations\201311201827524_012.Designer.cs">
+      <DependentUpon>201311201827524_012.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +131,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201308080024283_007.resx">
       <DependentUpon>201308080024283_007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311201812492_008.resx">
+      <DependentUpon>201311201812492_008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311201821285_009.resx">
+      <DependentUpon>201311201821285_009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311201824024_010.resx">
+      <DependentUpon>201311201824024_010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311201825244_011.resx">
+      <DependentUpon>201311201825244_011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311201827524_012.resx">
+      <DependentUpon>201311201827524_012.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
