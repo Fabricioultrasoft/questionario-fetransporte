@@ -22,13 +22,13 @@ namespace Repositorio
         public DbSet<UsuarioSindicato> UsuarioSindicato { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
 
-        public DbSet<Questionario> Questionario { get; set; }
+
         public DbSet<Cidade> Cidade { get; set; }
-        public DbSet<Especialidade> Especialidade { get; set; }
-        public DbSet<Peso> Peso { get; set; }
-        public DbSet<UtilizaEstruturaSestSenat> UtilizaEstruturaSestSenat { get; set; }
+        public DbSet<Estado> Estado { get; set; }
+        public DbSet<Bairro> Bairro { get; set; }
+
+        public DbSet<Questionario> Questionario { get; set; }
         public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
-        public DbSet<Altura> Altura { get; set; }
-        public DbSet<AnoAdmissao> AnoAdmissao { get; set; }
+
     }
 }
