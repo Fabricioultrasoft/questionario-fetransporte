@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBairro.cs" />
     <Compile Include="AppEmpresa.cs" />
     <Compile Include="AppCargo.cs" />
     <Compile Include="AppUsuario.cs" />
