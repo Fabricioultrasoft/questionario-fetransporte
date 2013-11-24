@@ -1,5 +1,10 @@
 
-
+select * from estados
+select * from cidades
+select * from bairro
+select * From Sindicatos
+select * From Empresas 
+/*
 Delete from estados
 Delete from cidades
 Delete from bairro
@@ -11,7 +16,7 @@ DBCC CHECKIDENT('cidades', RESEED, 0)
 DBCC CHECKIDENT('bairro', RESEED, 0)
 DBCC CHECKIDENT('Sindicatos', RESEED, 0)
 DBCC CHECKIDENT('Empresas', RESEED, 0)
-
+*/
 Begin tran 
 --ESTADOS
 	Insert Into Estados 

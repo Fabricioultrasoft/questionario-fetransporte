@@ -54,3 +54,4 @@ F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.M
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._013.resources
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._014.resources
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._015.resources
+F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._016.resources
