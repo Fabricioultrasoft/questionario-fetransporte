@@ -30,5 +30,7 @@ namespace Repositorio
         public DbSet<Questionario> Questionario { get; set; }
         public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
 
+        public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
+
     }
 }

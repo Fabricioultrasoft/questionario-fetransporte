@@ -12,5 +12,7 @@ namespace Dominio
         public Questionario Questionario { get; set; }
         public Empresa Empresa { get; set; }
         public Sindicato Sindicato { get; set; }
+
+        public List<RespostaPossivel> RespostaPossivel { get; set; }
     }
 }
