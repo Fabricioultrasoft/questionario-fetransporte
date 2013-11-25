@@ -1,12 +1,45 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Pagina Principal";
 }
+<div class="box usuarios radius box-shadow">
+    <div class="aba"><img src="~/Content/imagens/icones/usuarios.png" width="22"/><span>Usuários</span></div>
+    <div class="line-gray">&nbsp;</div>
+    <ul>
+        <li>@Html.ActionLink("FETRANSPORTES", "Usuario", "Cadastros")</li>
+        <li>@Html.ActionLink("Sindicato", "Usuario", "Cadastros")</li>
+        <li>@Html.ActionLink("Empresa", "Usuario", "Cadastros")</li>
+    </ul>
+</div>
+<div class="box cadastros radius box-shadow">
+    <div class="aba"><img src="~/Content/imagens/icones/cadastros.png"  width="22"/><span>Cadastro</span></div>
+    <div class="line-gray">&nbsp;</div>
+    <ul>
+        <li>@Html.ActionLink("Sindicato", "Sindicato", "Cadastros")</li>
+        <li>@Html.ActionLink("Empresa", "Empresa", "Cadastros")</li>
+        <li>@Html.ActionLink("Funcionários", "Funcionario", "Cadastros")</li>
+        <li>@Html.ActionLink("Setor/Área", "SetorArea", "Cadastros")</li>
+        <li>@Html.ActionLink("Cargo", "Cargo", "Cadastros")</li>
+    </ul>
+</div>
+<div class="box questionarios radius box-shadow">
+    <div class="aba"><img src="~/Content/imagens/icones/questionarios.png"  width="22"/><span>Questionários</span></div>
+    <div class="line-gray">&nbsp;</div>
+    <ul>
+        <li>@Html.ActionLink("Enviar Questionário", "Questionario", "Cadastros")</li>
+        <li>@Html.ActionLink("Responder Questionário", "Questionario", "Cadastros")</li>
+        <li>@Html.ActionLink("Responder Questionário Avulso", "Questionario", "Cadastros")</li>
+        <li>@Html.ActionLink("Imprimir Questionário", "Questionario", "Cadastros")</li>
+    </ul>
+</div>
+<div class="box relatorios radius box-shadow">
+    <div class="aba"><img src="~/Content/imagens/icones/relatorios.png"  width="22"/><span>Relatórios</span></div>
+    <div class="line-gray">&nbsp;</div>
+    <ul>
+        <li>@Html.ActionLink("FETRANSPORTES", "Relatorio", "Cadastros")</li>
+        <li>@Html.ActionLink("Sindicato", "Relatorio", "Cadastros")</li>
+        <li>@Html.ActionLink("Empresa", "Relatorio", "Cadastros")</li>
+    </ul>
+</div>
 
-<h2>Pagina Inicial</h2>
-
-<p> Opções </p>
-
-@Html.ActionLink("Cadastrar Sindicato", "Sindicato", "Cadastros")
-<p></p>
-@Html.ActionLink("Sobre", "Sobre","Home");
 

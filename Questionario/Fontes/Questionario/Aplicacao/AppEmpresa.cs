@@ -23,13 +23,13 @@ namespace Aplicacao
             var retorno = (from s in Banco.Empresa
                            select new DtoEmpresa
                            {
-                                EmpresaID    =    s.EmpresaID   ,
-                                NomeEmpresa  =    s.NomeEmpresa ,
-                                EmailEmpresa  =   s.EmailEmpresa,
-                                LogoMarca    =    s.LogoMarca   ,
-                                Observacao   =    s.Observacao, 
-                                Sindicato    =    s.Sindicato,
-                                Funcionario = s.Funcionario
+                               EmpresaID = s.EmpresaID,
+                               NomeEmpresa = s.NomeEmpresa,
+                               EmailEmpresa = s.EmailEmpresa,
+                               LogoMarca = s.LogoMarca,
+                               Observacao = s.Observacao,
+                               Sindicato = s.Sindicato,
+                               Funcionario = s.Funcionario
                            }).ToList();
             return retorno;
         }
