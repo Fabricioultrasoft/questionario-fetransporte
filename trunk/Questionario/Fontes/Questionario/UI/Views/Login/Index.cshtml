@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "FETRANSPORTES";
+}
+<form id="frmLogin">
+    <div  class="frm-template radius box-shadow">
+        <b style="color:#012D5E;">Login</b><br />
+        <div class="line-gray">&nbsp;</div><br />
+        <div class="campo-unico">
+            <label>Usuário</label>
+            <input type="text" id="Usuario" name="usuario" placeholder="Usuário"/>
+        </div>
+        <div class="campo-unico">
+            <label>Senha</label>
+            <input type="password" id="Senha" name="senha" placeholder="Senha"/>
+        </div>
+        <div class="campo-unico clear">
+            <input type="button" id="efetuarLogin" onclick="App.efetuarLogin()" value="Acessar" class="btn radius"/>
+            &nbsp; <input type="checkbox" /> Esqueci minha senha.
+        </div>
+    </div>
+</form>
+<link href="~/Content/css/login.css" rel="stylesheet" />
+<link href="~/Scripts/jsUI/plugins/modal/modal.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jsUI/plugins/modal/modal.js"></script>
+<script src="~/Scripts/jsUI/app.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#export').exToData({ data: usuarios });
+    });
+</script>
+

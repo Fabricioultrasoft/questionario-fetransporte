@@ -59,3 +59,25 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+/* EXTRAS */
+.radius {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.box-shadow {
+    -moz-box-shadow: 0 0 5px #003366;
+    -webkit-box-shadow: 0 0 5px #003366;
+    box-shadow: 0 0 5px #003366;
+}
+
+.line-gray {
+    height: 1px;
+    background: #e4e4e4 ;
+}
+
+.clear {
+    clear: both;
+}

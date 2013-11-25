@@ -13,5 +13,16 @@ F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.pdb
 F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.xml
 F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.exe.config
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.exe
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\ConsoleTeste.pdb
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Aplicacao.dll
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Repositorio.dll
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.dll
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.dll
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Aplicacao.pdb
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Repositorio.pdb
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\Dominio.pdb
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.xml
+D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.exe
 D:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.pdb

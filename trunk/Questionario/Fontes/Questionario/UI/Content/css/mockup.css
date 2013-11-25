@@ -1,0 +1,142 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: #9AC1E2;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+h2 {
+    color: #003061;
+}
+
+header {
+    width: 100%;
+    height: 40px;
+    background: #003061;
+    color: #FFFFFF;
+}
+
+header > .content {
+    padding: 10px;
+}
+
+header > .content span {
+    float: left;    
+}
+
+header > .content ul li {
+    list-style: none;
+    display: inline-block;
+    float: right;
+    
+}
+
+header > .content ul li a {
+    margin-right: 20px;
+    color: #ffffff;    
+    text-decoration: none;
+}
+
+.main-content {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content > .box {
+    width: 22%;
+    min-height: 250px;
+    padding: 5px;
+    float: left;
+    background: #f4f4f4;
+    margin-left: 1%;
+    margin-right: 1%;
+    top: 50%;
+    margin-top: 100px;
+    line-height: 30px;
+}
+
+.main-content ul li a {
+    color: #003061;  
+    display: block;
+    text-decoration: none;
+    padding:5px;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.main-content ul li a:hover {
+    font-weight: bold;
+    color: #003061;
+    background: #ffffff;
+}
+
+.aba {
+    position: relative;
+    width: 100%;
+    color: #000000;
+    font-weight: bold;
+    background: transparent;
+}
+
+.aba img {
+    position: absolute;
+    top: 5px;
+}
+
+.aba span {
+    margin-left: 25px;
+}
+
+footer {
+    width: 100%;
+    height: 40px;
+    background: #ffffff;
+    color: #003061;
+    position: fixed;    
+    bottom: 0;
+}
+
+footer > .content {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+footer > .content span:first-child {
+    float: left;
+}
+
+footer > .content span:last-child {
+    float: right;
+}
+
+/*GRID*/
+.grid {
+    width: 100%;
+    
+}
+
+.grid thead tr td {
+    background: #003061;
+color: #ffffff;
+    padding: 5px;
+    border: 1px solid #003061;
+}
+
+.grid tbody tr td {
+    background: #f4f4f4;
+    padding: 5px;
+    border: 1px solid #003061;
+}
+
+
+a {
+    color: #FFFFFF;
+}

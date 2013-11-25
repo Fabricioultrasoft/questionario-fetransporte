@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Aplicacao.dto.DtoSindicato>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Setor/Área";
+}
+<br />
+<h2>Setor/Área (<a href="javascript:;" id="openFrmCadastrarSetorArea">Cadastrar Novo</a>)</h2> <br />
+<table class="grid">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Ações</td>
+        </tr>
+    </thead>
+    <tbody id="lista">
+       
+    </tbody>
+</table>
+
