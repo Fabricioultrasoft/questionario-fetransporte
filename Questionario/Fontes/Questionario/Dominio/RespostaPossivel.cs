@@ -19,5 +19,6 @@ namespace Dominio
 
         public List<PerguntasQuestionario> PerguntasQuestionario { get; set; }
 
+        public List<Funcionario> Funcionario { get; set; }
     }
 }

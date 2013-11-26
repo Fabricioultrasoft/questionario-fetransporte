@@ -56,3 +56,6 @@ D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.M
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._017.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._018.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._019.resources

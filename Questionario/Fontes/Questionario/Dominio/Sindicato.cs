@@ -19,6 +19,8 @@ namespace Dominio
 
         public byte[] LogoMarca { get; set; }
 
+        public Federacao Federacao { get; set; }
+
         public virtual IEnumerable<UsuarioSindicato> UsuarioSindicato { get; set; }
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
     }
