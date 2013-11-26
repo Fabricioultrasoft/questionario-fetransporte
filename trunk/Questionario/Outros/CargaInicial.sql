@@ -1076,10 +1076,20 @@ Insert Into Bairro ( Cidade_CidadeID, NomeBairro )  Select CidadeID,'FORNO VELHO
 Insert Into Bairro ( Cidade_CidadeID, NomeBairro )  Select CidadeID,'PONTA DOS CASTELHANOS' From Fetransportes_questionario.Dbo.Cidades Where Descricao = 'ANCHIETA'
 Commit
 
+
+
+Select * From Sindicatos
+
+
 Begin tran
-	Insert Into Sindicatos ( NomeSindicato ) Values ( 'GVBUS' )
-	Insert Into Sindicatos ( NomeSindicato ) Values ( 'SETPES' )
-	Insert Into Sindicatos ( NomeSindicato ) Values ( 'TRANSCARES' )
+	Insert Into Federacao ( Descricaofederacao ) Values ( 'FETRANSPORTES' )
+Commit
+
+
+Begin tran
+	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'GVBUS', 1 )
+	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'SETPES', 1 )
+	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'TRANSCARES', 1 )
 Commit
 
 /**************************************************************************************************

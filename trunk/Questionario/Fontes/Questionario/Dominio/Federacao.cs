@@ -18,5 +18,6 @@ namespace Dominio
         public String DescricaoFederacao { get; set; }
 
         public virtual IEnumerable<UsuarioFederacao> UsuarioFederacao { get; set; }
+
     }
 }
