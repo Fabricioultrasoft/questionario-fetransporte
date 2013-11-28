@@ -25,7 +25,7 @@ namespace Dominio
 
         public Cargo Cargo { get; set; }
 
-        public virtual IEnumerable<Empresa> Empresa { get; set; }
+        public Empresa Empresa { get; set; }
 
     }
 }

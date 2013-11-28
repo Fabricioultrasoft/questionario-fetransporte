@@ -23,11 +23,6 @@ namespace Dominio
 
         public String Observacao { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o Sindicato")]
-        public Sindicato Sindicato { get; set; }
-
-        public Funcionario Funcionario { get; set; }
-        
         [MaxLength(255, ErrorMessage = "Quantidade máxima de caracteres: 255")]
         public String Endereco { get; set; }
 
@@ -45,6 +40,9 @@ namespace Dominio
 
         [MaxLength(8, ErrorMessage = "Quantidade máxima de caracteres: 8")]
         public String Cep { get; set; }
+
+        [Required(ErrorMessage = "Obrigatório informar o Sindicato")]
+        public Sindicato Sindicato { get; set; }
         
         public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }

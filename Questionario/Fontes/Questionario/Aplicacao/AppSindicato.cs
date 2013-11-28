@@ -31,6 +31,13 @@ namespace Aplicacao
             return retorno;
         }
 
+        /*public IEnumerable<Empresa> Listar()
+        { 
+            return Banco.Empresa.Include( x => x.)
+        
+        }*/
+
+
         public void Inserir(DtoSindicato DtoSindicato) 
         {
             var sindicato = new Sindicato();
