@@ -28,8 +28,7 @@ namespace Aplicacao
                                EmailEmpresa = s.EmailEmpresa,
                                LogoMarca = s.LogoMarca,
                                Observacao = s.Observacao,
-                               Sindicato = s.Sindicato,
-                               Funcionario = s.Funcionario
+                               Sindicato = s.Sindicato
                            }).ToList();
             return retorno;
         }
