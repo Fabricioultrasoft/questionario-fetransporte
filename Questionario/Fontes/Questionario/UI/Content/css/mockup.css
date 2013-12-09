@@ -4,11 +4,16 @@
     list-style: none;
     text-decoration: none;
 }
-
+html {
+    height: 100%;
+}
 body {
+    
     background: #9AC1E2;
     font-family: Arial;
     font-size: 12px;
+    background: url(../../Content/imagens/bg_fetransportes.png) no-repeat center;
+    background-size: 100% 100%;
 }
 
 h2 {
@@ -96,7 +101,7 @@ header > .content ul li a {
 footer {
     width: 100%;
     height: 40px;
-    background: #ffffff;
+    background: #cccccc;
     color: #003061;
     position: fixed;    
     bottom: 0;
@@ -107,6 +112,7 @@ footer > .content {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+
 }
 
 footer > .content span:first-child {
@@ -139,4 +145,30 @@ color: #ffffff;
 
 a {
     color: #FFFFFF;
+}
+
+.template-texto {
+    width: 400px;
+    height: 360px;
+    position: absolute;
+    text-align: justify;
+    top: 50%;
+    left:50%;
+    margin-top: -240px;
+    margin-left: -655px;
+    padding: 30px;
+    float: left;
+    background: #f4f4f4;
+}
+
+.global {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -290px;
+    margin-left: -140px;
+    opacity:0.9;
+    filter:alpha(opacity=100);
 }

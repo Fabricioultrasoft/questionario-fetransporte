@@ -8,3 +8,7 @@ D:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
 D:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb

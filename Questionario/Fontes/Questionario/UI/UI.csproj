@@ -134,6 +134,7 @@
     <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SetorAreaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -142,6 +143,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\mockup.css" />
+    <Content Include="Content\css\normalize.css" />
+    <Content Include="Content\css\ui.css" />
+    <Content Include="Content\imagens\bg_fetransportes.png" />
+    <Content Include="Content\imagens\fetransporte_logo.jpg" />
+    <Content Include="Content\imagens\icones\b_edit.png" />
+    <Content Include="Content\imagens\icones\b_trash.png" />
+    <Content Include="Content\imagens\icones\cadastros.png" />
+    <Content Include="Content\imagens\icones\home.png" />
+    <Content Include="Content\imagens\icones\questionarios.png" />
+    <Content Include="Content\imagens\icones\relatorios.png" />
+    <Content Include="Content\imagens\icones\usuarios.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -204,6 +218,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.json-2.4.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -237,6 +252,7 @@
     <Content Include="Views\Cadastros\Relatorio.cshtml" />
     <Content Include="Views\Cadastros\SetorArea.cshtml" />
     <Content Include="Views\Cadastros\Usuario.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

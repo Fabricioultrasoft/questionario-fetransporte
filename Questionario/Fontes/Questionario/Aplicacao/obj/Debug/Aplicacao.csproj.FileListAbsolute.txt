@@ -23,3 +23,17 @@ D:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework
 D:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
 D:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll.config
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.xml
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.xml
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb
