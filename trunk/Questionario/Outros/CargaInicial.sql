@@ -1076,11 +1076,6 @@ Insert Into Bairro ( Cidade_CidadeID, NomeBairro )  Select CidadeID,'FORNO VELHO
 Insert Into Bairro ( Cidade_CidadeID, NomeBairro )  Select CidadeID,'PONTA DOS CASTELHANOS' From Fetransportes_questionario.Dbo.Cidades Where Descricao = 'ANCHIETA'
 Commit
 
-
-
-Select * From Sindicatos
-
-
 Begin tran
 	Insert Into Federacao ( Descricaofederacao ) Values ( 'FETRANSPORTES' )
 Commit

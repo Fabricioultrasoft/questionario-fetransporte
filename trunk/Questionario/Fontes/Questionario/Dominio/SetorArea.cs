@@ -17,6 +17,6 @@ namespace Dominio
         [MaxLength(100, ErrorMessage = "Quantidade máxima de caracteres: 100")]
         public String NomeSetorArea { get; set; }
 
-        public virtual IEnumerable<Cargo> Cargo { get; set; }
+        public virtual List<Cargo> Cargo { get; set; }
     }
 }

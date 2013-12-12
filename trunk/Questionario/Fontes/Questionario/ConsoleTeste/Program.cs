@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-
+using Repositorio;
+using Dominio;
 using Aplicacao;
 using Aplicacao.dto;
 
@@ -16,101 +17,86 @@ namespace ConsoleTeste
     {
         static void Main(string[] args)
         {
-            #region configurando ambiente. e declarando as classes.
+
+            #region configurando ambiente.
             Console.BackgroundColor = ConsoleColor.DarkYellow;
             Console.ForegroundColor = ConsoleColor.Green;
-
-            Console.WriteLine("Digite: F1 para listar os sindicatos");
-            Console.WriteLine("Digite: F2 para listar as Empresas  ");
-
             ConsoleKeyInfo cki = new ConsoleKeyInfo();
-
-            cki = Console.ReadKey(true);
-
             #endregion
 
-            #region funções do sindicato
-            if (cki.Key == ConsoleKey.F1)
+            #region mostra opções de uso:
+            Console.WriteLine("Digite: F1 para listar os sindicatos e as empresas");
+            Console.WriteLine("Digite: F2 para Inserir Empresas");
+            Console.WriteLine("Digite: F3 para listar as empresas por código.");
+            Console.WriteLine("Digite: F4 para listar as Sindicatos por código.");
+            Console.WriteLine("Digite: F5 para listar as dtoSetorArea.");
+            cki = Console.ReadKey(true);
+            #endregion
+            AppSindicato SindicatoApp = new AppSindicato();
+            AppEmpresa EmpresaApp = new AppEmpresa();
+            AppCargo CargoApp = new AppCargo();
+
+            if (cki.Key == ConsoleKey.F5)
             {
-                var appSindicato = new AppSindicato();
-                var dtoSindicato = new DtoSindicato();
+                var listaCargos = CargoApp.Listar();
 
-                var AppUsuario = new AppUsuario();
-                var dtoUsuario = new DtoUsuario();
-
-                var AppUsuarioSindicato = new AppUsuarioSindicato();
-                var DtoUsuarioSindicato = new DtoUsuarioSindicato();
-
-                Console.WriteLine("Digite: 1 ou 2 para listar os sindicatos e 3 para deletar");
-                cki = Console.ReadKey(true);
-
-                if (cki.Key == ConsoleKey.D1)
+                foreach (var cargos in listaCargos)
                 {
-                    IEnumerable<DtoSindicato> listaDeSindicatos = appSindicato.Listar();
-                    foreach (DtoSindicato sindicatos in listaDeSindicatos)
-                    {
-                        Console.WriteLine(sindicatos.NomeSindicato);
-                    }
-
-                    Console.WriteLine("Listando todos os usuarios");
-                    Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>");
-
-                    IEnumerable<DtoUsuario> listaDeUsuarios = AppUsuario.Listar();
-                    foreach (DtoUsuario usuarios in listaDeUsuarios)
-                    {
-                        Console.WriteLine("ID do Usuario: {0} *** Nome do Usuário: {1}", usuarios.UsuarioID, usuarios.NomeUsuario);
-                    }
-
-                    Console.WriteLine("Listando os usuarios do Sindicato.");
-                    IEnumerable<DtoUsuarioSindicato> listaDeUsuariosSindicato = AppUsuarioSindicato.Listar();
-                    foreach (DtoUsuarioSindicato usuariosSindicato in listaDeUsuariosSindicato)
-                    {
-                        Console.WriteLine("ID do Usuario: {0} *** Nome do Usuário: {1}", usuariosSindicato.UsuarioSindicatoID);
-                    }
-
-                    Console.ReadKey();
-                }
-                else if (cki.Key == ConsoleKey.D2)
-                {
-                    dtoSindicato.NomeSindicato = Console.ReadLine();
-                    appSindicato.Inserir(dtoSindicato);
-                }
-                else if (cki.Key == ConsoleKey.D3)
-                {
-                    int codSindicato = Convert.ToInt32(Console.ReadLine());
-                    appSindicato.Deletar(codSindicato);
+                    Console.WriteLine("{0}", cargos.NomeCargos);
                 }
             }
-            #endregion
 
-            #region teste
+            else if (cki.Key == ConsoleKey.F1)
+            {
+                Console.WriteLine("-----");
+                Console.WriteLine("Digite o código do sindicato.");
+
+                int codigoSindicato = Convert.ToInt32(Console.ReadLine());
+                var listaDeSindicatos = SindicatoApp.ListarSindicato(codigoSindicato);
+                //var listaDeSindicatos = SindicatoApp.ListarSindicato();
+                foreach (var sindicato in listaDeSindicatos)
+                {
+                    Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
+                    foreach (var sindicatoEmpresa in sindicato.Empresa)
+                    {
+                        Console.WriteLine("Listando Empresas dos Sindicato:{0} - {1}  ", sindicato.NomeSindicato, sindicatoEmpresa.NomeEmpresa);
+                    }
+                }
+            }
+
             else if (cki.Key == ConsoleKey.F2)
             {
-                var appEmpresa = new AppEmpresa();
-                var dtoEmpresa = new DtoEmpresa();
+                Empresa empresaNova = new Empresa();
+                Console.WriteLine("Digite o nome da nova empresa:");
+                empresaNova.NomeEmpresa = Console.ReadLine();
 
-                if (cki.Key == ConsoleKey.D1)
+                Console.WriteLine("Digite o Codigo do Sindicato.");
+
+                int codigoSindicato = Convert.ToInt32(Console.ReadLine());
+                empresaNova.Sindicato = SindicatoApp.ListarSindicato().Where(x => x.SindicatoID == codigoSindicato).FirstOrDefault();
+
+                EmpresaApp.Salvar(empresaNova);
+            }
+
+            else if (cki.Key == ConsoleKey.F3)
+            {
+                Console.WriteLine("Digite o código da empresa");
+                int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
+
+                var listaDeEmpresas = EmpresaApp.ListarEmpresa(codigoDaEmpresa);
+                foreach (var empresa in listaDeEmpresas)
                 {
-                    IEnumerable<DtoEmpresa> listaDeEmpresas = appEmpresa.Listar();
-                    foreach (DtoEmpresa empresas in listaDeEmpresas)
-                    {
-                        Console.WriteLine(empresas.NomeEmpresa);
-                    }
-
-                    Console.ReadKey();
+                    Console.WriteLine(empresa.NomeEmpresa);
                 }
-              
-                //else if (cki.Key == ConsoleKey.D2)
-                //{
-                //    dtoEmpresa.NomeEmpresa = Console.ReadLine();
-                //    appEmpresa.Inserir(dtoEmpresa);
-                //}
-                //else if (cki.Key == ConsoleKey.D3)
-                //{
-                //    int codSindicato = Convert.ToInt32(Console.ReadLine());
-                //    appSindicato.Deletar(codSindicato);
-                //}
-                #endregion teste
+            }
+
+            else if (cki.Key == ConsoleKey.F4)
+            {
+                Console.WriteLine("Digite o código da empresa");
+                int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
+
+                EmpresaApp.Excluir(codigoDaEmpresa);
+                Console.WriteLine("Empresa Excluida.");
             }
             Console.ReadKey();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 using Aplicacao.dto;
 using Dominio;
@@ -31,11 +32,17 @@ namespace Aplicacao
             return retorno;
         }
 
-        /*public IEnumerable<Empresa> Listar()
-        { 
-            return Banco.Empresa.Include( x => x.)
-        
-        }*/
+        public IEnumerable<Sindicato> ListarSindicato ()
+        {
+            var retorno = Banco.Sindicato.Include(x => x.Empresa).ToList();
+            return retorno;
+        }
+
+        public IEnumerable<Sindicato> ListarSindicato(int identicador)
+        {
+            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x=> x.SindicatoID == identicador).ToList();
+            return retorno;
+        }
 
 
         public void Inserir(DtoSindicato DtoSindicato) 

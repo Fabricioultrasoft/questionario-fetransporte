@@ -42,10 +42,9 @@ namespace Dominio
         public String Cep { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o Sindicato")]
-        public Sindicato Sindicato { get; set; }
+        public  Sindicato Sindicato { get; set; }
         
         public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
-
     }
 }
