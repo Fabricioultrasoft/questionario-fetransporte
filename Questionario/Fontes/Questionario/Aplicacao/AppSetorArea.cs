@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+
 using Aplicacao.dto;
 using Dominio;
 using Repositorio;
@@ -18,16 +20,9 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public IEnumerable<DtoSetorArea> Listar()
+        public IEnumerable<SetorArea> Listar()
         {
-            var retorno = (from s in Banco.SetorArea
-                           select new DtoSetorArea
-                           {
-                               SetorAreaID = s.SetorAreaID,
-                               NomeSetorArea = s.NomeSetorArea,
-                               Cargo = s.Cargo
-                           }).ToList();
-
+            var retorno = Banco.SetorArea.ToList();
             return retorno;
         }
 
