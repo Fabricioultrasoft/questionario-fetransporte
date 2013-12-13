@@ -38,7 +38,7 @@ namespace Aplicacao
             return retorno;
         }
 
-        public IEnumerable<Sindicato> ListarSindicato(int identicador)
+        public IEnumerable<Sindicato> ListarEmpresasDoSindicato(int codigo)
         {
             var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x=> x.SindicatoID == identicador).ToList();
             return retorno;
