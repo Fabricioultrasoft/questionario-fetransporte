@@ -19,11 +19,10 @@
 			Os resultados serão apresentados aos sindicatos, às diretorias das empresas e ao SEST SENAT/ES com intuito de estabelecer ações relacionadas à capacitação e programas de saúde para empresa e colaboradores.
 			Em caso de dúvida, favor entrar em contato com o RH da sua empresa.
 			Desde já agradecemos a sua colaboração.</p>
-            <br /><br />
-            <b>Empresa</b>: &nbsp;&nbsp; <select name="empresa" size="1" style="width:200px;"><option>GVBUS</option></select>
-            &nbsp;&nbsp; <b>Funcionário</b>: &nbsp;&nbsp; <select name="empresa" size="1"  style="width:350px;"><option>METROPOLITANA TRANSPORTES E SERVIÇOS LTDA</option></select>
-		    <br /><br />
-        </div>	
+
+             Empresa:<select name="empresa" size="1"><option>Selecionar...</option></select>
+        Funcionário:<select name="funcionario" size="1"><option>Selecionar...</option></select>
+		</div>	
        
 
 		<div class="pergunta">
@@ -300,12 +299,9 @@
 		</div>
 		<input type="button" onclick="EnviarQuestionario();" value="Enviar Questionário"/>	
 	</form>
-    <br /><br /><br /><br /><br />
  </div>	
 <script type="text/javascript">
     function EnviarQuestionario() {
         console.log('#Questionario');
-        var form = $('#Questionario').serialize();
-        console.log(form);
     }
 </script>

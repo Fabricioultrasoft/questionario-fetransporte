@@ -12,7 +12,7 @@ body {
     background: #9AC1E2;
     font-family: Arial;
     font-size: 12px;
-    background: url(../../Content/imagens/bg_fetransportes.png) no-repeat center;
+    background: url(../../Content/imagens/bg_fetransportes.png) no-repeat fixed;
     background-size: 100% 100%;
 }
 
@@ -21,10 +21,12 @@ h2 {
 }
 
 header {
+    position: fixed;
     width: 100%;
     height: 40px;
     background: #003061;
     color: #FFFFFF;
+z-index:1;
 }
 
 header > .content {
@@ -144,7 +146,7 @@ color: #ffffff;
 
 
 a {
-    color: #FFFFFF;
+    color: #000;
 }
 
 .template-texto {
