@@ -97,3 +97,4 @@ H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\De
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._022.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._023.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._024.resources
