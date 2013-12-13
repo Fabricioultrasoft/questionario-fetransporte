@@ -37,3 +37,17 @@ H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debu
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll.config
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.pdb
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Dominio.pdb
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Repositorio.pdb
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.xml
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.xml
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb

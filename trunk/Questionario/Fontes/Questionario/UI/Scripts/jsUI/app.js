@@ -1,14 +1,18 @@
-﻿var App = {
+﻿var stringPath = "G:\\files\\data.xml";
+var lastId = 0;
+var lista = $("#lista");
+var entde = null;
+
+var App = {
     init: function () {
-        $('#importar').exToData({ tipo: 'Sindicato' , data: $.toJSON(cadastros) });
+        
     },
     efetuarLogin: function () {
-        
+
         $.ajax({
             url: '/Login/Efetuarlogin',
-            data: { usuario: $('#Usuario').val() , senha: $("#Senha").val() },
+            data: { usuario: $('#Usuario').val(), senha: $("#Senha").val() },
             type: 'POST',
-            dataType: 'json',
             beforeSend: function () {
                 modal.open({ content: '<center>Aguarde<br/><img src="Scripts/jsUI/plugins/modal/load.gif" border="0"/></center>' });
             },
@@ -22,105 +26,183 @@
             },
         });
     },
-    openFrmCadastrarSindicado: function () {
+    Listar: function (page,entidade) {
+        entde = entidade;
+        $('#Entidade').val("");
+        lista.empty();
+        if (page == 'Usuarios' && entde != "") {
+            console.log('#ListarUsuarios');
+            $.ajax({
+                url: '/Cadastros/ListarUsuarios',
+                type: 'post',
+                dataType: 'json',
+                data: { entidade: App.getEntidade() , path: stringPath },
+                success: function (json) {
+                    if (json == null) {
+                        console.log("");
+                    } else {
+                        $.each(eval(json), function (index, value) {
+                            lista.append('<tr><td>' + json[index].UsuarioID +
+                                        '</td><td>' + json[index].NomeUsuario +
+                                        '</td><td>' + json[index].LoginUsuario +
+                                        '</td><td><a href="javascript:;" onclick="App.openFrmEditarUsuario(' + json[index].UsuarioID + ')"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" onclick="App.deleterUsuario(' + json[index].UsuarioID + ')"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+                            $('#nextID').val(json[index].UsuarioID + 1);
+                        });
+                       
+                    }
+                }
+            });
+            $('#Entidade').val(App.getEntidade());
+        } else if (page === 'SetorArea') {
+            console.log('#ListarSetorAreas');
+            lastId = 1;
+            $('#nextID').val('');
+            $.ajax({
+                url: '/' + page + '/Listar',
+                type: 'post',
+                dataType: 'json',
+                data: { path: stringPath },
+                success: function (json) {
+                    if (json == null) {
+                        console.log("");
+                    } else {
+                        $.each(eval(json), function (index, value) {
+                            lista.append('<tr><td>' + json[index].SetorAreaID + '</td><td>' + json[index].NomeSetorArea + '</td><td><a href="javascript:;" data-id="' + json[index].SetorAreaID + '" onclick="App.openFrmEditarCadastrarSetorArea(' + json[index].SetorAreaID + ')"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" onclick="App.deletarSetorArea(' + json[index].SetorAreaID + ')"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+                            console.log(json[index].SetorAreaID);
+                            $('#nextID').val(json[index].SetorAreaID + 1);
+                        });
+                    }
+                }
+            });
+        } else if (page === 'Cargos') {
+            console.log('#ListarCargos');
+            lastId = 1;
+            $('#nextID').val('');
+            $.ajax({
+                url: '/Cadastros/ListarCargos',
+                type: 'post',
+                dataType: 'json',
+                data: { path: stringPath },
+                success: function (json) {
+                    if (json == null) {
+                        console.log("");
+                    } else {
+                        $.each(eval(json), function (index, value) {
+                            lista.append('<tr><td>' + json[index].CargoID + '</td><td>' + json[index].NomeCargos + '</td><td>' + json[index]._SetorArea + '</td><td><a href="javascript:;" data-id="' + json[index].CargoID + '" onclick="App.openFrmEditarCargo(' + json[index].CargoID + ')"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" onclick="App.deletarCargo(' + json[index].CargoID + ')"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+                            console.log(json[index].CargoID);
+                            $('#nextID').val(json[index].CargoID + 1);
+                        });
+                    }
+                }
+            });
+        }
+    },
+    getEntidade: function () {
+        var url = $(location).attr('href');
+        var urlSplited = $(location).attr('href').split('/');
+        var urlSplitedLen = urlSplited.length;
 
-        var html = '<h3>Cadastrar Sindicato</h3><br/>';
-            html += '<labe><b>Sindicato<b></label><br/>'
-            html += '<form><input type="text" id="nomeSindicato" name="nomeSindicato" /><br /><br />';
+        //console.log(url);
+        //console.log(urlSplited);
+        //console.log(urlSplited.length);
+        //console.log(urlSplited[urlSplitedLen-1]);
+        var entidade = urlSplited[urlSplitedLen - 1];
 
-            html += '<labe><b>Logomarca<b></label><br/>';
-            html += '<input type="file" id="logoSindicato name="logomarca" /><br /><br />';
-            
-            html += '<center><input type="button" id="btnCadastrarSindicato" onclick="App.cadastrarSindicato();" value="Cadastrar"/> ';
-            html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></form></center>';
+        return entidade;
+    },
+    openFrmCadastrarUsuario: function () {
+
+        var html = '<h3>Cadastrar Usuário</h3><br/>';
+
+        html += '<labe><b>Usuário<b></label><br/>'
+        html += '<input type="text" id="NomeUsuario" name="NomeUsuario" /><br /><br />';
+
+        html += '<labe><b>Login<b></label><br/>';
+        html += '<input type="text" id="LoginUsuario" name="LoginUsuario" /><br /><br />';
+
+        html += '<labe><b>Senha<b></label><br/>';
+        html += '<input type="text" id="senha" name="senha" /><br /><br />';
+
+        html += '<center><input type="button" id="btnCadastrarUsuario" onclick="App.cadastrarUsuario();" value="Cadastrar"/> ';
+        html += '<input type="button" id="btnCancelar" onclick="App.closeModal()" value="Cancelar"/></center>';
 
         modal.open({ content: html });
     },
-    cadastrarSindicato: function () {
-        console.log("Cadastrar Sindicato");
-
+    openFrmEditarUsuario: function (id) {
         $.ajax({
-            url: '../Cadastros/AdicionarSindicato',
+            url: '/Cadastros/getUsuarioEntidade',
             type: 'post',
-            data: { nome: $('#nomeSindicato').val(), logo: 'logo.jpg' },
-            success: function () {
-                console.log('Sindicato adicionado.');
+            dataType: 'json',
+            data: { id: id, entidade: $('#Entidade').val(), path: stringPath },
+            success: function (json) {
+
+                var html = '<h3>Editar Usuário</h3><br/>';
+
+                html += '<labe><b>Usuário<b></label><br/>'
+                html += '<input type="text" id="NomeUsuario" name="NomeUsuario" value="' + json[0].NomeUsuario + '"/><br /><br />';
+
+                html += '<labe><b>Login<b></label><br/>';
+                html += '<input type="text" id="LoginUsuario" name="LoginUsuario" value="' + json[0].LoginUsuario + '"/><br /><br />';
+
+                html += '<labe><b>Senha<b></label><br/>';
+                html += '<input type="text" id="senha" name="senha" value="' + json[0].SenhaUsuario + '" /><br /><br />';
+
+                html += '<center><input type="button" id="btnCadastrarUsuario" onclick="App.alterarUsuario(' + json[0].UsuarioID+');" value="Salvar"/> ';
+                html += '<input type="button" id="btnCancelar" onclick="App.closeModal()" value="Cancelar"/></center>';
+                App.openModal(html);
             }
         });
-        App.closeModal();
     },
-    openFrmCadastrarEmpresa: function () {
+    cadastrarUsuario: function () {
+        console.log('#CadastrarUsuario');
 
-        var html = '<h3>Cadastrar Empresa</h3><br/>';
-        html += '<labe><b>Sindicato<b></label><br/>';
-        html += '<select id="sindicatoEmpresa" ><option value="GVBUS">GVBUS</option><option value="SETPES">SETPES</option><option value="TRANSCARE">TRANSCARE</option></select><br/><br/>';
+        if (lastId != 0) {
+            var new_id = lastId + 1;
+            lastId = new_id;
+        } else {
+            var new_id = 1;
+        }
+        var _nome = $('#NomeUsuario').val();
+        var _login = $('#LoginUsuario').val();
+        var _senha = $('#senha').val();
 
-        html += '<labe><b>Empresa<b></label><br/>'
-        html += '<input type="text" id="nomeEmpresa" name="nomeEmpresa" /><br /><br />';
-
-        html += '<labe><b>E-mail<b></label><br/>'
-        html += '<input type="text" id="emailEmpresa" name="emailEmpresa" /><br /><br />';
-
-        html += '<labe><b>Logomarca<b></label><br/>';
-        html += '<input type="file" id="logoMarcaEmpresa" name="logomarca" /><br /><br />';
-
-        html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarEmpresa();" value="Cadastrar"/> ';
-        html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
-
-        modal.open({ content: html });
+          $.ajax({
+                url: '/Cadastros/CadastrarUsuario',
+                type: 'post',
+                data: { id: $('#nextID').val(), nome: _nome, login: _login, senha: _senha, entidade: $('#Entidade').val(), path: stringPath },
+                success: function () {
+                    App.Listar('Usuarios', entde);
+                    App.closeModal();
+                }
+            });
     },
-    cadastrarEmpresa: function () {
+    alterarUsuario: function (id) {
 
-        var lista = $('#lista');
+        var _nome = $('#NomeUsuario').val();
+        var _login = $('#LoginUsuario').val();
+        var _senha = $('#senha').val();
 
-        var last_id = 0;
-
-        var new_id = last_id + 1;
-        var empresa = $('#nomeEmpresa').val();
-        var email = $('#emailEmpresa').val();
-        var sindicato = $('#sindicatoEmpresa').val();
-        //var logomarca = $('#logomarcaEmpresa').val();
-
-        lista.append('<tr><td>' + new_id + '</td><td>' + empresa + '</td><td>' + email + '</td><td>' + sindicato + '</td><td><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
-        App.closeModal();
+        $.ajax({
+            url: '/Cadastros/AlterarUsuario',
+            type: 'post',
+            data: { id: id, nome: _nome, login: _login, senha: _senha, entidade: $('#Entidade').val(), path: stringPath },
+            success: function () {
+                App.Listar('Usuarios', entde);
+                App.closeModal();
+            }
+        });
     },
-    openFrmCadastrarfuncionario: function () {
-
-        var html = '<h3>Cadastrar Funcionario</h3><br/>';
-
-        html += '<labe><b>Empresa<b></label><br/>';
-        html += '<select id="empresaFuncionario" ><option value="">Selecione...</option></select><br/><br/>';
-
-        html += '<labe><b>Empresa<b></label><br/>'
-        html += '<input type="text" id="nomeFuncionario" name="nomeFuncionario" /><br /><br />';
-
-        html += '<labe><b>E-mail<b></label><br/>'
-        html += '<input type="text" id="emailFuncionario" name="emailFuncionario" /><br /><br />';
-
-        html += '<labe><b>Setor/Área - Cargo<b></label><br/>';
-        html += '<select id="setorAreaCargoFuncionario" ><option value="">Selecione...</option></select><br/><br/>';
-
-        html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarEmpresa();" value="Cadastrar"/> ';
-        html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
-
-        modal.open({ content: html });
+    deleterUsuario: function (id) {
+        $.ajax({
+            url: '/Cadastros/DeletarUsuario',
+            type: 'post',
+            data: { id: id, entidade: $('#Entidade').val(), path: stringPath },
+            success: function () {
+                App.Listar('Usuarios', entde);
+            }
+        });
     },
-    cadastrarFuncionario: function () {
-
-        var lista = $('#lista');
-
-        var last_id = 0;
-
-        var new_id = last_id + 1;
-        var nome = $('#nomeFuncionario').val();
-        var email = $('#emailFuncionario').val();
-        var empresa = $('#empresaEmpresa').val();
-        var setorAreaCargo = $('#setorAreaCargo').val();
-        //var logomarca = $('#logomarcaEmpresa').val();
-
-        lista.append('<tr><td>' + new_id + '</td><td>' + nome + '</td><td>' + email + '</td><td>' + setorAreaCargo + '</td><td>' + empresa + '</td><td><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
-        App.closeModal();
-    },
+    //SetorArea
     openFrmCadastrarSetorArea: function () {
 
         var html = '<h3>Cadastrar Setor/Área</h3><br/>';
@@ -133,79 +215,168 @@
 
         modal.open({ content: html });
     },
-    cadastrarSetorArea: function () {
+    openFrmEditarCadastrarSetorArea: function (id) {
+        $.ajax({
+            url: '../SetorArea/getSetorArea',
+            type: 'post',
+            dataType: 'json',
+            data: { id: id, path: stringPath },
+            success: function (json) {
 
+                var html = '<h3>Editar Setor/Área</h3><br/>';
+                html += '<labe><b>Setor/Área<b></label><br/>'
+                html += '<input type="text" id="setorArea" name="setorArea" value="' + json[0].NomeSetorArea + '"/><br /><br />';
+
+                html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.alterarSetorArea(' + json[0].SetorAreaID + ');" value="Salvar"/> ';
+                html += '<input type="button" id="btnCancelar" onclick="App.closeModal()" value="Cancelar"/></center>';
+                App.openModal(html);
+            }
+        });
+
+    },
+    alterarSetorArea: function (id) {
+        $.ajax({
+            url: '../SetorArea/Alterar',
+            type: 'post',
+            data: { id: id, name: $("input[name=setorArea]").val(), path: stringPath },
+            success: function () {
+                App.closeModal();
+                App.Listar('SetorArea',null);
+            }
+        });
+    },
+    cadastrarSetorArea: function () {
         var lista = $('#lista');
 
-        var last_id = 0;
-
-        var new_id = last_id + 1;
+        if (lastId != 0) {
+            var new_id = lastId + 1;
+            lastId = new_id;
+        } else {
+            var new_id = 1;
+        }
         var setorArea = $('#setorArea').val();
         //var logomarca = $('#logomarcaEmpresa').val();
 
-        lista.append('<tr><td>' + new_id + '</td><td>' + setorArea + '</td><td><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+        lista.append('<tr><td>' + $('#nextID').val() + '</td><td>' + setorArea + '</td><td><a href="javascript:;" data-id="' + new_id + '" onclick="App.openFrmEditarCadastrarSetorArea(' + $('#nextID').val() + ')"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" onclick="App.deletarSetorArea(' + new_id + ')"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+        $.ajax({
+            url: '../SetorArea/Adicionar',
+            type: 'post',
+            data: { id: $('#nextID').val() , name: setorArea, path: stringPath },
+            success: function () {
+                console.log('Setor/Área adicionado.');
+            }
+        });
         App.closeModal();
     },
+    deletarSetorArea: function (id) {
+        $.ajax({
+            url: '/SetorArea/DeletarSetorArea',
+            type: 'post',
+            data: { id: id, path: stringPath },
+            success: function () {
+                App.Listar('SetorArea', entde);
+            }
+        });
+    },
+    //Cargo
     openFrmCadastrarCargo: function () {
 
         var html = '<h3>Cadastrar Setor/Área</h3><br/>';
 
         html += '<labe><b>Setor/Área<b></label><br/>';
-        html += '<select id="setorArea" ><option value="">Selecione...</option></select><br/><br/>';
+        $.ajax({
+            url: '/Cadastros/obterSetorAreas',
+            type: 'post',
+            dataType: 'json',
+            data: { path: stringPath },
+            success: function (json) {
+                if (json == null) { } else {
+                    html += '<select id="setorArea" >';
+                    html += '<option value="">Selecione...</option>';
+                    $.each(eval(json), function (index, value) {
+                        html += '<option value="' + json[index].NomeSetorArea + '">' + json[index].NomeSetorArea + '</option>';
+                    });
+                    html += '</select><br/><br/>';
 
-        html += '<labe><b>Cargo<b></label><br/>';
-        html += '<input type="text" id="cargo" name="cargo" /><br /><br />';
+                    html += '<labe><b>Cargo<b></label><br/>';
+                    html += '<input type="text" id="cargo" name="cargo" /><br /><br />';
 
-        html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarCargo();" value="Cadastrar"/> ';
-        html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
+                    html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarCargo();" value="Cadastrar"/> ';
+                    html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
 
-        modal.open({ content: html });
+                    modal.open({ content: html });
+                }
+            }
+        });
+       
+    },
+    openFrmEditarCargo: function (id) {
+        $.ajax({
+            url: '/Cadastros/getCargo',
+            type: 'post',
+            dataType: 'json',
+            data: { id: id, path: stringPath },
+            success: function (json) {
+
+                var html = '<h3>Editar Cargo/Área</h3><br/>';
+                if (json == null) { } else {
+                    html += '<select id="setorArea" >';
+                    html += '<option value="">Selecione...</option>';
+                    $.each(eval(json), function (index, value) {
+                        html += '<option value="' + json[index]._SetorArea + '">' + json[index]._SetorArea + '</option>';
+                   
+                    html += '</select><br/><br/>';
+
+                    html += '<labe><b>Cargo<b></label><br/>';
+                    html += '<input type="text" id="cargo" name="cargo" value="' + json[index].NomeCargos + '"/><br /><br />';
+                    });
+                    html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.alterarCargo('+id+');" value="Cadastrar"/> ';
+                    html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
+
+                    modal.open({ content: html });
+                }
+            }
+        });
     },
     cadastrarCargo: function () {
 
         var lista = $('#lista');
 
-        var last_id = 0;
-
-        var new_id = last_id + 1;
+        if (lastId != 0) {
+            var new_id = lastId + 1;
+            lastId = new_id;
+        } else {
+            var new_id = 1;
+        }
         var cargo = $('#cargo').val();
         var setorArea = $('#setorArea').val();
         //var logomarca = $('#logomarcaEmpresa').val();
 
-        lista.append('<tr><td>' + new_id + '</td><td>' + cargo + '</td><td>' + setorArea + '</td><td><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+        $.ajax({
+            url: '/Cadastros/AdicionarCargo',
+            type: 'post',
+            data: { id: $('#nextID').val(), nome: cargo, setorArea: setorArea, path: stringPath },
+            dataType: 'json',
+            success: function () {
+                App.Listar('Cargos', null);
+                lista.append('<tr><td>' + new_id + '</td><td>' + cargo + '</td><td>' + setorArea + '</td><td><a href="javascript:;" data-id="' + $('#nextID').val() + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" data-id="' + $('#nextID').val() + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+            }
+        });
         App.closeModal();
     },
-    openFrmCadastrarUsuario: function () {
-
-            var html = '<h3>Cadastrar Usuário</h3><br/>';
-            html += '<labe><b>Usuário<b></label><br/>'
-            html += '<input type="text" id="usuario" name="usuario" /><br /><br />';
-
-            html += '<labe><b>Login<b></label><br/>';
-            html += '<input type="text" id="login" name="login" /><br /><br />';
-
-            html += '<labe><b>Senha<b></label><br/>';
-            html += '<input type="text" id="senha" name="senha" /><br /><br />';
-            
-            html += '<center><input type="button" id="btnCadastrarSindicato" onclick="App.cadastrarUsuario();" value="Cadastrar"/> ';
-            html += '<input type="button" id="btnCancelar" onclick="App.closeModal()" value="Cancelar"/></center>';
-
-            modal.open({ content: html });
+    alterarCargo: function (id) {
+        $.ajax({
+            url: '../Cadastros/AlterarCargo',
+            type: 'post',
+            data: { id: id, nome: cargo, setorArea: setorArea, path: stringPath },
+            success: function () {
+                App.closeModal();
+                App.Listar('Cargos', null);
+            }
+        });
     },
-    cadastrarUsuario: function () {
-
-        var lista = $('#lista');
-
-        var last_id = 0;
-
-        var new_id = last_id + 1;
-        var usuario = $('#usuario').val();
-        var login = $('#login').val();
-        var senha = $('#senha').val();
-
-        lista.append('<tr><td>' + new_id + '</td><td>' + usuario + '</td><td>' + login + '</td><td><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a><a href="javascript:;" data-id="' + new_id + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
-        App.closeModal();
-
+    openModal: function (html) {
+        modal.open({ content: html });
     },
     closeModal: function () {
         modal.close();

@@ -26,3 +26,26 @@ input[type=button] {
     background: #003366;
     border: 1px solid #003366;
 }
+
+.pergunta{ 
+	padding: 5px;
+	background: #f4f4f4; 
+	border: 1px solid #e4e4e4;
+	margin-bottom: 10px;
+    opacity:0.9;
+    filter:alpha(opacity=100);
+}
+.pergunta span {
+	clear: both;
+	display: inline-block;
+}
+.pergunta .perg {
+	padding: 5px;
+	font-weight: bold;
+}
+.pergunta .resp {
+	padding: 5px;
+}
+p {
+	text-align: justify;
+}

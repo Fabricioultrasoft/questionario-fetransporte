@@ -16,5 +16,14 @@ namespace Dominio
         [Required(ErrorMessage="Obrigatório nome do usuario")]
         [StringLength(100, ErrorMessage="Quantidade maxima de caracteres")]
         public String NomeUsuario { get; set; }
+
+        [Required(ErrorMessage = "Obrigatório nome do usuario")]
+        [StringLength(100, ErrorMessage = "Quantidade maxima de caracteres")]
+        public String LoginUsuario { get; set; }
+
+        [Required(ErrorMessage = "Obrigatório nome do usuario")]
+        [StringLength(100, ErrorMessage = "Quantidade maxima de caracteres")]
+        public String SenhaUsuario { get; set; }
+
     }
 }
