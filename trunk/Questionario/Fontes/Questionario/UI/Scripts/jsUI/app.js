@@ -131,6 +131,7 @@ var App = {
 
         return entidade;
     },
+    //Usuario
     openFrmCadastrarUsuario: function () {
 
         var html = '<h3>Cadastrar Usuário</h3><br/>';
@@ -398,6 +399,7 @@ var App = {
             }
         });
     },
+    //Empresa
     openFrmCadastrarEmpresa: function () {
         var html = '<h3>Cadastrar Empresa</h3><br/>';
 
@@ -494,6 +496,11 @@ var App = {
             }
         });
     },
+    openFrmCadastrarFuncionario: function () { },
+    openFrmEditarFuncionario: function () { },
+    cadastrarFuncionario: function () { },
+    alterarFuncionario: function () { },
+    deletarFuncionario: function () { },
     openModal: function (html) {
         modal.open({ content: html });
     },
