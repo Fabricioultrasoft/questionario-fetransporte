@@ -380,12 +380,14 @@ var App = {
             dataType: 'json',
             success: function () {
                 App.Listar('Cargos', null);
-                lista.append('<tr><td>' + new_id + '</td><td>' + cargo + '</td><td>' + setorArea + '</td><td><a href="javascript:;" data-id="' + $('#nextID').val() + '"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" data-id="' + $('#nextID').val() + '"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+               
             }
         });
         App.closeModal();
     },
     alterarCargo: function (id) {
+        var cargo = $('#cargo').val();
+        var setorArea = $('#setorArea').val();
         $.ajax({
             url: '../Cadastros/AlterarCargo',
             type: 'post',
