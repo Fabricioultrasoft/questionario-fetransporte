@@ -150,6 +150,7 @@
     <Content Include="Content\css\ui.css" />
     <Content Include="Content\imagens\bg_fetransportes.png" />
     <Content Include="Content\imagens\fetransporte_logo.jpg" />
+    <Content Include="Content\imagens\fetransporte_logo.png" />
     <Content Include="Content\imagens\icones\b_edit.png" />
     <Content Include="Content\imagens\icones\b_trash.png" />
     <Content Include="Content\imagens\icones\cadastros.png" />
@@ -157,6 +158,7 @@
     <Content Include="Content\imagens\icones\questionarios.png" />
     <Content Include="Content\imagens\icones\relatorios.png" />
     <Content Include="Content\imagens\icones\usuarios.png" />
+    <Content Include="Content\imagens\sest_senat_logo.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

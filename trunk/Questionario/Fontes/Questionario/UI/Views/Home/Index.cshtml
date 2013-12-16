@@ -2,6 +2,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Pagina Principal";
 }
+<div><br />
+    <img src="~/Content/imagens/fetransporte_logo_mini.png" /><img src="~/Content/imagens/sest_senat_logo_mini.png" style="margin-left: 20px;"/>
+</div>
 <div class="box usuarios radius box-shadow">
     <div class="aba"><img src="~/Content/imagens/icones/usuarios.png" width="22"/><span>Usuários</span></div>
     <div class="line-gray">&nbsp;</div>
@@ -9,17 +12,20 @@
         <li>@Html.ActionLink("FETRANSPORTES", "Usuario/fetransportes", "Cadastros")</li>
         <li>@Html.ActionLink("Sindicato", "Usuario/sindicatos", "Cadastros")</li>
         <li>@Html.ActionLink("Empresa", "Usuario/empresas", "Cadastros")</li>
+        <li></li>
     </ul>
 </div>
 <div class="box cadastros radius box-shadow">
     <div class="aba"><img src="~/Content/imagens/icones/cadastros.png"  width="22"/><span>Cadastro</span></div>
     <div class="line-gray">&nbsp;</div>
     <ul>
+        <li>@Html.ActionLink("Federação", "Federação", "Cadastros")</li>
         <li>@Html.ActionLink("Sindicato", "Sindicato", "Cadastros")</li>
         <li>@Html.ActionLink("Empresa", "Empresa", "Cadastros")</li>
         <li>@Html.ActionLink("Funcionários", "Funcionario", "Cadastros")</li>
         <li>@Html.ActionLink("Setor/Área", "SetorArea", "Cadastros")</li>
         <li>@Html.ActionLink("Cargo", "Cargo", "Cadastros")</li>
+        <li></li>
     </ul>
 </div>
 <div class="box questionarios radius box-shadow">
@@ -28,8 +34,9 @@
     <ul>
         <li>@Html.ActionLink("Enviar Questionário", "Questionario", "Cadastros")</li>
         <li>@Html.ActionLink("Responder Questionário", "Questionario", "Cadastros")</li>
-        <li>@Html.ActionLink("Responder Questionário Avulso", "Questionario", "Cadastros")</li>
         <li>@Html.ActionLink("Imprimir Questionário", "Questionario", "Cadastros")</li>
+        <li>@Html.ActionLink("Cadastrar Questionário", "Questionario", "Cadastros")</li>
+        <li></li>
     </ul>
 </div>
 <div class="box relatorios radius box-shadow">
@@ -39,6 +46,7 @@
         <li>@Html.ActionLink("FETRANSPORTES", "Relatorio", "Cadastros")</li>
         <li>@Html.ActionLink("Sindicato", "Relatorio", "Cadastros")</li>
         <li>@Html.ActionLink("Empresa", "Relatorio", "Cadastros")</li>
+        <li></li>
     </ul>
 </div>
 

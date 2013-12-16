@@ -170,7 +170,7 @@ namespace UI.Controllers
 
                     cargo.CargoID = int.Parse(node["id"].InnerText);
                     cargo.NomeCargos = node["nome"].InnerText;
-                    cargo._SetorArea = node["setorArea"].InnerText;
+                    
 
                     lista.Add(cargo);
                 }
@@ -265,7 +265,7 @@ namespace UI.Controllers
                         {
                             CargoID = int.Parse(node["id"].InnerText),
                             NomeCargos = node["nome"].InnerText,
-                            _SetorArea = node["setorArea"].InnerText
+                           
                         };
                         lista.Add(cargo);
                     }
