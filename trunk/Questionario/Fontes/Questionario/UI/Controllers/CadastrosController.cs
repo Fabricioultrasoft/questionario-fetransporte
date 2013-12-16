@@ -277,6 +277,15 @@ namespace UI.Controllers
 
         #endregion
 
+
+        public JsonResult obterSindicatos() {
+            
+           return new JsonResult() { 
+                Data = null
+            };
+
+        }
+
         public void EnviarQuestionario() { 
              
         }
@@ -284,6 +293,114 @@ namespace UI.Controllers
         public ActionResult Empresa()
         {
             return View();
+        }
+
+        public JsonResult ListarEmpresas(string path)
+        {
+            doc = new XmlDocument();
+            doc.Load(path);
+
+            List<Dominio.Empresa> lista = new List<Dominio.Empresa>();
+
+
+            XmlNodeList nodes = doc.SelectNodes(@"/dados/empresas/empresa");
+
+            foreach (XmlNode node in nodes)
+            {
+
+                var empresa = new Dominio.Empresa();
+
+                empresa.EmpresaID = int.Parse(node["id"].InnerText);
+                empresa.NomeEmpresa = node["nome"].InnerText;
+                empresa.EmailEmpresa = node["email"].InnerText;
+                empresa._Sindicato = node["sindicato"].InnerText;;
+                lista.Add(empresa);
+            }
+
+            return new JsonResult()
+            {
+                Data = lista
+            };
+        }
+
+        public JsonResult getEmpresa(string id, string path)
+        {
+            doc = new XmlDocument();
+            doc.Load(path);
+            List<Dominio.Empresa> lista = new List<Dominio.Empresa>();
+
+            XmlNodeList nodes = doc.SelectNodes(@"/dados/empresas/empresa");
+
+            foreach (XmlNode node in nodes)
+            {
+                if (node["id"].InnerText == id)
+                {
+                    var empresa = new Dominio.Empresa()
+                    {
+                        EmpresaID = int.Parse(node["id"].InnerText),
+                        NomeEmpresa = node["nome"].InnerText,
+                        EmailEmpresa = node["email"].InnerText,
+                        _Sindicato = node["sindicato"].InnerText
+                    };
+                    lista.Add(empresa);
+                }
+            }
+            return new JsonResult()
+            {
+                Data = lista
+            };
+        }
+
+
+        public void AdicionarEmpresa(string id, string nome, string email, string sindicato, string path)
+        {
+            doc = new XmlDocument();
+            doc.Load(path);
+
+            XmlNode linha = doc.CreateElement("empresa");
+
+            XmlNode Id = doc.CreateElement("id");
+            XmlNode Nome = doc.CreateElement("nome");
+            XmlNode Email = doc.CreateElement("email");
+            XmlNode Sindicato = doc.CreateElement("sindicato");
+
+            Id.InnerText = id;
+            Nome.InnerText = nome;
+            Email.InnerText = email;
+            Sindicato.InnerText = sindicato;
+
+            linha.AppendChild(Id);
+            linha.AppendChild(Nome);
+            linha.AppendChild(Email);
+            linha.AppendChild(Sindicato);
+
+            doc.SelectSingleNode(@"/dados/empresas").AppendChild(linha);
+
+            doc.Save(path);
+        }
+
+        public void AlterarEmpresa(string id, string nome, string email, string sindicato, string path)
+        {
+            doc = new XmlDocument();
+            doc.Load(path);
+            XmlNode no;
+            no = doc.SelectSingleNode(String.Format("/dados/empresas/empresa[id={0}]", id));
+            no.SelectSingleNode("./nome").InnerText = nome;
+            no.SelectSingleNode("./email").InnerText = email;
+            no.SelectSingleNode("./sindicato").InnerText = sindicato;
+
+            doc.Save(path);
+        }
+
+        public void DeletarEmpresa(string id, string path)
+        {
+            doc = new XmlDocument();
+            doc.Load(path);
+
+            XmlNode t = doc.SelectSingleNode(String.Format("/dados/empresas/empresa[id={0}]", id));
+            t.ParentNode.RemoveChild(t);
+
+            doc.Save(path);
         }
 
         public ActionResult Funcionario()

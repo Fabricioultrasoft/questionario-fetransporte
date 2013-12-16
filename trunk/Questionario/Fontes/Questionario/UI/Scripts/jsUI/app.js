@@ -95,6 +95,27 @@ var App = {
                     }
                 }
             });
+        } else if (page === 'Empresas') {
+            console.log('#ListarEmpresas');
+            lastId = 1;
+            $('#nextID').val('');
+            $.ajax({
+                url: '/Cadastros/ListarEmpresas',
+                type: 'post',
+                dataType: 'json',
+                data: { path: stringPath },
+                success: function (json) {
+                    if (json == null) {
+                        console.log("");
+                    } else {
+                        $.each(eval(json), function (index, value) {
+                            lista.append('<tr><td>' + json[index].EmpresaID + '</td><td>' + json[index].NomeEmpresa + '</td><td>' + json[index].EmailEmpresa + '</td><td>' + json[index]._Sindicato + '</td><td><a href="javascript:;" data-id="' + json[index].EmpresaID + '" onclick="App.openFrmEditarEmpresa(' + json[index].EmpresaID + ')"><img src="../../Content/imagens/icones/b_edit.png" border="0" /></a> <a href="javascript:;" onclick="App.deletarCargo(' + json[index].EmpresaID + ')"><img src="../../Content/imagens/icones/b_trash.png" border="0" /></a></td></tr>');
+                            console.log(json[index].EmpresaID);
+                            $('#nextID').val(json[index].EmpresaID + 1);
+                        });
+                    }
+                }
+            });
         }
     },
     getEntidade: function () {
@@ -375,6 +396,87 @@ var App = {
             }
         });
     },
+    openFrmCadastrarEmpresa: function () {
+        var html = '<h3>Cadastrar Empresa</h3><br/>';
+
+
+        html += '<labe><b>Sindicato<b></label><br/>';
+        html += '<select id="Sindicato" name="sindicato">';
+        html += '<option value="GVBUS">GVBUS</option>';
+        html += '<option value="GVBUS">TRANSCARES</option>';
+        html += '</select><br/><br/>';
+       
+        html += '<labe><b>Empresa<b></label><br/>';
+        html += '<input type="text" id="Empresa" name="empresa" /><br /><br />';
+
+        html += '<labe><b>E-mail<b></label><br/>';
+        html += '<input type="text" id="Email" name="email" /><br /><br />';
+
+  
+        html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarEmpresa();" value="Cadastrar"/> ';
+        html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
+        modal.open({ content: html });
+    },
+    openFrmEditarEmpresa: function (id){
+        $.ajax({
+            url: '/Cadastros/getEmpresa',
+            type: 'post',
+            dataType: 'json',
+            data: { id: id, path: stringPath },
+            success: function (json) {
+
+                var html = '<h3>EditarEmpresa</h3><br/>';
+                if (json == null) { } else {
+                    html += '<labe><b>Sindicato<b></label><br/>';
+                    html += '<select id="Sindicato" name="sindicato">';
+                    html += '<option value="GVBUS">GVBUS</option>';
+                    html += '<option value="TRANSCARES">TRANSCARES</option>';
+                    html += '</select><br/><br/>';
+                    $.each(eval(json), function (index, value) {
+
+
+                        html += '<labe><b>Empresa<b></label><br/>';
+                        html += '<input type="text" id="Empresa" name="empresa" value="'+json[index].NomeEmpresa+'"/><br /><br />';
+
+                        html += '<labe><b>E-mail<b></label><br/>';
+                        html += '<input type="text" id="Email" name="email" value="' + json[index].EmailEmpresa + '"/><br /><br />';
+                    });
+                    html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.alterarEmpresa(' + id + ');" value="Cadastrar"/> ';
+                    html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
+
+                    modal.open({ content: html });
+                }
+            }
+        });
+    },
+    cadastrarEmpresa: function () {
+        var lista = $('#lista');
+
+        if (lastId != 0) {
+            var new_id = lastId + 1;
+            lastId = new_id;
+        } else {
+            var new_id = 1;
+        }
+
+        var empresa = $('#Empresa').val();
+        var emailEmpresa = $('#Email').val();
+        var empresaSindicato = $('#Sindicato').val();
+        //var logomarca = $('#logomarcaEmpresa').val();
+
+        $.ajax({
+            url: '/Cadastros/AdicionarEmpresa',
+            type: 'post',
+            data: { id: $('#nextID').val(), nome: empresa, email: emailEmpresa, sindicato: empresaSindicato, path: stringPath },
+            dataType: 'json',
+            success: function () {
+                App.Listar('Empresas', null);
+         
+            }
+        });
+        App.closeModal();
+    },
+    alterarEmpresa: function (id) { },
     openModal: function (html) {
         modal.open({ content: html });
     },
