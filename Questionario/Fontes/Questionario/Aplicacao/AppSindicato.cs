@@ -40,7 +40,7 @@ namespace Aplicacao
 
         public IEnumerable<Sindicato> ListarEmpresasDoSindicato(int codigo)
         {
-            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x=> x.SindicatoID == identicador).ToList();
+            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x=> x.SindicatoID == codigo).ToList();
             return retorno;
         }
 
