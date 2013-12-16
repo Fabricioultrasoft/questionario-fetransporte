@@ -441,7 +441,7 @@ var App = {
                         html += '<labe><b>E-mail<b></label><br/>';
                         html += '<input type="text" id="Email" name="email" value="' + json[index].EmailEmpresa + '"/><br /><br />';
                     });
-                    html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.alterarEmpresa(' + id + ');" value="Cadastrar"/> ';
+                    html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.alterarEmpresa(' + id + ');" value="Salvar"/> ';
                     html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
 
                     modal.open({ content: html });
@@ -470,13 +470,28 @@ var App = {
             data: { id: $('#nextID').val(), nome: empresa, email: emailEmpresa, sindicato: empresaSindicato, path: stringPath },
             dataType: 'json',
             success: function () {
+                App.closeModal();
                 App.Listar('Empresas', null);
-         
             }
         });
         App.closeModal();
     },
-    alterarEmpresa: function (id) { },
+    alterarEmpresa: function (id) {
+
+        var empresa = $('#Empresa').val();
+        var emailEmpresa = $('#Email').val();
+        var empresaSindicato = $('#Sindicato').val();
+
+        $.ajax({
+            url: '../Cadastros/AlterarEmpresa',
+            type: 'post',
+            data: { id: id, nome: empresa, email: emailEmpresa, sindicato: empresaSindicato, path: stringPath },
+            success: function () {
+                App.closeModal();
+                App.Listar('Empresas', null);
+            }
+        });
+    },
     openModal: function (html) {
         modal.open({ content: html });
     },
