@@ -16,3 +16,4 @@ G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
+G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache

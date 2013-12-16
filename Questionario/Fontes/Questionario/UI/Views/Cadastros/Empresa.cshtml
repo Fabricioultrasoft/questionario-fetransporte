@@ -5,6 +5,7 @@
 }
 <br />
 <h2>Empresas (<a href="javascript:;" id="openFrmCadastrarEmpresa">Cadastrar Novo</a>)</h2> <br />
+<input type="hidden" id="nextID" name="nextID"/>
 <table class="grid">
     <thead>
         <tr>
@@ -19,4 +20,10 @@
        
     </tbody>
 </table>
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jsUI/app.js"></script>
+<script type="text/javascript">
+    App.Listar('Empresas', null);
+</script>
+
 
