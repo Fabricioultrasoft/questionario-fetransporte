@@ -12,7 +12,6 @@ namespace Repositorio
     public class Contexto: DbContext
     {
         public DbSet<Cargo> Cargo { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Federacao> Federacao { get; set; }
         public DbSet<Sindicato> Sindicato  { get; set; }
         public DbSet<Funcionario> Funcionario  { get; set; }
@@ -21,7 +20,6 @@ namespace Repositorio
         public DbSet<UsuarioFederacao> UsuarioFederacao  { get; set; }
         public DbSet<UsuarioSindicato> UsuarioSindicato { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
-
 
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Estado> Estado { get; set; }

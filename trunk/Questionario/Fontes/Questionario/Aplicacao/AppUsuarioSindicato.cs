@@ -15,17 +15,17 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public IEnumerable<DtoUsuarioSindicato> Listar()
-        {
-            var retorno = (from s in Banco.UsuarioSindicato
-                           select new DtoUsuarioSindicato
-                           {
-                               UsuarioID = s.UsuarioID,
-                               NomeUsuario = s.NomeUsuario
-                           }).ToList();
+        //public IEnumerable<DtoUsuarioSindicato> Listar()
+        //{
+        //    var retorno = (from s in Banco.UsuarioSindicato
+        //                   select new DtoUsuarioSindicato
+        //                   {
+        //                       UsuarioID = s.UsuarioID,
+        //                       NomeUsuario = s.NomeUsuario
+        //                   }).ToList();
 
-            return retorno;
-        }
+        //    return retorno;
+        //}
 
     }
 }

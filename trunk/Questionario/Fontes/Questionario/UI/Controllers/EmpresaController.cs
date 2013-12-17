@@ -14,7 +14,7 @@ namespace UI.Controllers
     {
         //
         // GET: /SetorArea/
-        string path = "H:\\files\\data.xml";
+        //string path = "H:\\files\\data.xml";
         private XmlDocument doc;
         public ActionResult Index()
         {
