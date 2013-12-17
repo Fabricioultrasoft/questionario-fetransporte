@@ -51,3 +51,6 @@ G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Debu
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.dll
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Debug\Aplicacao.pdb
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\Aplicacao.dll.config
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Debug\EntityFramework.SqlServer.xml
