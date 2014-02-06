@@ -154,7 +154,6 @@ G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.dl
 G:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.pdb
 F:\Projetos\Questionario\Fontes\Questionario\UI\bin\EntityFramework.SqlServer.dll
 F:\Projetos\Questionario\Fontes\Questionario\UI\bin\EntityFramework.SqlServer.xml
-D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\UI.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\UI.pdb
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\Antlr3.Runtime.dll
@@ -191,5 +190,6 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\System.Web.WebP
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\System.Web.WebPages.Deployment.xml
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\System.Web.WebPages.Razor.xml
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\bin\Repositorio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\UI\obj\Debug\UI.pdb
