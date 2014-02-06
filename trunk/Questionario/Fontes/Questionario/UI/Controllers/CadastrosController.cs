@@ -47,7 +47,7 @@ namespace UI.Controllers
                 doc = new XmlDocument();
                 doc.Load(path);
 
-                List<Dominio.Usuario> lista = new List<Dominio.Usuario>();
+                List<Usuario> lista = new List<Usuario>();
            
 
                 XmlNodeList nodes = doc.SelectNodes(@"/dados/usuarios/"+entidade+"/usuario");

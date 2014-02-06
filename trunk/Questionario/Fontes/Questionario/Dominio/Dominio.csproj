@@ -55,6 +55,7 @@
     <Compile Include="RespostaPossivel.cs" />
     <Compile Include="SetorArea.cs" />
     <Compile Include="Sindicato.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioEmpresa.cs" />
     <Compile Include="UsuarioFederacao.cs" />
     <Compile Include="UsuarioSindicato.cs" />

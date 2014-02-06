@@ -53,7 +53,7 @@ namespace ConsoleTeste
 
                 int codigoSindicato = Convert.ToInt32(Console.ReadLine());
                 //var listaDeSindicatos = SindicatoApp.ListarSindicato(codigoSindicato);
-                //var listaDeSindicatos = SindicatoApp.ListarSindicato();
+                var listaDeSindicatos = SindicatoApp.ListarSindicato();
                 foreach (var sindicato in listaDeSindicatos)
                 {
                     Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
