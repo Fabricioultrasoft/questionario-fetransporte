@@ -351,7 +351,6 @@ namespace UI.Controllers
             };
         }
 
-
         public void AdicionarEmpresa(string id, string nome, string email, string sindicato, string path)
         {
             doc = new XmlDocument();
@@ -412,8 +411,6 @@ namespace UI.Controllers
         {
             return View();
         }
-
-
 
         public ActionResult Questionario()
         {
