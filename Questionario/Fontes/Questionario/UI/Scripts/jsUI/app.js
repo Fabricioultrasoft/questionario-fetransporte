@@ -496,11 +496,31 @@ var App = {
             }
         });
     },
-    openFrmCadastrarFuncionario: function () { },
-    openFrmEditarFuncionario: function () { },
+    openFrmCadastrarFuncionario: function () {
+		var html = '<h3>Cadastrar Funcionário</h3><br/>';
+
+
+        html += '<labe><b>Sindicato<b></label><br/>';
+        html += '<select id="Sindicato" name="sindicato">';
+        html += '<option value="GVBUS">GVBUS</option>';
+        html += '<option value="GVBUS">TRANSCARES</option>';
+        html += '</select><br/><br/>';
+       
+        html += '<labe><b>Empresa<b></label><br/>';
+        html += '<input type="text" id="Empresa" name="empresa" /><br /><br />';
+
+        html += '<labe><b>E-mail<b></label><br/>';
+        html += '<input type="text" id="Email" name="email" /><br /><br />';
+
+  
+        html += '<center><input type="button" id="btnCadastrarEmpresa" onclick="App.cadastrarEmpresa();" value="Cadastrar"/> ';
+        html += '<input type="button" id="btnCancelar" onclick="App.closeModal();" value="Cancelar"/></center>';
+        modal.open({ content: html });
+	},
     cadastrarFuncionario: function () { },
-    alterarFuncionario: function () { },
-    deletarFuncionario: function () { },
+    openFrmEditarFuncionario: function (id) { },	
+    alterarFuncionario: function (id) { },
+    deletarFuncionario: function (id) { },
     openModal: function (html) {
         modal.open({ content: html });
     },
