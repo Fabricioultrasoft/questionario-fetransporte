@@ -64,7 +64,7 @@ namespace Aplicacao
         }
 
 
-        public IEnumerable<DtoEmpresa> Listar()
+        /*public IEnumerable<DtoEmpresa> Listar()
         {
             var retorno = (from s in Banco.Empresa
                            select new DtoEmpresa
@@ -77,7 +77,7 @@ namespace Aplicacao
                                Sindicato = s.Sindicato
                            }).ToList();
             return retorno;
-        }
+        }*/
 
     }
 }
