@@ -6,12 +6,17 @@ using System.Web.Mvc;
 
 namespace UI.Controllers
 {
-    public class UsuarioController : Controller
+    public class SindicatosController : Controller
     {
         //
-        // GET: /Usuario/
+        // GET: /Sindicatos/
 
-        public ActionResult Index()
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+        public ActionResult Usuarios()
         {
             return View();
         }
