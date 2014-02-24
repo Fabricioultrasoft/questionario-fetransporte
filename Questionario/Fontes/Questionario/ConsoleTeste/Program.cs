@@ -49,17 +49,17 @@ namespace ConsoleTeste
             else if (cki.Key == ConsoleKey.F1)
             {
                 Console.WriteLine("-----");
-                Console.WriteLine("Digite o código do sindicato.");
+//                Console.WriteLine("Digite o código do sindicato.");
 
-                int codigoSindicato = Convert.ToInt32(Console.ReadLine());
-                //var listaDeSindicatos = SindicatoApp.ListarSindicato(codigoSindicato);
-                var listaDeSindicatos = SindicatoApp.ListarSindicato();
+                //int codigoSindicato = Convert.ToInt32(Console.ReadLine());
+                //var listaDeSindicatos = SindicatoApp.ListarSindicato();
+                var listaDeSindicatos = SindicatoApp.Listar();
                 foreach (var sindicato in listaDeSindicatos)
                 {
                     Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
-                    foreach (var sindicatoEmpresa in sindicato.Empresa)
+                    foreach (var sindicatoEmpresa in sindicato.Empresas)
                     {
-                        Console.WriteLine("Listando Empresas dos Sindicato:{0} - {1}  ", sindicato.NomeSindicato, sindicatoEmpresa.NomeEmpresa);
+                        Console.WriteLine("{0} ", sindicatoEmpresa.NomeEmpresa);
                     }
                 }
             }
