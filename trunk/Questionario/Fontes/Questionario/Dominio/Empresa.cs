@@ -43,7 +43,7 @@ namespace Dominio
 
         [Required(ErrorMessage = "Obrigatório informar o Sindicato")]
         public  Sindicato Sindicato { get; set; }
-        public string _Sindicato { get; set; }
+//        public string _Sindicato { get; set; }
         public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
     }

@@ -30,5 +30,11 @@ namespace Repositorio
 
         public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
 
+        public Contexto()
+            : base("name=Contexto")
+        {
+
+        }        
+
     }
 }

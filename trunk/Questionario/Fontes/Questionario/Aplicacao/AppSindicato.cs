@@ -26,26 +26,29 @@ namespace Aplicacao
                            select new DtoSindicato
                            {
                                SindicatoID = s.SindicatoID,
-                               NomeSindicato = s.NomeSindicato
+                               NomeSindicato = s.NomeSindicato,
+                               Empresas = s.Empresa.Select(e => new DtoEmpresa{NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa}).ToList()
                            }).ToList();
+
 
             return retorno;
         }
 
-        public IEnumerable<Sindicato> ListarSindicato ()
+        public IEnumerable<Sindicato> ListarSindicato()
         {
             var retorno = Banco.Sindicato.Include(x => x.Empresa).ToList();
+
             return retorno;
         }
 
         public IEnumerable<Sindicato> ListarEmpresasDoSindicato(int codigo)
-        {
-            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x=> x.SindicatoID == codigo).ToList();
+        {            
+            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x => x.SindicatoID == codigo).ToList();
             return retorno;
         }
 
 
-        public void Inserir(DtoSindicato DtoSindicato) 
+        public void Inserir(DtoSindicato DtoSindicato)
         {
             var sindicato = new Sindicato();
             sindicato.NomeSindicato = DtoSindicato.NomeSindicato;
@@ -53,7 +56,7 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-        public void Deletar(int codSindicato) 
+        public void Deletar(int codSindicato)
         {
             var sindicato = Banco.Sindicato.Find(codSindicato);
             if (sindicato != null)
