@@ -75,7 +75,7 @@ namespace ConsoleTeste
                 int codigoSindicato = Convert.ToInt32(Console.ReadLine());
                 empresaNova.Sindicato = SindicatoApp.ListarSindicato().Where(x => x.SindicatoID == codigoSindicato).FirstOrDefault();
 
-                EmpresaApp.Salvar(empresaNova);
+                EmpresaApp.Inserir(empresaNova);
             }
 
             else if (cki.Key == ConsoleKey.F3)

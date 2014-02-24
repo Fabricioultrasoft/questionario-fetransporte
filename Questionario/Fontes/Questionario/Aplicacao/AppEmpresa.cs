@@ -20,7 +20,7 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public void Salvar(Empresa empresa) 
+        public void Inserir(Empresa empresa) 
         {
             empresa.Sindicato = Banco.Sindicato.ToList().Where(x => x.SindicatoID == empresa.Sindicato.SindicatoID).FirstOrDefault();
             Banco.Empresa.Add(empresa);
@@ -63,21 +63,6 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-
-        /*public IEnumerable<DtoEmpresa> Listar()
-        {
-            var retorno = (from s in Banco.Empresa
-                           select new DtoEmpresa
-                           {
-                               EmpresaID = s.EmpresaID,
-                               NomeEmpresa = s.NomeEmpresa,
-                               EmailEmpresa = s.EmailEmpresa,
-                               LogoMarca = s.LogoMarca,
-                               Observacao = s.Observacao,
-                               Sindicato = s.Sindicato
-                           }).ToList();
-            return retorno;
-        }*/
-
+       
     }
 }
