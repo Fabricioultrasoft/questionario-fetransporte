@@ -20,21 +20,103 @@
             },
         });
     },
-    Listar: function (entidade) {
-        if (entidade == 'Empresa') {
-            strUrl = 'ObterUsuariosDaEmpresa';
-        }
-
-        $.ajax({
-            url: strUrl,
-            type: 'get',
-            dataType: 'json',
-            success: function (json) {
-
-            }
-        });
-    },
     openFrmCadastrarUsuario: function () {
-        console.log('App.openFrmCadastrarUsuario');
+        var html = '<form id="frmCadastrarUsuario">';
+        html += '<select id="empresaID" name="empresaID" size="1"></select>';
+        html += 'Usuário:<input type="text" id="usuario" name="usuario"/>';
+        html += 'Senha:<input type="text" id="senha" name="senha"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
+    },
+    Listar: function (usuariosFrom) {
+        console.log(usuariosFrom + ": ListarUsuarios()");
+        if (usuariosFrom == 'Fetransportes') {
+            $.ajax({
+                url: 'ListarUsuarios',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.UsuarioFederacaoID + '</td><td>' + json.LoginUsuarioFederacao + '</td><td>' + json.NomeUsuarioFederacao + '</td><td>' + json.LoginUsuarioFederacao + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        }
+        else if (usuariosFrom == 'Sindicato') {
+
+        } else if (usuariosFrom == 'Empresas') {
+
+        }
+    },
+    ListarEntidade: function (entidade) {
+        if (entidade == 'Sindicato') {
+            $.ajax({
+                url: 'ListarSindicatos',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        } else if (entidade == 'Empresas') {
+            $.ajax({
+                url: 'ListarEmpresas',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.NomeEmpresa + '</td><td>' + json.EmailEmpresa + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        } else if (entidade == 'Funcionarios') {
+            $.ajax({
+                url: 'ListarFuncionarios',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.FuncionarioID + '</td><td>' + json.NomeFuncionario + '</td><td>' + json.EmailFuncionario + '</td><td>' + json.CargoFuncionario +  '</td><td>' + json.EmpresaFuncionario + + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        } else if (entidade == 'SetorArea') {
+            $.ajax({
+                url: 'ListarSetorArea',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        } else if (entidade == 'Cargos') {
+            $.ajax({
+                url: 'ListarCargos',
+                type: 'post',
+                dataType: 'json',
+                success: function (json) {
+                    if (json != null) {
+                        $.each(eval(json), function (item, index) {
+                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                        });
+                    }
+                }
+            });
+        }
     }
 }

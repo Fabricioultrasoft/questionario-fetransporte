@@ -1,7 +1,6 @@
-﻿@model IEnumerable<Aplicacao.dto.DtoUsuario>
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Usuário";
+    ViewBag.Title = "Sindicatos - Usuarios";
 }
 <br />
 <h2>Usuário (<a href="javascript:;" id="openFrmCadastrarUsuario">Cadastrar Novo</a>)</h2><br /> 
@@ -23,16 +22,5 @@
 <script src="~/Scripts/jquery-1.8.2.js"></script>
 <script src="~/Scripts/jsUI/app.js"></script>
 <script type="text/javascript">
-     var url = $(location).attr('href');
-    var urlSplited = $(location).attr('href').split('/');
-    var urlSplitedLen = urlSplited.length;
-
-    //console.log(url);
-    //console.log(urlSplited);
-    //console.log(urlSplited.length);
-    //console.log(urlSplited[urlSplitedLen-1]);
-    var entidade = urlSplited[urlSplitedLen - 1];
-   
-
-    App.Listar('Usuarios',entidade);
+    App.Listar('Fetransportes');
 </script>

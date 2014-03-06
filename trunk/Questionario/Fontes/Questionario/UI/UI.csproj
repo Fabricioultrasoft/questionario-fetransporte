@@ -140,6 +140,7 @@
     <Compile Include="Controllers\SetorAreaController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
     <Compile Include="Controllers\SindicatosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -270,6 +271,7 @@
     <Content Include="Views\Empresas\Home.cshtml" />
     <Content Include="Views\Fetransportes\Usuarios.cshtml" />
     <Content Include="Views\Sindicatos\Usuarios.cshtml" />
+    <Content Include="Views\Sindicatos\Cadastros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
