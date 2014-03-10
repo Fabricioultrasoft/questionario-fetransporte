@@ -49,9 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201312152033095_001.cs" />
-    <Compile Include="Migrations\201312152033095_001.Designer.cs">
-      <DependentUpon>201312152033095_001.cs</DependentUpon>
+    <Compile Include="Migrations\201403102243311_001.cs" />
+    <Compile Include="Migrations\201403102243311_001.Designer.cs">
+      <DependentUpon>201403102243311_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403102247125_002.cs" />
+    <Compile Include="Migrations\201403102247125_002.Designer.cs">
+      <DependentUpon>201403102247125_002.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +73,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201312152033095_001.resx">
-      <DependentUpon>201312152033095_001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403102243311_001.resx">
+      <DependentUpon>201403102243311_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403102247125_002.resx">
+      <DependentUpon>201403102247125_002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

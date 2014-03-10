@@ -42,7 +42,7 @@ namespace Dominio
         [MaxLength(8, ErrorMessage = "Quantidade máxima de caracteres: 8")]
         public String Cep { get; set; }
 
-        public virtual IEnumerable<UsuarioFederacao> UsuarioFederacao { get; set; }
+        //public virtual IEnumerable<UsuarioFederacao> UsuarioFederacao { get; set; }
 
     }
 }

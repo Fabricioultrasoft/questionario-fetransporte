@@ -15,7 +15,7 @@ namespace Aplicacao.dto
 
         public Sindicato Sindicato { get; set; }
         public Funcionario Funcionario { get; set; }
-        public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
+        //public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
     }
 }
