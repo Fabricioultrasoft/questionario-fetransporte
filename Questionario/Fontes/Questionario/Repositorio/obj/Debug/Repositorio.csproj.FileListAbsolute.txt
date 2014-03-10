@@ -37,8 +37,6 @@ D:\Projetos\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Dominio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.xml
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
-D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._001.resources
-D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.dll.config
@@ -106,3 +104,6 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._001.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
