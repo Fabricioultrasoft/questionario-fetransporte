@@ -34,17 +34,29 @@ namespace Aplicacao
             return retorno;
         }
 
-        public IEnumerable<Sindicato> ListarSindicato()
+        //public IEnumerable<Sindicato> ListarSindicato()
+        //{
+        //    var retorno = Banco.Sindicato.Include(x => x.Empresa).ToList();
+
+        //    return retorno;
+        //}
+
+        public IEnumerable<DtoSindicato> ListarEmpresasDoSindicatoPorCodigo(int codigo)
         {
-            var retorno = Banco.Sindicato.Include(x => x.Empresa).ToList();
+            var retorno = (from s in Banco.Sindicato
+                           select new DtoSindicato
+                           {
+                               SindicatoID = s.SindicatoID,
+                               NomeSindicato = s.NomeSindicato,
+                               Empresas = s.Empresa.Select(e => new DtoEmpresa { NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa }).ToList()
+                           }).ToList();
+
 
             return retorno;
-        }
 
-        public IEnumerable<Sindicato> ListarEmpresasDoSindicato(int codigo)
-        {            
-            var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x => x.SindicatoID == codigo).ToList();
-            return retorno;
+
+            //var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x => x.SindicatoID == codigo).ToList();
+            //return retorno;
         }
 
 
