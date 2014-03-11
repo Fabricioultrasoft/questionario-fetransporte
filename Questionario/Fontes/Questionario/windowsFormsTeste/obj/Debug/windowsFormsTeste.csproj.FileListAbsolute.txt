@@ -1,0 +1,17 @@
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\windowsFormsTeste.exe.config
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\windowsFormsTeste.exe
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\windowsFormsTeste.pdb
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Aplicacao.dll
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Repositorio.dll
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\EntityFramework.dll
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Aplicacao.pdb
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\Repositorio.pdb
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\bin\Debug\EntityFramework.xml
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.frmPrincipal.resources
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.Properties.Resources.resources
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.csproj.GenerateResource.Cache
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.exe
+F:\Projetos\Questionario\Fontes\Questionario\windowsFormsTeste\obj\Debug\windowsFormsTeste.pdb

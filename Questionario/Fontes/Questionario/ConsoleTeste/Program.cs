@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 
-using Repositorio;
-using Dominio;
 using Aplicacao;
-using Aplicacao.dto;
 
 
 namespace ConsoleTeste
@@ -18,87 +10,95 @@ namespace ConsoleTeste
         static void Main(string[] args)
         {
 
-            #region configurando ambiente.
-            Console.BackgroundColor = ConsoleColor.DarkYellow;
-            Console.ForegroundColor = ConsoleColor.Green;
+            #region --- Configura ambiente
+            ConfiguraAmbiente configuraAmbiente = new ConfiguraAmbiente();
             ConsoleKeyInfo cki = new ConsoleKeyInfo();
-            #endregion
-
-            #region mostra opções de uso:
-            Console.WriteLine("Digite: F1 para listar os sindicatos e as empresas");
-            Console.WriteLine("Digite: F2 para Inserir Empresas");
-            Console.WriteLine("Digite: F3 para listar as empresas por código.");
-            Console.WriteLine("Digite: F4 para listar as Sindicatos por código.");
-            Console.WriteLine("Digite: F5 para listar as dtoSetorArea.");
+            Console.WriteLine("Digite: F1 PARA ACESSAR AS OPÇÕES DE SINDICATOS");
             cki = Console.ReadKey(true);
             #endregion
-            AppSindicato SindicatoApp = new AppSindicato();
-            AppEmpresa EmpresaApp = new AppEmpresa();
-            AppCargo CargoApp = new AppCargo();
 
-            if (cki.Key == ConsoleKey.F5)
+            if (cki.Key == ConsoleKey.F1)
             {
-                var listaCargos = CargoApp.Listar();
+                Console.WriteLine("Digite: 1 para listar os sindicatos e as empresas");
+                #region -- Lista todos os sindicatos e as empresas
 
-                foreach (var cargos in listaCargos)
+                cki = Console.ReadKey(true);
+                AppSindicato SindicatoApp = new AppSindicato();
+
+                if (cki.Key == ConsoleKey.D1)
                 {
-                    Console.WriteLine("{0}", cargos.NomeCargos);
-                }
-            }
-
-            else if (cki.Key == ConsoleKey.F1)
-            {
-                Console.WriteLine("-----");
-//                Console.WriteLine("Digite o código do sindicato.");
-
-                //int codigoSindicato = Convert.ToInt32(Console.ReadLine());
-                //var listaDeSindicatos = SindicatoApp.ListarSindicato();
-                var listaDeSindicatos = SindicatoApp.Listar();
-                foreach (var sindicato in listaDeSindicatos)
-                {
-                    Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
-                    foreach (var sindicatoEmpresa in sindicato.Empresas)
+                    Console.WriteLine("-----");
+                    var listaDeSindicatos = SindicatoApp.Listar();
+                    foreach (var sindicato in listaDeSindicatos)
                     {
-                        Console.WriteLine("{0} ", sindicatoEmpresa.NomeEmpresa);
+                        Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
+                        foreach (var sindicatoEmpresa in sindicato.Empresas)
+                        {
+                            Console.WriteLine("         {0} ", sindicatoEmpresa.NomeEmpresa);
+                        }
                     }
+                    Console.ReadKey();
                 }
-            }
+                #endregion
 
-            else if (cki.Key == ConsoleKey.F2)
-            {
-                Empresa empresaNova = new Empresa();
-                Console.WriteLine("Digite o nome da nova empresa:");
-                empresaNova.NomeEmpresa = Console.ReadLine();
 
-                Console.WriteLine("Digite o Codigo do Sindicato.");
-
-                int codigoSindicato = Convert.ToInt32(Console.ReadLine());
-                empresaNova.Sindicato = SindicatoApp.ListarSindicato().Where(x => x.SindicatoID == codigoSindicato).FirstOrDefault();
-
-                EmpresaApp.Inserir(empresaNova);
-            }
-
-            else if (cki.Key == ConsoleKey.F3)
-            {
-                Console.WriteLine("Digite o código da empresa");
-                int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
-
-                var listaDeEmpresas = EmpresaApp.ListarEmpresa(codigoDaEmpresa);
-                foreach (var empresa in listaDeEmpresas)
+                else if (cki.Key == ConsoleKey.D0)
                 {
-                    Console.WriteLine(empresa.NomeEmpresa);
+                    Console.WriteLine("Console FINALIZADO");
                 }
             }
 
-            else if (cki.Key == ConsoleKey.F4)
-            {
-                Console.WriteLine("Digite o código da empresa");
-                int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
 
-                EmpresaApp.Excluir(codigoDaEmpresa);
-                Console.WriteLine("Empresa Excluida.");
-            }
-            Console.ReadKey();
+
+
+            //AppEmpresa EmpresaApp = new AppEmpresa();
+            //AppCargo CargoApp = new AppCargo();
+
+            //if (cki.Key == ConsoleKey.F5)
+            //{
+            //    var listaCargos = CargoApp.Listar();
+
+            //    foreach (var cargos in listaCargos)
+            //    {
+            //        Console.WriteLine("{0}", cargos.NomeCargos);
+            //    }
+            //}
+
+            //else if (cki.Key == ConsoleKey.F2)
+            //{
+            //    Empresa empresaNova = new Empresa();
+            //    Console.WriteLine("Digite o nome da nova empresa:");
+            //    empresaNova.NomeEmpresa = Console.ReadLine();
+
+            //    Console.WriteLine("Digite o Codigo do Sindicato.");
+
+            //    int codigoSindicato = Convert.ToInt32(Console.ReadLine());
+            //    //empresaNova.Sindicato = SindicatoApp.ListarSindicato().Where(x => x.SindicatoID == codigoSindicato).FirstOrDefault();
+
+            //    EmpresaApp.Inserir(empresaNova);
+            //}
+
+            //else if (cki.Key == ConsoleKey.F3)
+            //{
+            //    Console.WriteLine("Digite o código da empresa");
+            //    int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
+
+            //    var listaDeEmpresas = EmpresaApp.ListarEmpresa(codigoDaEmpresa);
+            //    foreach (var empresa in listaDeEmpresas)
+            //    {
+            //        Console.WriteLine(empresa.NomeEmpresa);
+            //    }
+            //}
+
+            //else if (cki.Key == ConsoleKey.F4)
+            //{
+            //    Console.WriteLine("Digite o código da empresa");
+            //    int codigoDaEmpresa = Convert.ToInt16(Console.ReadLine());
+
+            //    EmpresaApp.Excluir(codigoDaEmpresa);
+            //    Console.WriteLine("Empresa Excluida.");
+            //}
+
         }
     }
 }

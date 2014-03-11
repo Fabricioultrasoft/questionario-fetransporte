@@ -61,3 +61,5 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.exe
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\ConsoleTeste\obj\Debug\ConsoleTeste.pdb
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projetos\Questionario\Fontes\Questionario\ConsoleTeste\bin\Debug\EntityFramework.SqlServer.xml
