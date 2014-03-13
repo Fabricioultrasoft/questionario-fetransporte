@@ -94,3 +94,6 @@ D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.c
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._003.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._004.resources
+F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
+F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._003.resources
+F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._004.resources

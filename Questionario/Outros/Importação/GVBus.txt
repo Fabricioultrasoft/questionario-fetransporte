@@ -1,0 +1,17 @@
+	NOME DA EMPRESA	ENDEREÇO	BAIRRO	CIDADE	ES	CEP	OBS
+							
+	CONSÓRCIO CENTRO SUL			Vila Velha			Empresa líder Viação Praia Sol
+	CONSÓRCIO CIDADANIA						"Empresa líder Serramar	Serra"
+	CONSÓRCIO SERRA						Empresa líder Unimar Serra
+	EXPRESSO SANTA PAULA	Rua 1 D nº 178 A Lote III	Civit II	  Serra	  ES	  Cep 29168064	
+	GRANVITUR FRETAMENTO E TURISMO LTDA	Rod Serafim Derenze 2715	Grande Vitória	  Vitória	ES	CEP 29031319	
+	METROPOLITANA TRANSPORTES E SERVIÇOS	LTDA Rua Galdino Ferraz 10	Vila Independência	 Cariacica	ES	CEP 29148610	
+	NOVA TRANSPORTE LTDA	Rua Padre Leandro Del Ommo Snº	São Francisco	 Cariacica	ES	  CEP 29145405	
+	SANTA ZITA TRANSPORTES COLETIVOS LTDA 	Av Hozack Ferreira Brante sn	Marcílio de Noronha	"	Viana"	ES	Cep  29135000	
+	SERRAMAR TRANSPORTE COLETIVO LTDA	Terceira Avenida 355	 Jardim Limoeiro	" 	Serra"	ES	Cep 29163666	
+	VIAÇÃO NETUNO LTDA	Rod José Sette Km 75	Vila Tabajara	 Cariacica	ES	     CEP 29154580	
+	VIAÇÃO PRAIA SOL LTDA	Rua Humberto Lorenzutti sn	 Bairro N Sra Da Penha	  Vila Velha	ES	  CEP 29110180	
+	VIAÇÃO SATÉLITE LTDA	Rod José Sette Km 75	Vila Tabajara	  Cariacica	ES	     CEP 29154580	
+	VIAÇÃO SERRANA LTDA	Rua 1 D nº 178 A Lote III	Civit II	 Serra	  ES	  Cep 29168064	
+	VEREDA TRANSPORTE COLETIVO LTDA	Rua Linhares snº	Nossa Senhora da Penha	  Vila Velha	ES	   Cep29127206	
+	Unimar Transportes Ltda 	Ltda Rua Cel Manoel Nunes 475	Laranjeiras	  Serra	ES	     CEP 29162155	
