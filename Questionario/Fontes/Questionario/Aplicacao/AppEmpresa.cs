@@ -47,8 +47,6 @@ namespace Aplicacao
             EmpresaSalvar.Observacao= empresa.Observacao;
             EmpresaSalvar.Endereco= empresa.Endereco;
             EmpresaSalvar.Bairro= empresa.Bairro;
-            EmpresaSalvar.Cidade= empresa.Cidade;
-            EmpresaSalvar.Estado= empresa.Estado;
             EmpresaSalvar.Complemento = empresa.Complemento;
             EmpresaSalvar.Cep = empresa.Cep;
 

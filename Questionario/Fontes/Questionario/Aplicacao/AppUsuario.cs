@@ -18,18 +18,29 @@ namespace Aplicacao
         {
             Banco = new Contexto();
         }
-        
-        //public IEnumerable<DtoUsuario> Listar()
-        //{
-        //    var retorno = (from s in Banco.Usuario
-        //                   select new DtoUsuario
-        //                   {
-        //                        UsuarioID  = s.UsuarioID,
-        //                        NomeUsuario = s.NomeUsuario
-        //                   }).ToList();
 
-        //    return retorno;
-        //}
+        public void Cadastrar(DtoUsuario DtoUsuario)
+        {
+            var Usuario = new Usuario
+                {
+                    NomeUsuario = DtoUsuario.NomeUsuario,
+                    LoginUsuario = DtoUsuario.LoginUsuario,
+                    SenhaUsuario = DtoUsuario.SenhaUsuario,
+                    TipoUsuario = DtoUsuario.TipoUsuario,
+                };
+            Banco.Usuario.Add(Usuario);
+            Banco.SaveChanges();
+        }
+
+        public bool VerificarLogin (string Login, string Senha)
+        {
+            var retorno = Banco.Usuario.Where(x => x.LoginUsuario == Login && x.SenhaUsuario == Senha).FirstOrDefault();
+
+            if (retorno != null)
+                return true;
+            else
+                return false;
+        }
 
     }
 }

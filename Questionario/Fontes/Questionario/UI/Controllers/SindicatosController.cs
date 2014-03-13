@@ -43,12 +43,12 @@ namespace UI.Controllers
             
             List<Sindicato> lista = new List<Sindicato>();
             
-            var listResult = appSindicato.ListarSindicato();
+            //var listResult = appSindicato.ListarSindicato();
 
 
-            foreach (Sindicato s in listResult) {
-                lista.Add(s);
-            }
+            //foreach (Sindicato s in listResult) {
+            //    lista.Add(s);
+            //}
 
             return new JsonResult() { 
                 Data = lista
