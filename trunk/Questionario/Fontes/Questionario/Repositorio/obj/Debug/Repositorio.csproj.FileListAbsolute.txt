@@ -92,3 +92,5 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._001.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._003.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._004.resources

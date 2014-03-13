@@ -35,6 +35,7 @@ Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estad
 Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIAÇÃO SERRANA LTDA','','Rua 1 D nº 178 A Lote III','Civit II','Serra','ES',1,'29168064')
 Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VEREDA TRANSPORTE COLETIVO LTDA','','Rua Linhares, s/nº', 'Nossa Senhora da Penha','Vila Velha','ES',1,'29127206')
 Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('Unimar Transportes Ltda','', 'Rua Cel. Manoel Nunes, 475', 'Laranjeiras','Serra','ES',1,'29162155')
+
 Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ALVORADA SUL AMERICA DE TURISMO - ASAT','Rua Francisco Vieira Passos, 441 A','Muquiçaba','Guarapari','ES',2,'29200000')
 Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ARARA AZUL TURISMO LTDA','Av. Lourival Nunes, 700','Jardim Limoeiro','Serra','ES',2,'29164050')
 Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CORDIAL TRASNPORTE E TURISMO LTDA','Rua Francisco Vieira Passos, 441 A','Guaxindiba','Aracruz','ES',2,'29190000')

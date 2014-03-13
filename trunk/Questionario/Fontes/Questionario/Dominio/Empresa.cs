@@ -26,14 +26,11 @@ namespace Dominio
         [MaxLength(255, ErrorMessage = "Quantidade máxima de caracteres: 255")]
         public String Endereco { get; set; }
 
-        [MaxLength(100, ErrorMessage = "Quantidade máxima de caracteres: 100")]
-        public String Bairro { get; set; }
+        //[MaxLength(100, ErrorMessage = "Quantidade máxima de caracteres: 100")]
+        //public String Cidade { get; set; }
 
-        [MaxLength(100, ErrorMessage = "Quantidade máxima de caracteres: 100")]
-        public String Cidade { get; set; }
-
-        [MaxLength(50, ErrorMessage = "Quantidade máxima de caracteres: 50")]
-        public String Estado { get; set; }
+        //[MaxLength(50, ErrorMessage = "Quantidade máxima de caracteres: 50")]
+        //public String Estado { get; set; }
 
         [MaxLength(255, ErrorMessage = "Quantidade máxima de caracteres: 255")]
         public String Complemento { get; set; }
@@ -41,10 +38,11 @@ namespace Dominio
         [MaxLength(8, ErrorMessage = "Quantidade máxima de caracteres: 8")]
         public String Cep { get; set; }
 
+        public Bairro Bairro { get; set; }
+
         [Required(ErrorMessage = "Obrigatório informar o Sindicato")]
         public  Sindicato Sindicato { get; set; }
-//        public string _Sindicato { get; set; }
-//        public virtual IEnumerable<UsuarioEmpresa> UsuarioEmpresa { get; set; }
+
         public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
     }
 }

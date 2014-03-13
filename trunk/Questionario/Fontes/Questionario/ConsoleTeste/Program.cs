@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Aplicacao;
+using Aplicacao.dto;
 
 
 namespace ConsoleTeste
@@ -16,6 +17,7 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F1 PARA ACESSAR AS OPÇÕES DE SINDICATOS");
             cki = Console.ReadKey(true);
             #endregion
+
 
             if (cki.Key == ConsoleKey.F1)
             {
@@ -39,8 +41,34 @@ namespace ConsoleTeste
                     }
                     Console.ReadKey();
                 }
+            }
                 #endregion
 
+            else if (cki.Key == ConsoleKey.F2)
+            {
+                Console.WriteLine("Digite: 1 para Inserir novo usuário.");
+                #region -- Lista todos os sindicatos e as empresas
+
+                cki = Console.ReadKey(true);
+
+                DtoUsuario usuarioDto = new DtoUsuario();
+                AppUsuario UsuarioApp = new AppUsuario();
+
+                if (cki.Key == ConsoleKey.D1)
+                {
+                    Console.WriteLine("Login");
+                    usuarioDto.LoginUsuario = Console.ReadLine();
+                    Console.WriteLine("Nome");
+                    usuarioDto.NomeUsuario = Console.ReadLine();
+                    Console.WriteLine("Senha");
+                    usuarioDto.SenhaUsuario = Console.ReadLine();
+                    Console.WriteLine("Tipo");
+                    usuarioDto.TipoUsuario = Int32.Parse(Console.ReadLine());
+
+                    UsuarioApp.Cadastrar(usuarioDto);
+                }
+
+                #endregion
 
                 else if (cki.Key == ConsoleKey.D0)
                 {
@@ -48,8 +76,9 @@ namespace ConsoleTeste
                 }
             }
 
-
-
+        }
+    }
+}
 
             //AppEmpresa EmpresaApp = new AppEmpresa();
             //AppCargo CargoApp = new AppCargo();
@@ -98,7 +127,3 @@ namespace ConsoleTeste
             //    EmpresaApp.Excluir(codigoDaEmpresa);
             //    Console.WriteLine("Empresa Excluida.");
             //}
-
-        }
-    }
-}

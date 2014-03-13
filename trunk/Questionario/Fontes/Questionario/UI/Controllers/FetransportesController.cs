@@ -23,21 +23,21 @@ namespace UI.Controllers
 
         public JsonResult ListarUsuarios() {
 
-            List<UsuarioFederacao> usuarios = new List<UsuarioFederacao>();
+            //List<UsuarioFederacao> usuarios = new List<UsuarioFederacao>();
 
-            var listResult = appFederacao.ListarUsuarioFederacao();
+            //var listResult = appFederacao.ListarUsuarioFederacao();
 
-            foreach (var usuario in listResult) {
-                usuarios.Add(new UsuarioFederacao() { 
-                    UsuarioFederacaoID = usuario.UsuarioFederacaoID,
-                    LoginUsuarioFederacao = usuario.LoginUsuarioFederacao,
-                    NomeUsuarioFederacao = usuario.NomeUsuarioFederacao,
-                    SenhaUsuarioFederacao = usuario.SenhaUsuarioFederacao
-                });
-            }
+            //foreach (var usuario in listResult) {
+            //    usuarios.Add(new UsuarioFederacao() { 
+            //        UsuarioFederacaoID = usuario.UsuarioFederacaoID,
+            //        LoginUsuarioFederacao = usuario.LoginUsuarioFederacao,
+            //        NomeUsuarioFederacao = usuario.NomeUsuarioFederacao,
+            //        SenhaUsuarioFederacao = usuario.SenhaUsuarioFederacao
+            //    });
+            //}
 
             return new JsonResult() { 
-                Data = usuarios
+            //    Data = usuarios
             };
         }
 
