@@ -1,0 +1,35 @@
+
+
+ALVORADA SUL AMERICA DE TURISMO - ASAT;Rua Francisco Vieira Passos 441 A;Muquiçaba;Guarapari;ES;CEP 29.200-000;Guarapari
+ARARA AZUL TURISMO LTDA.;Av. Lourival Nunes 700;Jardim Limoeiro;Serra;ES;CEP 29164-050;Serra
+CORDIAL TRASNPORTE E TURISMO LTDA;Rua Francisco Vieira Passos 441 A;GuaxindibaAracruzESCEP 29.190-000;Aracruz
+EXPRESSO ARACRUZ LTDA;Rod. Aracruz - Barra do Riacho km 1.5;Moroba;Aracruz;ES;CEP 29.190-000;Aracruz
+LUZA TRANSPORTES E TURISMO LTDA - ME;Rua Cel Darcy Pacheco de Queiroz 141;Sotema;Cariacica;ES;CEP 29.152-140;Cariacica
+MARLIM AZUL TURISMO LTDA EPP;Br 101- Km 262 sn;Laranjeiras Velha;Serra;ES;CEP 29.165-681;Serra
+MINASTUR - TRANSPORTES TURISMO LTDA;Rua Fazenda do Ouro cax postal 21;Centro;Manhumirim;MG;CEP 36.970-000;Manhumirim;MG
+REIS TRANSPORTES LTDA;Av. Jones Santos Neves 62;Maria Ortiz;Cachoeirio de Itapemirim;ES;CEP 29.300-500;Cachoeiro de Itapemirim
+TRANSITUR TRANSPORTE COLETIVO LTDA ME;Rod Br 101 Norte km 265 - sala 106;Carapina;Serra;ES;CEP 29.160-470;Serra
+TRANSPORTES COLETIVOS SÃO CIPRIANO LTDA;Av. Nove de Agosto 2289;Centro;Jaguaré;ES;CEP 29.950-000;Jaguaré
+UNIMAR TRANSPORTES LTDA;Rua Cel Manoel Nunes 475;Laranjeiras Velha;Serra;ES;CEP 29.162-155;Serra
+VIAÇÃO ÁGUIA BRANCA SA;Rodovia BR 262 km 05;Campo Grande;Cariacica;ES;CEP 29.140-905;Cariacica
+VIAÇÃO ALVORADA LTDA;Rua Ernesto Canal 200;Alvorada;Vila Velha;ES;CEP 29.154-000;Vila Velha
+VIAÇÃO FLECHA BRANCA LTDA;Av. Nossa Senhora da Consolação 64;Vila Rica;Cachoeiro de Itapemirim;ES;CEP 29.301-080;Cachoeiro de Itapemirim
+VIAÇÃO GRANDE VITÓRIA LTDA;Rod. Serafim Derenzi 2415;Inhangueta;Vitória;ES;CEP 29.031-600;Vitória
+VIAÇÃO ITAPEMIRIM SA;Rod. Br 262 - Km 03;Campo Grande;Cariacica;ES;CEP 29.140-501;Cariacica
+VIAÇÃO JOANA D'ARC SA;Av. Silvio Avidos 1680;São Silvano;Colatina;ES;CEP 29.706-010;Colatina
+VIAÇÃO JOANA D'ARC SA - FILIAL;Av. Prefeito Samuel Batista Cruz snº;Três Barras;Linhares;ES;CEP 29.907-380;Linhares
+VIAÇÃO MARILANDIA LTDA;Rua Uceucino Malta Bauer 425;Lace;Colatina;ES;CEP 29.703 - 020;Colatina
+VIAÇÃO MUTUM PRETO LTDA;Rua José Martins da Silva 310;Bairro Boa Fé;Afonso Claudio;ES;CEP 29.600-000;Afonso Claudio
+VIAÇÃO PRETTI LTDA;Rua João Pretti 95;São Silvano;Colatina;ES;CEP 29.706-060;Colatina
+VIAÇÃO REAL ITA LTDA;Av. Jones Santos Neves 146;Maria Ortiz;Cachoeiro de Itapemirim;ES;CEP 29.300-500;Cachoeiro de Itapemirim
+VIAÇÃO SANREMO LTDA;Av. Ernesto Canal 200;Alvorada;Vila Velha;ES;CEP 29.117-120;Vila Velha
+VIAÇÃO SANTA LUZIA LTDA;Av. Nossa Senhora da Consolação 64;Vila Rica;Cachoeiro de Itapemirim;ES;CEP 29.301-080;Cachoeiro de Itapemirim
+VIAÇÃO SÃO GABRIEL LTDA;Rua Pernambuco653 Posto Esso;São Mateus;ES;CEP 29.931-560;São Mateus
+VIAÇÃO SÃO ROQUE LTDA;Rua Fioravanti Rossi 670;São Bras;Colatina;ES;CEP 29.703-810;Colatina
+VIAÇÃO SUDESTE LTDA;Av. Nossa Senhora da Consolação 70;Vila Rica;Cachoeiro de Itapemirim;ES;CEP 29.301-080;Cachoeiro de Itapemirim
+VIAÇÃO TABUAZEIRO LTDA;Rod. Br 101 Norte km 85;Jardim Tropical;Serra;ES;CEP 29.075-050;Serra
+VIAÇÃO VERDES VALES LTDA;Rua José  Martins Silva 310;Boa Fé;Afonso Claudio;ES;CEP 29.600-000;Afonso Claudio
+VIX  LOGÍSTICA SA;Av. Jerônimo Vervloet 275;Goiabeiras;Vitória;ES;CEP 29.070-350;Vitória
+
+
+
