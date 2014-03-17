@@ -6,257 +6,228 @@
 */
 Begin tran
 	Insert Into Federacao ( Descricaofederacao ) Values ( 'FETRANSPORTES' )
-Commit
 
-Begin tran
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'GVBUS', 1 )
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'SETPES', 1 )
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'TRANSCARES', 1 )
 	
-	Begin Tran
-	Insert Into UsuariosFederacao (NomeUsuarioFederacao,LoginUsuarioFederacao ,SenhaUsuarioFederacao ,Federacao_FederacaoID) Values ('Edilene', 'Edilene', 'Edilene',1)
-	Insert Into UsuariosFederacao (NomeUsuarioFederacao,LoginUsuarioFederacao ,SenhaUsuarioFederacao ,Federacao_FederacaoID) Values ('Adriana', 'Adriana', 'Adriana',1)
-	Insert Into UsuariosFederacao (NomeUsuarioFederacao,LoginUsuarioFederacao ,SenhaUsuarioFederacao ,Federacao_FederacaoID) Values ('Livia', 'Livia', 'Livia',1)
-Commit
+	Insert into Usuarios ( NomeUsuario, LoginUsuario, SenhaUsuario, TipoUsuario, Federacao_FederacaoID ) values ('FETRANSPORTES','FETRANSPORTES','FETRANS', 1,1)
 
-Begin tran 
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CONS”RCIO CENTRO SUL' , 'Empresa lÌder: ViaÁ„o Praia Sol', '', '', 'Vila Velha', 'ES', 1, '' )
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CONS”RCIO CIDADANIA', 'Empresa lÌder: Serramar', '', '', 'Serra', 'ES', 1, '' )
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CONS”RCIO SERRA','Empresa lÌder: Unimar', '', '','Serra', 'ES', 1, '' )
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO SANTA PAULA','', 'Rua 1 D, n∫ 178 A Lote III', 'Civit II','Serra','ES',1, '29168064')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('GRANVITUR FRETAMENTO E TURISMO LTDA','','Rod. Serafim Derenze, 2715','Grande VitÛria','VitÛria','ES', 1, '29031319')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('METROPOLITANA TRANSPORTES E SERVI«OS LTDA','','Rua Galdino Ferraz,10','Vila IndependÍncia', 'Cariacica','ES',1,'29148610')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('NOVA TRANSPORTE LTDA','','Rua Padre Leandro Del Ommo, S/n∫', 'S„o Francisco', 'Cariacica','ES',1,'29145405')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('SANTA ZITA TRANSPORTES COLETIVOS LTDA','','Av.Hozack Ferreira Brante, s/n', 'MarcÌlio de Noronha','Viana','ES',1,'29135000')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('SERRAMAR TRANSPORTE COLETIVO LTDA','','Terceira Avenida, 355','Jardim Limoeiro','Serra','ES',1,'29163666')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O NETUNO LTDA','','Rod. JosÈ Sette, Km 7,5','Vila Tabajara','Cariacica','ES',1,'29154580')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O PRAIA SOL LTDA','','Rua Humberto Lorenzutti, s/n','N. Sra. Da Penha', 'Vila Velha','ES',1,'29110180')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O SAT…LITE LTDA','','Rod. JosÈ Sette, Km 7,5','Vila Tabajara','Cariacica','ES',1,'29154580')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O SERRANA LTDA','','Rua 1 D n∫ 178 A Lote III','Civit II','Serra','ES',1,'29168064')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VEREDA TRANSPORTE COLETIVO LTDA','','Rua Linhares, s/n∫', 'Nossa Senhora da Penha','Vila Velha','ES',1,'29127206')
-Insert Into Empresas ( NomeEmpresa, Observacao,  Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('Unimar Transportes Ltda','', 'Rua Cel. Manoel Nunes, 475', 'Laranjeiras','Serra','ES',1,'29162155')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'CONSORCIO CENTRO SUL	',	'X',	NULL	,'00000000'	,'Empresa lÌder ViaÁ„o Praia Sol')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'CONSORCIO CIDADANIA	',	'X',	NULL	,'00000000'	,'Empresa lÌder Serramar Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'CONSORCIO SERRA	',	'X',	NULL	,'00000000'	,'Empresa lÌder Unimar Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'EXPRESSO SANTA PAULA	',	'Rua 1 D n 178 A Lote III',	572	,'29168064'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'GRANVITUR FRETAMENTO E TURISMO LTDA	',	'Rod Serafim Derenze 2715',	379	,'29031319'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'METROPOLITANA TRANSPORTES E SERVICOS	',	'LTDA Rua Galdino Ferraz 10',	366	,'29148610'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'NOVA TRANSPORTE LTDA	',	'Rua Padre Leandro Del Ommo Sn',	107	,'29145405'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'SANTA ZITA TRANSPORTES COLETIVOS LTDA 	',	'Av Hozack Ferreira Brante sn',	547	,'29135000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'SERRAMAR TRANSPORTE COLETIVO LTDA	',	'Terceira Avenida 355',	426	,'29163666'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'VIACAO NETUNO LTDA	',	'Rod JosÈ Sette Km 75',	362	,'29154580'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'VIACAO PRAIA SOL LTDA	',	'Rua Humberto Lorenzutti sn',	221	,'29110180'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'VIACAO SATELITE LTDA	',	'Rod JosÈ Sette Km 75',	362	,'29154580'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'VIACAO SERRANA LTDA	',	'Rua 1 D n 178 A Lote III',	572	,'29168064'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'VEREDA TRANSPORTE COLETIVO LTDA	',	'Rua Linhares sn',	221	,'29127206'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'Unimar Transportes Ltda 	',	'Ltda Rua Cel Manoel Nunes 475',	577	,'29162155'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'ALVORADA SUL AMERICA DE TURISMO - ASAT	',	'Rua Francisco Vieira Passos 441 A',	468	,'29200000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'ARARA AZUL TURISMO LTDA 	',	'Av Lourival Nunes 700',	426	,'29164050'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'CORDIAL TRASNPORTE E TURISMO LTDA	',	'Rua Francisco Vieira Passos 441 A',	972	,'29190000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'EXPRESSO ARACRUZ LTDA	',	'Rod Aracruz  Barra do Riacho km 1.5',	973	,'29190000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'LUZA TRANSPORTES E TURISMO LTDA - ME	',	'Rua Cel Darcy Pacheco de Queiroz 141',	291	,'29152140'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'MARLIM AZUL TURISMO LTDA†EPP	',	'Br 101 Km 262 sn',	196	,'29165681'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'REIS TRANSPORTES LTDA	',	'Av Jones Santos Neves 62',	777	,'29300500'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'TRANSITUR TRANSPORTE COLETIVO LTDA ME	',	'Rod Br 101 Norte km 265  sala 106',	410	,'29160470'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'TRANSPORTES COLETIVOS SAO CIPRIANO LTDA	',	'Av Nove de Agosto 2289',	970	,'29950000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'UNIMAR TRANSPORTES LTDA	',	'Rua Cel Manoel Nunes 475',	196	,'29162155'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO AÅGUIA BRANCA SA	',	'Rodovia BR 262 km 05',	177	,'29140905'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO ALVORADA LTDA	',	'Rua Ernesto Canal 200',	248	,'29154000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO FLECHA BRANCA LTDA	',	'Av Nossa Senhora da Consolacao 64',	974	,'29301080'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO GRANDE VITORIA LTDA	',	'Rod Serafim Derenzi 2415',	283	,'29031600'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO ITAPEMIRIM SA	',	'Rod Br 262  Km 03',	177	,'29140501'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO JOANA DARC SA	',	'Av Silvio Avidos 1680',	32	,'29706010'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO JOANA D ARC SA - FILIAL	',	'Av Prefeito Samuel Batista Cruz sn',	67	,'29907380'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO MARILANDIA LTDA	',	'Rua Uceucino Malta Bauer 425',	86	,'29703020'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO MUTUM PRETO LTDA	',	'Rua Jose Martins da Silva 310',	987	,'29600000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO PRETTI LTDA	',	'Rua Joao Pretti 95',	32	,'29706060'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO REAL ITA LTDA	',	'Av Jones Santos Neves 146',	777	,'29300500'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO SANREMO LTDA	',	'Av Ernesto Canal 200',	248	,'29117120'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO SANTA LUZIA LTDA	',	'Av Nossa Senhora da Consolacao 64',	974	,'29301080'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO SAO GABRIEL LTDA	',	'Rua Pernambuco 653',	992	,'0'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO SAO ROQUE LTDA	',	'Rua Fioravanti Rossi 670',	385	,'29703810'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO SUDESTE LTDA	',	'Av Nossa Senhora da Consolacao 70',	974	,'29301080'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO TABUAZEIRO LTDA	',	'Rod Br 101 Norte km 85',	212	,'29075050'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIACAO VERDES VALES LTDA	',	'Rua Jo„o Martins Silva 310',	993	,'29600000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'VIX  LOGAçSTICA SA	',	'Av Jeronimo Vervloet 275',	261	,'29070350'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	2,	 'MINASTUR - TRANSPORTES TURISMO LTDA	',	'Rua Fazenda do Ouro cax postal 21',	998	,'36970000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'A J VIEIRA TRANSPORTE E COMERCIO LTDA	',	'Localidade de Crubixa Zona Rural',	994	,'29280000'	,'')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'A L MONTEIRO TRANSPORTES EPP	',	'R Pedro Zangranzi 360 Esc Virtual 02',	426	,'29164020'	,'correspondÍncia R Constante SodrÈ 840 apto901Ed Maison Laffite Praia do Canto 29055420 VitÛria ESSerra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'AGUIA ASSISTENCIA AUTOMOTIVA 24 H LTDA	',	'Rua IndependÍncia n 169',	952	,'29161101'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'AGUIA BRANCA LOGISTICA LTDA	',	'Rod br 262 km 5',	177	,'29140905'	,'Cariacicaao lado da Ceasa')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ALESAT COMBUSTIVEIS S A	',	'Av dante Michelini n 5500 ',	317	,'29090070'	,'Vitoria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'AQCES LOGISTICA NACIONAL LTDA	',	'Rod Norte Sul n308 Lado Par ',	952	,'29161172'	,'Correpondencia Rod ES010 km 2 5 quadra Chalote 355Jardim Limoeiro29164140 Caixa Postal 42Serra ESSerra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ATENDER RIO TRANSPORTES LTDA (TRANSMARONI)	',	'Rua Buenos Aires 104 LJ 03 ',	263	,'2910310'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BASE TRANSPORTES E LOGISTICA LTDA	',	'Av Acesso Rodovi·rio s n Tim QD 09 mod02 03 ',	417	,'29161376'	,'*****************')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BATISTA COMERCIAL LOGISTICA REPRES LTDA	',	'Av Darly Santos n4680 ',	263	,'29103091'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BAYER TRANSPORTES LTDA EPP	',	'R S„o Paulo n10 Qd 11',	547	,'29135000'	,'Em frente a Faculdade de VianaViana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES HAVARIO LTDA ME	',	'Rua 09 Qda 13 Lote 05 N 05       ',	979	,'29135000'	,'Caixa postal 0303513VianaLoteamento Simer')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BRASIL REAL LOGISTICA E TRANSPORTES LTDA	',	'Rod Br 101 norte KM291 s n Contorno',	214	,'29151814'	,'Em frente a BrasitaliaCariacica ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BRASPRESS TRANSPORTES URGENTES LTDA	',	'Rua Atalydes Moreira de Souza 1656 ',	559	,'29168055'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BRENDA TRANSPORTES LTDA	',	'Av Gov Valadares n3 Quadra 65',	547	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CACHOEIRO TRANSPORTES LTDA EPP	',	'Rod Engenheiro Fabiano Vivacqua n2115 ',	975	,'29315025'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CAITE TRANSPORTES LTDA	',	'Av Prefeito Samuel Batista Cruz n 1923 ',	481	,'29900515'	,'Linhares')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CAPIXABALOG TRANSPORTES E LOGIST LTDA ME	',	'Estrada MarcÌlio de Noronha s n',	856	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CARGA PESADA ENG™ E TRANSP LTDA	',	'RODOVIA BR 262 KM 10 S N ',	497	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CARGOLUX TRANSPORTES LTDA ME	',	'Rod BR 262 km 5 5 s n ',	107	,'29145409'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CARGOLUX LOGISTICA LTDA	',	'Rod BR 262 km 5 5 s n ',	107	,'29145409'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CENTRONORTE ARMAZENS GERAIS LTDA	',	'Matriz R Vale do Rio Doce n60',	46	,'29153078'	,'CorrespondÍncia R Anezio Jose Simoess nS„o TorquatoCEP29114 350Vila VelhaESVila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CEREAIS DO NICO LTDA (TRANSPORTES DO NICO)	',	'R IpÍ n15 Movelar 29906 120',	342	,'0'	,'*****************')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CHEIM TRANSPORTES SA	',	'Rod Br 101 Norte Km 12',	410	,'29160042'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA AMERICANA LTDA	',	'Rod Br 262 Km 1306          ',	980	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CLAC IMPORTACAO E EXPORTACAO LTDA	',	'Rod BR 101 Norte KM 265 s n ',	196	,'29162122'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'COL CENTROESTE LOGISTICA LTDA	',	'Rua mestre Gomes n∞ 613',	476	,'29100320'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CONFIANCA MUDANCAS E TRANSPORTES LTDA	',	'Av Luiz Silva 37 A ',	231	,'29111175'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CORPUS SANEAMENTO E OBRAS LTDA	',	'Rua S„o Sebasti„o n 70',	280	,'29030738'	,'VitÛria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'DARCY TRAVAGLIA ME	',	'Rua Jo„o Sasso s n',	976	,'29314650'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'DICASTELLI TRANSPORTES LTDA EPP	',	'R Ecologista Chico Mendes n482',	989	,'29360000'	,'CASTELO')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'DIRECIONAL TRANSP E LOGISTICA LTDA	',	'Rod BR262 km4 5     ',	217	,'29148022'	,'Cariacica ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'DUCLORO IND COM TRANSP REP LTDA	',	'Rua dos Coelhos  s n          ',	426	,'29163105'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'E S TRANSPORTES LTDA ME	',	'Rua Galdino Ferraz n 90        ',	366	,'0'	,'Cariacica Trevo do Contorno de VitÛria ñ PrÛximo a VitÛria Diesel29148 610 ñ ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ECOS TRANSPORTES E SERVICOS LTDA	',	'Av Brigadeiro Eduardo Gomes 501 sala02      ',	426	,'29164072'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ELO TRANSPORTES LTDA	',	'Rod Br 101 Norte Km 254         ',	991	,'2917615'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EMPRESAS DE TRANSPORTES ATLAS LTDA	',	'Rod Br 101 Norte Km 263 s n       ',	577	,'29162010'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EMPRESAS DE TRANSPORTES PAJUCARA	',	'Rod Br 262 Km 06 s n         ',	107	,'29241409'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'CICLO TRANSPORTES LTDA	',	'Rua E s n',	981	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EXPRESSO JUNDIAI SAO PAULO LTDA	',	'Rua S„o Jorge n 05         ',	177	,'29140501'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EXPRESSO LIMEIRA DE VIACAO	',	'Rod BR 101 Norte n 2930  Km 291     ',	214	,'29151815'	,'Serra Contorno ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EXPRESSO SERRANO LTDA	',	'Rod Br 262 Km 5 5          ',	177	,'29145409'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EXPRESSO SANTANA LTDA	',	'Rua Estrada de Capuaba n483       ',	171	,'29115486'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EXPRESSO VILA VELHA LOGISTICA LTDA ME	',	'End Av Muqui N1021          ',	321	,'29102190'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'FADEL TRANSPORTES E LOGISTICA LTDA	',	'Br 101 Km 290 s n          ',	362	,'29154501'	,'Contorno ( dentro da AMBEV)Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'FT TRANSPORTES LTDA	',	'Rua Bela Vista n96         ',	454	,'29118710'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'G D TRANSPORTES E REPRESENTACAO LTDA	',	'Rua Jo„o Calmon 992          ',	481	,'29900120'	,'Linhares')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'GIORI TRANSPORTES LTDA	',	'Rod Br 101 Km 291 n∞ 90        ',	214	,'29151815'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES MALU LTDA (MALU TRANSPORTES)	',	'Av Central s n           ',	981	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'GPS CORRETORA e ADM de SEGS LTDA	',	'Av Nossa Sra dos Navegantes 675       ',	341	,'29050912'	,'VitÛriaEd Palacio do CafÈ4∫ andar ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'GSV TRANSPORTE E COM DE GASES LTDA	',	'Rodovia do Contorno  Km 9 5         ',	977	,'29300970'	,'Caixa Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'HIPER EXPORT TERMINAIS RETROPORTUARIOS SA	',	'Estrada do Cais de Capuaba 1500      ',	171	,'29119000'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'HORTIGIL HORTIFRUTI S A	',	'R Edson Bonadiman n 45         ',	107	,'29145450'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'HUMAR TRANSPORTES LTDA	',	'Rua 4 Esquina c a rua 4 a s n      ',	572	,'29160970'	,'SerraESSerra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ILHA AZUL PARTICIPACOES ADM CONSULT CORRET DE SEGUROS LTDA	',	'AV Nossa Senhora da Penha n∞1506      ',	458	,'29045400'	,'VitÛriaLoja 01Ed Praia Flat')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'INTERLOG TRANSPORTES E LOG LTDA	',	'Rua Costa Rica n∞ 43 Sala 101        ',	51	,'29140280'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'INTERPORT LOGISTICA LTDA	',	'Rodovia Darly Santos 4723       ',	221	,'29110340'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'J ALVES LOGISTICA LTDA EPP	',	'Rua Piracicaba n 219         ',	218	,'29112170'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'JCALLENZANE & CIA LTDA	',	'Rua Vicente Burian 207         ',	990	,'29173080'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'J C LIMA E CIA LTDA	',	'Rua Ronilson Queiroz J˙nior s n      ',	988	,'29330000'	,'Anchieta')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'JM COMERCIO DE HORTIFRUTI LTDA ME(COMERCIAL BARBA)	',	'Rodovia BR262 s n          ',	217	,'29145906'	,' Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'EWALD COMERCIO E TRANSPORTES LTDA	',	'Rua Um  Quadra A  Lotes 16 19        ',	982	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'KR TRANSPORTES e LOGISTICA LTDA Rodovia ES 010	',	'n 4255 A             ',	426	,'29164043'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'L B T TRANSPORTES LTDA	',	'Rod do CafÈ 0 Km 01 590         ',	480	,'29705200'	,'Colatina')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'LIDER LOGISTICA DE TRANSPORTES LTDA	',	'Av Dos Camaras n945         ',	191	,'29156837'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'LOGISTICA E TRANSPORTE FIOROT LTDA	',	'Av GraÁa Aranha  n 45          ',	447	,'29114330'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'LOGISTICA VERA CRUZ LTDA ME	',	'Rua Vicente SantÛrio Fantine 64      ',	199	,'29146786'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MA TRANSPORTES LTDA ME	',	'Av Francisco Mardegam n 123       ',	887	,'29314100'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MSC MEDITERRANEAN LOGISTICA LTDA (MEDLOG)	',	'Av Carlos Lindemberg sn         ',	221	,'29110902'	,'Vila VelhaprÈdio em frente ao Carrefour')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'M G TRANSPORTES E LOGISTICA LTDA (Expresso UniAo)	',	'AvAna Merotto Stefanon n 30       ',	231	,'29111630'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MRJS LOGISTICA E TRANSPORTES LTDA (SS LOGISTICA)	',	'R Athalides Moreira de Souza n∞140 lt 2 Qd 3 ',	559	,'29168055'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MAROVIC TRANSPORTES LTDA	',	'Rod BR 101 km 267 s n         ',	426	,'29164038'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'VINHEDOS TRANSPORTES LTDA	',	'Rua Nove Lote 07 Quadra 13 sn       ',	979	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MEGALOG LOGISTICA E TRANSPORTES LTDA	',	'R Porto Alegre s n          ',	934	,'29165973'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MELTEX JOY COMERCIO DE CONFECCOES LTDA	',	'Rod Br 101 s n Km 290         ',	362	,'29151300'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MILA TRANSPORTES LTDA	',	'Rod Br 262 Km 09          ',	547	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MIRAMAR PRODUTOS ALIMENTICIOS LTDA	',	'Av Fernando Ferrari 1700        ',	261	,'29075050'	,'VitÛria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MULTILIFT LOGISTICA LTDA	',	'Av Vale do Rio Doce s n         ',	131	,'29150970'	,'Caixa Postal 032034Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'NESAC TRANSPORTES LTDA ME	',	'Rua Angelo Zani S N          ',	126	,'29148622'	,'Cariacica Sala 09 ')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 '‘MEGA TRANSPORTES E SERVICOS LTDA	',	'Estrada de Capuaba 1258        ',	462	,'29115830'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PAGANINI MATERIAL DE CONSTRUCAO LTDA	',	'Av Cel AntÙnio Duarte 155        ',	882	,'29280000'	,'Iconha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'MEGA TRANSPORTES E SERVICOS LTDA ME	',	'Rua Trindade 100          ',	983	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PIANCA TRANSPORTES E TURISMO LTDA	',	'Rua Francisco Simıes Borges n109      ',	901	,'29190000'	,'Aracruz')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PEDRA BRANCA TRANSPORTES LTDA	',	'Rod Br 101 km 210 n∞08        ',	995	,'29670000'	,'IbiraÁu')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PORTO SEGURO LOGISTICA E TRANSPORTES LTDA	',	'Rod Carlos Lindemberg n 6231 Sala 106    ',	231	,'29111865'	,' Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PREMIER SERVICOS E TRANSPORTES LTDA ME	',	'R Santa Tereza n 189         ',	366	,'29148604'	,'END Para CorresR Galdino Ferrazn∫90Vila IndependÍnciaCariacica ES29148 610Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RAPIDO TRANSPAULO LTDA	',	'Rua Alfredo Galeno  n 01  Caixa Postal 045058  ',	243	,'29175703'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RAPIDAO COMETA TRANSPORTE E LOGISTICA SA	',	'Av Talma Rodrigues Ribeiro 1765      ',	204	,'29173795'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RBE TRANSPORTES E SERVICOS LTDA	',	'Rod BR 101 Norte s n km 210 s n Cx Postal 25  ',	995	,'296700'	,'IbiraÁu')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RODAGASES TRANSPORTES LTDA ME (FRISSO TRANSPORTES LT)	',	'End CorrespondÍncia Rua O s n      ',	745	,'29163269'	,'SerraPonto de referÍncia atr·s do posto Oliva Av Norte sulo')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RODOLOG TRANSPORTES MULTIMODAIS LTDA (RODOFLY)	',	'Rua Atalydes Moreira de Souza 964      ',	559	,'29168055'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RODOMETAL TRANSPORTES E SERV LTDA (METALOSA)	',	'Rod do CafÈ KM 02          ',	788	,'29705200'	,'Colatina')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'PATRUS TRANSPORTES URGENTES LTDA	',	'RodBr101 262 Km 13 5         ',	984	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RODOVIARIO LIDER LTDA	',	'Rodovia Br 101 Km 292         ',	366	,'29148640'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ROTA BRASIL TRANSPORTES E LOGISTICA LTDA	',	'Rod Br 101 Km 374          ',	996	,'29280000'	,'Iconha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'ROTA DO SOL TRANSPORTADORA LTDA	',	'Rod Br 101 262 Km 12 7         ',	769	,'29135000'	,'End para correspondÍncia CX Postal 30061Campo Grande 29146970Cariacica ESViana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'S RODRIGUES TRANSPORTES LTDA ME	',	'Rod BR 101 Norte s n km 291       ',	214	,'29151815'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SL TRANSPORTES e LOGISTICA LTDA Nova Quality LogIstica	',	'Rua Messias GonÁalves Correia N 9     ',	221	,'29110080'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SMG TRANSPORTES LTDA	',	'Rua Jo„o Cipriano 19         ',	777	,'29301560'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SL TRANSPORTES e LOGISTICA LTDA	',	'Rua Messias GonÁalves Correia N 9      ',	221	,'0'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SMG TRANSPORTES LTDA	',	'Rua Jo„o Cipriano 19         ',	777	,'29301560'	,' Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SAULO TRANSPORTES LTDA	',	'Rua Engenheiro JosÈ HimÈrio 27        ',	177	,'29146460'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SALEIO TRANSPORTES SANTOS TRANSPORTADORA E LOGISTICA	',	'Rua Estrada de Catuaba SL05 n21     ',	239	,'29119060'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SERMAVIL LOCACAO E MONTAGENS LTDA	',	'Rua Comendador Sim„o Helon N∞ 1055      ',	572	,'2916890'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SHAMAH TRANSPORTES E SERVICO INTERMODAL LTDA ME	',	'Av VitÛria Regia 1729 loja 02      ',	140	,'29104590'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'SILVEROL LOCACOES LTDA EPP	',	'Rua Jo„o Arcari 13 A         ',	846	,'29185000'	,'Fund„o')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TAF TRANSPORTES E LOGISTICA LTDA ME (ALE LOGISTICA)	',	'R Leila Diniz n 1100         ',	213	,'29104070'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TL TRANSPORTES E LOGISTICA LTDA	',	'ROD BR 262 101 KM12 s n        ',	769	,'29135000'	,'ao lado do Posto E Churrascaria Cana„Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TOP TRANS DISTRIBUICAO E LOGISTICA LTDA	',	'Rua 6 B Lote 12 quadra 14        ',	572	,'29168085'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES FS LTDA	',	'Rod ES 10 km 2 5          ',	426	,'29164140'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TEGMA LOGISTICA INTEGRADA SA	',	'Estrada do contorno s n Km 281       ',	388	,'29158001'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TNT MERC⁄RIO CARGAS E ENCOMENDAS SA	',	'Rod BR 262 km 14          ',	769	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TODA CARGA TRANSPORTES LTDA	',	'Rod Br 101 km 294          ',	909	,'29146970'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TODAVIA LOGISTICA E TRANSPORTES LTDA	',	'Rua Neves Armond 174         ',	427	,'29052280'	,'VitÛria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSABRIL TRANSPORTADORA ABRIL LTDA	',	'Rua Ac·cio Godim 426         ',	426	,'29164010'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSBIAZATTI TRANSPORTES E LOGISTICA LTDA	',	'Rod Gether Lopes de Farias n∞ 2600 Terreo KM 7   ',	480	,'29705200'	,'Colatina')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSCACHOEIRO TRANSP CARGAS LTDA EPP	',	'Rua Juvenal R Santos  49 51        ',	978	,'29311741'	,'EndereÁo Vila VelhaRua Tadeu Rauta ñ 1000 ñ CobilandiaVila VelhaES 29111 060Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSCAMPO TRANSPORTADORA CAMPO LTDA	',	'Rua dos Artistas  s n          ',	345	,'29146970'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSCHERRER TRANSPORTADORA LTDA	',	'Rod JosÈ Sette s n          ',	253	,'29156315'	,'PrÛximo ao FrigorzanCariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSDTA TRANSP E ASSES EM COM EXT LTDA ME	',	'Estrada de Capuaba n∞ 93 Salas 101 02    ',	239	,'29119060'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSGLEIDE TRANSPORTES ( TG TRANSPORTADORA BRASIL)	',	'Rua Cassimiro de Abreu 261        ',	410	,'29162707'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSGLEIDE TRANSPORTES DE CARGAS LTDA	',	'Rod Br 101 Norte Km 267 s n        ',	410	,'29161340'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSILVA TRANSPORTES E LOGISTICA LTDA	',	'Rod BR 101 Norte Contorno SN km 283     ',	388	,'29159001'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSJOIA TRANSPORTADORA JOIA LTDA	',	'Rua Braulina Baptista Lopes 265       ',	147	,'29160765'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSLUZ TRANSPORTADORA LTDA ME	',	'SÈtima Avenida n 115 Loja B       ',	231	,'29111220'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSMAGNO TRANSP RODOVIARIOS LTDA	',	'Rod Darly Santos s n         ',	75	,'29104491'	,'(Ao lado do TCVV)Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSMENDES TRANSPORTES LTDA	',	'R Antonio Vieira n17        ',	756	,'29300650'	,' Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPAPINHA TRANSP LOG ARMAZENAGEM LTDA	',	'R Orlando Caliman n 275        ',	317	,'29090220'	,'n∫ Caixa postal 19246EndereÁo para correspondencia Av™ Brasiln∫ 1322 ñ Sala 07Novo HorizonteSerraES29163 331')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPEDRA TRANSPORTES LTDA	',	'Rod Br 101 Norte Contorno s n km 291    ',	214	,'29151815'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPEDROSA SA	',	'Rua Dom Bosco s n          ',	999	,'35410000'	,'End De CorrespondÍncia Rua Sucupira n∞221Ch·cara Santo AntÙnioBetim MG32684 180CNPJ 21849120 0001 38Minas Gerais')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'GOLD COMERCIO E TRANSPORTES LTDA	',	'Rod Br 262  Km 09           ',	985	,'29350000'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA BELMOK LTDA	',	'Rua Idalino de Carvalho SN        ',	497	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA CALEZANE LTDA	',	'Rod VitÛria JacaraÌpe Km 02       ',	426	,'29160970'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA COLATINENSE LTDA	',	'Rua 4 n460           ',	572	,'29168077'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA CONTINENTAL LTDA	',	'Rod Carlos Lindemberg n 1990       ',	231	,'29110001'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA DE SA LTDA	',	'Rod Br 262 Km 46  s n  Posto BR  Caixa Postal 33 ',	494	,'29255000'	,'Marechal Floriano')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA FIOROT LTDA	',	'Rua AnÈsio JosÈ Simıes 30        ',	447	,'29114350'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA INTERPORT LTDA	',	'End Rod Carlos Lindenberg SL 18 N∞4723 A    ',	221	,'29110400'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA JOLIVAN LTDA MATRIZ	',	'Av Danilo M de Castro 816        ',	882	,'29280000'	,'FILIALRod Br 262Km 8 5 ñ GuaritasViana ES29135 000Iconha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA MMA LTDA	',	'Rua 06 D s n          ',	572	,'29168024'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA POUPE PESO LTDA ME	',	'Av Fernando Ferrari 3627        ',	150	,'29075053'	,'VitÛria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA SOUZA REIS LTDA	',	'R Carioca n132          ',	952	,'29161195'	,'Serra ES')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA TRANSFINAL LTDA	',	'Rod Br 101  Km 296 s n         ',	214	,'29146970'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA TRAVAGLIA LTDA ME	',	'Rua Jo„o Sasso n299         ',	976	,'29314650'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTADORA WINSTON LTDA	',	'Rua Euclides da Cunha 41         ',	880	,'29300130'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTE EXCELSIOR LTDA	',	'Av Copacabana s n          ',	702	,'29166820'	,'correspondÍncia R Marcela Eny C Loureiron∫9027335 170Morada da Granja Barra Barra MansaRJSerra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES ARIANE LTDA	',	'Rod BR 262 Km 83          ',	856	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES FIOROTI LTDA	',	'Rua Severino Zanol 135         ',	410	,'29162726'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'JAMEF TRANSPORTES LTDA	',	'Margens da BR 262 s n KM 9      ',	985	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES ICONHA LTDA	',	'Av Danilo Monteirode Castro n∞ 278      ',	882	,'292800'	,'Iconha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'BRASIL CARGO TRANSPORTES LTDA ME	',	'Rua Santa Clara s n lotes 07 a 16 Quadra 02 ',	986	,'29135000'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES SEM LIMITE LTDA ME	',	'Rua AmÈrica 500           ',	177	,'29150790'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPORTES SERVICOS E REPRESENTACOES TENORIO LTDA ME	',	'Rua Rosa Vermelha 777         ',	213	,'29104030'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSPOSUL TRANSPORTES LTDA	',	'Rua Maranh„o 10           ',	51	,'29140482'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSUICA LOCACAO E PRESTACAO DE SERVICOS LTDA	',	'Rua Geraldo Del Puppo sn Lotes 11 e 13 quadra VII  ',	572	,'29168074'	,'Ao lado da empresa Perfilados Rio DoceSerra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRANSZERO TRANSPORTADORA DE VEICULOS LTDA	',	'Av Civit I 497           ',	559	,'29168045'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRD TRANSPORTE E LOGISTICA	',	'Rua GuardÍnia 112          ',	829	,'29171239'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRES TRANSPORTES LTDA	',	'Rod BR 101 km265 sn          ',	196	,'29162122'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TRESELES TRANSPORTE DE CARGAS LTDA (PRETTI CARGAS)	',	'Rua 06 D Quadra XIII D         ',	572	,'29168070'	,'SERRA')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'TURRA & ARTILLES LTDA	',	'R Samuel Meira Brasil n 95 Gleba L      ',	178	,'29166800'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'UNIENG LOGISTICA LTDA	',	'Rua Antonio Velozo de Azevedo sn      ',	426	,'29164066'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'USIFAST LOGISTICA INDUSTRIAL S A	',	'Rod BR 101 Norte 2320 Sala 08 KM 267 73     ',	331	,'29163387'	,'Posto Planalto ( em frente a Hiunday ) Caixa Postal 040 099Av Presidente Castelo branco n∫1460 Carapina Serra ES 29160970 Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'VANAMA TRANSPORTES LTDA	',	'Rod Governador JosÈ Henrique Sete n 01     ',	234	,'29156775'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'RODOPLAN COMERCIO TRANSP PREST SERVICOS LTDA	',	'Rod Br 262 sn Km8          ',	986	,'29135160'	,'Viana')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'VIRC COMERCIO E TRANSPORTES LTDA	',	'Rodovia Br 262 Km 6 5 Loja 09 Pavilh„o 02    ',	314	,'29145906'	,'Cariacica')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'VIX LOGISTICA SA	',	'Av JerÙnimo Vervloet n 275        ',	261	,'29070350'	,'VitÛria')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'WALDEMIRO BERGER TRANSPORTES BERGER	',	'Rodovia Afonso Schwab km 01        ',	997	,'29645000'	,'*****************')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'WID TRANSPORTES LTDA	',	'Av Marechal Humberto de Alencar n 1311     ',	231	,'29111500'	,'Vila Velha')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'WINSTON TRANSPORTES LTDA	',	'Rua Euclides da Cunha 33        ',	880	,'29304130'	,'Cachoeiro de Itapemirim')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'WORK TRANSPORTES LTDA	',	'Rua Coelho Neto 93          ',	426	,'26164045'	,'Serra')
+	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	3,	 'YPIRANGA TRANSP PESADOS LTDA ME	',	'Rua Estrada Cais de Capuaba 999 Sl 03     ',	171	,'29115486'	,'Vila Velha')
+		
+-- COMMIT
 
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ALVORADA SUL AMERICA DE TURISMO - ASAT','Rua Francisco Vieira Passos, 441 A','MuquiÁaba','Guarapari','ES',2,'29200000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ARARA AZUL TURISMO LTDA','Av. Lourival Nunes, 700','Jardim Limoeiro','Serra','ES',2,'29164050')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CORDIAL TRASNPORTE E TURISMO LTDA','Rua Francisco Vieira Passos, 441 A','Guaxindiba','Aracruz','ES',2,'29190000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('COSTA SUL TRASNPORTE E TURISMO LTDA','Rod. Frederico Augusto Coser, 200', 'Aeroporto', 'Cachoeiro de Itapemirim', 'ES',2,'29314400')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO ARACRUZ LTDA','Rod. Aracruz Barra do Riacho km 1,5', 'Moroba', 'Aracruz', 'ES', 2, '29190000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('LUZA TRANSPORTES E TURISMO LTDA - ME','Rua Cel Darcy Pacheco de Queiroz, 141','Sotema', 'Cariacica','ES',2,'29152140')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('MARLIM AZUL TURISMO LTDA†EPP','Br 101- Km 262, s/n','Laranjeiras Velha','Serra','ES',2,'29165681')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('MINASTUR - TRANSPORTES TURISMO LTDA','Rua Fazenda do Ouro, cax postal 21','Centro','Manhumirim','MG',2,'36970000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('REIS TRANSPORTES LTDA','Av. Jones Santos Neves, 62','Maria Ortiz','Cachoeirio de Itapemirim','ES',2,'29300500')	
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('TRANSITUR TRANSPORTE COLETIVO LTDA ME','Rod Br 101 Norte, km 265 - sala 106','Carapina','Serra','ES',2,'29160470')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('TRANSPORTES COLETIVOS S√O CIPRIANO LTDA','Av. Nove de Agosto, 2289','Centro','JaguarÈ','ES',2,'29950000')	
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('UNIMAR TRANSPORTES LTDA','Rua Cel Manoel Nunes, 475','Laranjeiras Velha','Serra','ES',2,'29162155')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O ¡GUIA BRANCA S/A','Rodovia BR 262, km 05','Campo Grande','Cariacica','ES', 2, '29140905')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O ALVORADA LTDA','Rua Ernesto Canal, 200','Alvorada','Vila Velha','ES',2,'29154000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O FLECHA BRANCA LTDA','Av. Nossa Senhora da ConsolaÁ„o, 64','Vila Rica','Cachoeiro de Itapemirim','ES',2,'29301080')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O GRANDE VIT”RIA LTDA','Rod. Serafim Derenzi, 2415','Inhangueta','VitÛria','ES',2,'29031600')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O ITAPEMIRIM S/A','Rod. Br 262 - Km 03','Campo Grande','Cariacica','ES',2,'29140501')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O JOANA DARC S/A','Av. Silvio Avidos, 1680','S„o Silvano','Colatina','ES',2,'29706010')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O JOANA DARC S/A - FILIAL','Av. Prefeito Samuel Batista Cruz, s/n∫','TrÍs Barras','Linhares','ES',2,'29907380')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O MARILANDIA LTDA','Rua Uceucino Malta Bauer, 425','Lace','Colatina','ES',2,'29703020')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O MUTUM PRETO LTDA','Rua JosÈ Martins da Silva, 310','Bairro Boa FÈ','Afonso Claudio','ES',2,'29600000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O PRETTI LTDA','Rua Jo„o Pretti, 95','S„o Silvano','Colatina','ES',2,'29706060')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O REAL ITA LTDA','Av. Jones Santos Neves, 146','Maria Ortiz','Cachoeiro de Itapemirim','ES',2,'29300500')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O SANREMO LTDA','Av. Ernesto Canal, 200','Alvorada','Vila Velha','ES',2,'29117120')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O SANTA LUZIA LTDA','Av. Nossa Senhora da ConsolaÁ„o, 64','Vila Rica','Cachoeiro de Itapemirim','ES',2,'29301080')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O S√O GABRIEL LTDA','Rua Pernambuco,653','Posto Esso','S„o Mateus','ES',2,'29931560')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O S√O ROQUE LTDA','Rua Fioravanti Rossi, 670','S„o Bras','Colatina','ES',2,'29703810')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O SUDESTE LTDA','Av. Nossa Senhora da ConsolaÁ„o, 70','Vila Rica','Cachoeiro de Itapemirim','ES',2,'29301080')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O TABUAZEIRO LTDA','Rod. Br 101 Norte, km 8,5','Jardim Tropical','Serra','ES',2,'29075050')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIA«√O VERDES VALES LTDA','Rua JosÈ  Martins Silva, 310','Boa FÈ','Afonso Claudio','ES',2,'29600000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('VIX  LOGÕSTICA S/A','Av. JerÙnimo Vervloet, 275','Goiabeiras','VitÛria','ES',2,'29070350')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('A. J. VIEIRA TRANSPORTE E COMERCIO LTDA','Localidade de Crubixa','Zona Rural','Iconha','ES',3,'29280000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('A. L. MONTEIRO TRANSPORTES EPP','R. Pedro Zangranzi, 360','Esc. Virtual 02','Jardim Limoeiro','ES', 3,'29164020')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('AGUIA ASSISTENCIA AUTOMOTIVA 24 H LTDA','Rua IndependÍncia n∫ 169','Rosario de F·tima','Serra','ES',3,'29161101')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('¡GUIA BRANCA LOGÕSTICA LTDA','Rod. br 262, km 5','Campo Grande','Cariacica','ES',3,'29140905')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ALESAT COMBUSTÕVEIS S/A','Av. dante Michelini, n∫ 5500','Jardim Camburi','VitÛria','ES',3,'29090070')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('AQCES LOGÕSTICA NACIONAL LTDA','Rod. Norte Sul, n∫308','Rosario Fatima','Serra','ES',3,'29161172')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ATENDER RIO TRANSPORTES LTDA (TRANSMARONI)','Rua Buenos Aires, 104 LJ 03','AraÁas','Vila Velha','ES',3,'29103010')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BASE TRANSPORTES E LOGÕSTICA LTDA','Av. Acesso Rodovi·rio, s/n','Tim/QD 09/mod02/03','Serra','ES',3,'29161376')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BATISTA COMERCIAL LOGÕSTICA REPRES. LTDA','Av. Darly Santos, n∫4680','AraÁ·s','Vila Velha','ES',3,'29103091')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BAYER TRANSPORTES LTDA EPP','R. S„o Paulo, n∫10, Qd 11','Marcilio de Noronha','Viana','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BRASIL CARGO TRANSPORTES LTDA ME','Rua Santa Clara - s/n∫, lotes 07 a 16 -  Quadra 02','Loteamento Simer','Vila Bethania','ES',3,'')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BRASIL REAL LOGÕSTICA E TRANSPORTES LTDA','Rod Br 101 norte, KM291, s/n','Contorno','Nova Valverde','ES',3,'29151814')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BRASPRESS TRANSPORTES URGENTES LTDA','Rua Atalydes Moreira de Souza, 1656','CIVIT I','Serra','ES',3,'29168055')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('BRENDA TRANSPORTES LTDA','Av. Gov. Valadares, n∫3, Quadra 65','MarcÌlio de Noronha','Viana','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CACHOEIRO TRANSPORTES LTDA EPP','Rod. Engenheiro Fabiano Vivacqua, n∫2115','Safra','Cachoeiro de Itapemirim','ES',3,'29315025')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CAITE TRANSPORTES LTDA','Av. Prefeito Samuel Batista Cruz, n 1923,','Centro','Linhares','ES',3,'29900515')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CAPIXABALOG TRANSPORTES E LOGÕST. LTDA ME','Estrada MarcÌlio de Noronha, s/n∫','Guaritas','Viana','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CARGA PESADA ENG™ E TRANSP. LTDA','RODOVIA BR 262 - KM 10 - S/N∫','BAIRRO AREINHA','VIANA','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CARGOLUX TRANSPORTES LTDA ME','Rod. BR 262 km 5,5, s/n','S„o Francisco','Cariacica','ES',3,'29145409')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CARGOLUX LOGÕSTICA LTDA','Rod. BR 262 km 5,5, s/n','S„o Francisco','Cariacica','ES',3,'29145409')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CENTRONORTE ARMAZENS GERAIS LTDA Matriz','R. Vale do Rio Doce, n∫60','Porto de Santana','Cariacica','ES',3,'29153078')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CEREAIS DO NICO LTDA (TRANSPORTES DO NICO)','R. IpÍ, n∫15','Movelar','Linhares','ES',3,'29906120')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CHEIM TRANSPORTES S.A.','Rod. Br 101 Norte - Km 12','Carapina','Serra','ES',3,'29160042')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CICLO TRANSPORTES LTDA','Rua E - s/n','Campo Verde','Viana','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CLAC IMPORTA«√O E EXPORTA«√O LTDA','Rod. BR 101 Norte- KM 265 - s/n','Laranjeiras Velha','Serra','ES',3,'29162122')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('COL CENTROESTE LOGÕSTICA LTDA','Rua mestre Gomes - n∞ 613','GlÛria','Vila Velha','ES',3,'29100320')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CONFIAN«A MUDAN«AS E TRANSPORTES','LTDA Av. Luiz Silva, 37-A','Cobilandia','Vila Velha','ES',3,'29111175')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('CORPUS SANEAMENTO E OBRAS LTDA','Rua S„o Sebasti„o n∫. 70','ResistÍncia','VitÛria','ES',3,'29030738')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('DARCY TRAVAGLIA  ME','Rua Jo„o Sasso, s/n','S„o Geraldo','Cachoeiro de Itapemirim','ES',3,'29314650')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('DICASTELLI TRANSPORTES LTDA - EPP','R. Ecologista Chico Mendes, n∫482','Santa Barbara','Castelo','ES',3,'29360000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('DIRECIONAL TRANSP. E LOGÕSTICA LTDA','Rod BR262 km4,5','Vila Capixaba','Cariacica','ES',3,'29148022')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('DUCLORO IND COM TRANSP. REP. LTDA','Rua dos Coelhos ñ s/n','Jardim Limeiro','Serra','ES',3,'29163105')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('E S TRANSPORTES LTDA -ME','Rua Galdino Ferraz n∫ 90 Trevo do Contorno de VitÛria','Vila IndependÍncia ñ PrÛximo a VitÛria Diesel','Cariacica','ES',3,'29148610') 
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ECOS TRANSPORTES E SERVI«OS  LTDA','Av. Brigadeiro Eduardo Gomes, 501 sala02','Jardim Limoeiro','Serra','ES',3,'29164072')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ELO TRANSPORTES LTDA','Rod. Br 101 Norte Km 254','Posto Esso','Serra','ES',3,'29176015')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EMPRESAS DE TRANSPORTES ATLAS LTDA','Rod. Br 101 Norte Km 263 s/n∫','Laranjeiras','Serra','ES',3,'29162010')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EMPRESAS DE TRANSPORTES PAJU«ARA','Rod Br 262 - Km 06  - s/n','S„o Franciso','Cariacica','ES',3,'29241409')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EWALD COM…RCIO E TRANSPORTES LTDA','Rua Um ñ Quadra A ñ Lotes 16/19','Flamengo','Viana','ES',3,'29135000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO JUNDIAÕ  S√O PAULO LTDA','Rua S„o Jorge, n∫ 05','Campo Grande','Cariacica','ES',3,'29140501')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO LIMEIRA DE VIA«√O','Rod. BR 101-Norte, n∫ 2930 ñ Km 291','Contorno Nova Valverde','Cariacica','ES',3,'29151815')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO SERRANO LTDA','Rod. Br 262  Km 5,5','Campo Grande','Cariacica','ES',3,'29145409')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO SANTANA LTDA','Rua Estrada de Capuaba,n∫483','Ilha das Flores','Vila Velha','ES',3,'29115486')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('EXPRESSO VILA VELHA LOGÕSTICA LTDA ME','End.: Av. Muqui , N∫1021','Praia de Itaparica','Vila velha','ES',3,'29102190')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('FADEL TRANSPORTES E LOGÕSTICA LTDA','Br 101 Km 290 s/n','Tabajara - Contorno','Cariacica','ES',3,'29154501')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('FT TRANSPORTES LTDA','Rua Bela Vista, n∫96','Industrial','Vila Velha','ES',3,'29118710')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('G D TRANSPORTES E REPRESENTA«√O','LTDA Rua Jo„o Calmon, 992','Centro','Linhares','ES',3,'29900120')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('GIORI TRANSPORTES LTDA','Rod. Br 101 - Km 291- n∞ 90','Nova valverde','Cariacica','ES',3,'29151815')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('GOLD COM…RCIO E TRANSPORTES LTDA','Rod Br 262 ñ Km 09','Primavera','Viana','ES',3,'29350000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('GPS CORRETORA e ADM de SEGS LTDA','Av. Nossa Sra dos Navegantes, 675 - 4∫ andar  Ed Palacio do CafÈ','Enseada do Su·','VitÛria','ES',3,'29050912')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('GSV TRANSPORTE E COM. DE GASES LTDA','Rodovia do Contorno ñ Km 9,5','Bairro Morro Grande','Cach. Itapemirim','ES',3,'29300970')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('HIPER EXPORT TERMINAIS RETROPORTU¡RIOS S.A','Estrada  do Cais de Capuaba, 1500','lha das Flores','Vila Velha','ES',3,'29119000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('HORTIGIL HORTIFRUTI S/A','R. Edson Bonadiman,n∫ 45','S„o Francisco','Cariacica','ES',3,'29145450')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('HUMAR TRANSPORTES LTDA','Rua 4 - Esquina c/ a rua 4-a s/n','Civit II','Serra','ES',3,'29160970')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('ILHA AZUL PARTICIPA«’ES ADM. CONSULT. CORRET. DE SEGUROS LTDA','AV.Nossa Senhora da Penha,n∞1506, Loja 01 Ed. Praia Flat','Santa L˙cia','VitÛria','ES',3,'29045400')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('INTERLOG TRANSPORTES E LOG. LTDA','Rua Costa Rica n∞ 43 - Sala 101','Jardim AmÈrica','Cariacica','ES',3,'29140280')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('INTERPORT LOGÕSTICA LTDA','Rodovia Darly Santos, 4723','Nossa Sra da Penha','Vila Velha','ES',3,'29110340')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('J.  ALVES LOGÕSTICA  LTDA  EPP','Rua Piracicaba n∫ 219','Jardim Marilandia','Vila Velha','ES',3,'29112170')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('J.CALLENZANE & CIA LTDA','Rua Vicente Burian - 207','Camar·','Serra','ES',3,'29173080')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('J C LIMA E CIA LTDA','Rua Ronilson Queiroz J˙nior, s/n∫','Portal de Anchieta','Anchieta','ES',3,'29330000')
-Insert Into Empresas ( NomeEmpresa, Endereco, Bairro, Cidade, Estado,  Sindicato_SindicatoID, cep ) Values ('JM COM…RCIO DE HORTIFRUTI LTDA- ME(COMERCIAL BARBA)','Rodovia BR262, s/n','Vila Capixaba','Cariacica','ES',3,'29145906')
-Commit
-
-('JAMEF TRANSPORTES LTDA','Margens da BR 262, s/n∫, KM 9','Primavera','Viana','ES',3,'29135000') 
-('KR TRANSPORTES e LOGÕSTICA LTDA','Rodovia ES 010, n∫ 4.255 -A','Jardim Limoeiro','Serra','ES'3,'29164043')
-('L B T TRANSPORTES LTDA','Rod do CafÈ 0 Km 01 - 590','Carlos G. Nauman','Colatina','ES',3,'29705200')
-('LIDER LOGÕSTICA DE TRANSPORTES LTDA','Av. Dos Camaras, n945','Santo Antonio','Cariacica','ES',3,'29156837')
-('LOGÕSTICA E TRANSPORTE FIOROT LTDA','Av. GraÁa Aranha ñ n∫ 45','S„o Torquato','Vila Velha','ES',3,'29114330')
-('LOGÕSTICA VERA CRUZ LTDA- ME','Rua Vicente SantÛrio Fantine - 64','Vera Cruz','Cariacica','ES',3,'29146786')
-('MA TRANSPORTES LTDA  ME','Av. Francisco Mardegam, n∫ 123','Aeroporto','Cachoeiro de Itapemirim','ES',3,'29314100')
-('MSC MEDITERRANEAN LOGISTICA LTDA (MEDLOG)',' Av. Carlos Lindemberg, s/n','Nossa Senhora da Penha','Vila Velha','ES',3,'29110902')
-('M G TRANSPORTES E LOGÕSTICA LTDA (Expresso Uni„o)',' Av.Ana Merotto Stefanon, n∫ 30','Cobil‚ndia','Vila Velha','ES',3,'29111630')
-('MRJS LOGÕSTICA E TRANSPORTES LTDA (SS LOGÕSTICA)',' R. Athalides Moreira de Souza, n∞140, lt 2, Qd 3','Civit I','Serra','ES',3,'29168055')
-('MAROVIC TRANSPORTES LTDA',' Rod. BR 101, km 267, s/n','Jardim Limoeiro','Serra','ES',3,'29164038')
-('MEGA TRANSPORTES E SERVI«OS LTDA ME',' Rua Trindade, 100','Nova Bethania','Viana','ES',3,'29135000')
-('MEGALOG LOGÕSTICA E TRANSPORTES LTDA',' R. Porto Alegre, s/n','Alterosa','Serra','ES',3,'29165973')
-('MELTEX JOY COMERCIO DE CONFEC«’ES LTDA',' Rod. Br 101 s/n Km 290','Tabajara','Cariacica','ES',3,'29151300')
-('MILA TRANSPORTES LTDA Rod',' Br 262 - Km 09','Marcilio de Noronha','Viana','ES',3,'29135000')
-('MIRAMAR PRODUTOS ALIMENTÕCIOS LTDA',' Av. Fernando Ferrari, 1.700','Goiabeiras','VitÛria','ES',3,'29075050')
-('MULTILIFT LOGISTICA LTDA',' Av. Vale do Rio Doce , s/n','Porto Velho','Cariacica','ES',3,'29150970')
-('NESAC TRANSPORTES LTDA ME',' Rua Angelo Zani, S/N  Sala 09 ','Mucuri',,'Cariacica','ES',3,'29148622')
-('‘MEGA TRANSPORTES E SERVI«OS LTDA',' Estrada de Capuaba, 1258','Ilha da ConceiÁ„o','Vila Velha','ES',3,'29115830')
-('PAGANINI MATERIAL DE CONSTRU«√O LTDA',' Av. Cel. AntÙnio Duarte, 155','Centro','Iconha','ES',3,'29280000')
-('PATRUS TRANSPORTES URGENTES LTDA',' Rod.Br.101/262 ñ Km 13,5','Parque Industrial','Viana','ES',3,'29135000')
-('PIANCA TRANSPORTES E TURISMO LTDA','Rua Francisco Simıes Borges, n∫109','Vila Nova','Aracruz','ES',3,'29190000')
-('PEDRA BRANCA TRANSPORTES LTDA Rod','Br 101 km 210 - n∞08','Pedra Branca','IbiraÁu','ES',3,'29670000')
-('PORTO SEGURO LOGÕSTICA E TRANSPORTES LTDA','Rod. Carlos Lindemberg, n 6231, Sala 106','Cobil‚ndia','Vila Velha','ES',3,'29111865')
-('PREMIER SERVI«OS E TRANSPORTES LTDA-ME','R. Santa Tereza, n∫ 189, Vila IndependÍncia','Cariacica','ES',3,'29148604')
-('R¡PIDO TRANSPAULO LTDA','Rua Alfredo Galeno ñ n∫ 01 ñ Caixa Postal: 045058','Nova Zel‚ndia','Serra','ES',3,'29.175.703')
-('RAPID√O COMETA TRANSPORTE E LOGISTICA SA','Av. Talma Rodrigues Ribeiro - 1.765 - Portal de JacaraÌpe','Serra','ES',3,'29173-795')
-('RBE TRANSPORTES E SERVI«OS LTDA','Rod. BR 101 Norte, s/n∫ km  210 s/n Cx Postal 25','Pedra Branca','IbiraÁu','ES',3,'29670000')
-('RODAGASES TRANSPORTES LTDA   ME (FRISSO TRANSPORTES LT)','End. CorrespondÍncia: Rua O, s/n∫','S„o Diogo I','Serra','ES',3,'29163269')
-('RODOLOG TRANSPORTES MULTIMODAIS LTDA (RODOFLY)','Rua Atalydes Moreira de Souza - 964','Civit I','Serra','ES',3,'29168055')
-('RODOMETAL TRANSPORTES E SERV. LTDA  (METALOSA)','Rod. do CafÈ ñ KM 02 ñ CÛrrego do Ouro','Colatina','ES',3,'29705200')
-('RODOPLAN COM…RCIO, TRANSP. PREST. SERVI«OS LTDA','Rod Br 262, s/n∫, Km 8, Vila Bethania','Viana','ES',3,'29135160')
-('RODOVI¡RIO LÕDER LTDA','Rodovia Br 101 - Km 292','Vila IdependÍncia','Cariacica','ES',3,'29148-640')
-('ROTA BRASIL TRANSPORTES E LOGISTICA LTDA','Rod. Br 101, Km 374','Uni„o','Iconha','ES',3,'29280000')
-('ROTA DO SOL TRANSPORTADORA LTDA','Rod. Br 101/262, Km 12,7','Ribeira','Viana','ES',3,'29135000')
-('S RODRIGUES TRANSPORTES LTDA ME','Rod. BR 101 Norte, s/n ñkm 291','Nova Valverde','Cariacica','ES',3,'29151815')
-('SL TRANSPORTES e LOGÕSTICA LTDA','Nova Quality LogÌstica Rua Messias GonÁalves Correia , N∫ 9','N. Sr™ da Penha','Vila Velha','ES',3,'29110080')
-('SMG TRANSPORTES LTDA','Rua Jo„o Cipriano, 19','Maria Ortiz','Cachoeiro de Itapemirim','ES',3,'29301560')
-('SL TRANSPORTES e LOGÕSTICA LTDA Nova Quality LogÌstica','Rua Messias GonÁalves Correia N∫ 9','N. Sr™ da Penha','Vila Velha','ES',3,'')
-('SMG TRANSPORTES LTDA','Rua Jo„o Cipriano, 19','Maria Ortiz','Cachoeiro de Itapemirim','ES',3,'29301560')
-('SAULO TRANSPORTES LTDA','Rua Engenheiro JosÈ HimÈrio, 27','Campo Grande','Cariacica','ES',3,'CEP 29146-460'
-('SALEIO TRANSPORTES SANTOS TRANSPORTADORA E LOGÕSTICA','Rua Estrada de Catuaba ,SL05, n∫21','AtaÌde','Vila Velha','ES','29119060')
-('SERMAVIL LOCA«√O E MONTAGENS LTDA','Rua Comendador Sim„o Helon - N∞ 1055','Civit','Serra','ES',3,'29168090')
-('SHAMAH TRANSPORTES E SERVI«O INTERMODAL LTDA-ME','Av. VitÛria Regia, 1729, loja 02','Jardim Colorado','Vila Velha','ES','29104590')
-('SILVEROL LOCA«’ES LTDA - EPP','Rua Jo„o Arcari - 13 A','TimbuÌ','Fund„o','ES',3,'29185000')
-
-
-/***
-('TAF TRANSPORTES E LOGÕSTICA LTDA ME   (ALE LOGÕSTICA)','R. Leila Diniz, n 1100','Novo MÈxico','Vila Velha','ES',3,'29104070'
-
-('T.L TRANSPORTES E LOGÕSTICA LTDA ROD','BR 262/101 - KM12, s/n','Ribeira','Viana','ES','29135000'
-('TEGMA LOGÕSTICA INTEGRADA S.A','Estrada do contorno - s/n - Km 281','Porto Engenho','Cariacica','ES','29158001'
-('TNT MERC⁄RIO CARGAS E ENCOMENDAS. S.A','Rod. BR 262, km 14','Ribeira','Viana','ES','29135000'
-('TODA CARGA TRANSPORTES LTDA','Rod. Br 101 - km 294  Contorno','Cariacica','ES','29146970'
-('TODAVIA LOGÕSTICA E TRANSPORTES LTDA Rua Neves Armond ñ 174','Praia do Su·','VitÛria','ES','29052280'
-('TOP TRANS DISTRIBUI«√O E LOGÕSTICA LTDA',' Rua 6 B, Lote 12, quadra 14','Civit ll','Serra','ES','29168085'
-('TRANSABRIL TRANSPORTADORA ABRIL LTDA','Rua Ac·cio Godim - 426','Jardim Limoeiro','Serra','ES','29164010'
-('TRANSBIAZATTI TRANSPORTES E LOGÕSTICA LTDA','Rod Gether Lopes de Farias n∞ 2600 - Terreo, KM 7','Carlos Germano Naumann','Colatina','ES','29705200'
-('TRANSCACHOEIRO TRANSP. CARGAS LTDA EPP','Rua Juvenal R. Santos ñ 49 / 51','Agostinho Simonato','Cachoeiro Itapemirim-ES','ES','29311-741'
-('TRANSCAMPO TRANSPORTADORA CAMPO LTDA','Rua dos Artistas ñ s/n','Oper·rio','Cariacica','ES','29146970'
-('TRANSPEDROSA S.A','Rua Dom Bosco s/n','Cachoeira do Campo','Ouro Preto','MG',3,'35410000'
-
-('TRANSCHERRER TRANSPORTADORA LTDA','Rod JosÈ Sette - s/n','S„o Jo„o Batista','Cariacica','ES','29156315'
-
-('TRANSDTA TRANSP. E ASSES. EM COM. EXT. LTDA ME','Estrada de Capuaba n∞ 93','Salas 101/02','Ataide','Vila Velha','ES','29119060'
-('TRANSGLEIDE TRANSPORTES ( TG - TRANSPORTADORA BRASIL)','Rua Cassimiro de Abreu, 261','Planalto Carapina','Serra','ES','29162707'
-('TRANSGLEIDE TRANSPORTES DE CARGAS LTDA','Rod. Br 101 Norte Km 267 - s/n','Carapina','Serra','ES','29161340'
-('TRANSILVA TRANSPORTES E LOGÕSTICA LTDA','Rod. BR 101 Norte Contorno, S/N, km 283','Porto Engenho','Cariacica','ES','29159001'
-('TRANSJ”IA TRANSPORTADORA J”IA LTDA','Rua Braulina Baptista Lopes, 265','Manoel Plaza','Serra','ES','29160765'
-('TRANSLUZ TRANSPORTADORA LTDA ME','SÈtima Avenida, n 115, Loja B','Cobil‚ndia','Vila Velha','ES','29111220'
-('TRANSMAGNO TRANSP. RODOVIARIOS LTDA',' Rod. Darly Santos, s/n','Jardim Asteca','Vila Velha','ES','29104491'
-('TRANSMENDES TRANSPORTES LTDA','R. Antonio Vieira, n∫17','Santo Antonio','Cachoeiro de Itapemirim','ES','29300650'
-('TRANSPEDRA TRANSPORTES LTDA','Rod. Br 101 - Norte - Contorno s/n - km 291','Nova Valverde','Cariacia','ES','29151815'
-('TRANSPORTADORA AMERICANA LTDA','Rod Br 262, Km 1306','CalabouÁo','Viana','ES','29135000'
-('TRANSPORTADORA BELMOK LTDA','Rua Idalino de Carvalho S/N','Areinha','Viana','ES','29135000'
-('TRANSPORTADORA CALEZANE LTDA','Rod. VitÛria /JacaraÌpe, Km 02','Jardim Limoeiro','Serra','ES','29160-970'
-('TRANSPORTADORA COLATINENSE LTDA','Rua 4, n∫460','Civit II','Serra','ES','29168077'
-('TRANSPORTADORA CONTINENTAL LTDA','Rod. Carlos Lindemberg, n∫ 1990','Cobil‚ndia','Vila Velha','ES','29110001'
-('TRANSPORTADORA DE S¡ LTDA','Rod. Br 262, Km 46 ñ s/n ñ Posto BR ñ Caixa Postal: 33','Centro','Marechal Floriano','ES','29255000'
-('TRANSPORTADORA FIOROT LTDA','Rua  AnÈsio JosÈ Simıes, 30','S„o Torquato','Vila Velha','ES','29114350'
-('TRANSPORTADORA INTERPORT LTDA','End. Rod. Carlos Lindenberg SL 18, N∞4723 - A','Vila Velha','ES','Nossa Senhora da Penha','29110400'
-('TRANSPORTADORA JOLIVAN LTDA MATRIZ','Av. Danilo M. de Castro, 816','Centro','Iconha','ES','29280000'
-('TRANSPORTADORA M.M.A  LTDA','Rua 06 - D, s/n∫','Civit II','Serra','ES','29168024'
-('TRANSPORTADORA POUPE PESO LTDA ME','Av. Fernando Ferrari - 3627','Jabour','VitÛria','ES','29075053'
-
-('TRANSPORTADORA SOUZA REIS LTDA','R. Carioca, n∫132, Rosario de F·tima','Serra','ES','29161195'
-
-('TRANSPORTADORA TRAVAGLIA LTDA ME','Rua Jo„o Sasso, n∫299','S„o Geraldo','Cachoeiro de Itapemirim','ES','29314650'
-
-('TRANSPORTADORA TRANSFINAL LTDA','Rod. Br 101 ñ Km 296 - s/n∫','Nova Valverde','Cariacica','ES','29146970'
-
-('TRANSPORTADORA WINSTON LTDA','Rua Euclides da Cunha - 41','ParaÌso','Cachoeiro de Itapemirim','ES','29300130'
-
-('TRANSPORTES ARIANE LTDA','Rod. BR 262 ñ Km 8,3','Guaritas','Viana','ES','29135000'
-
-('TRANSPORTE EXCELSIOR LTDA','Av. Copacabana, s/n, Morada das Laranjeiras','Serra','ES','29166820'
-
-('TRANSPORTES FS LTDA','Rod. ES - 010 - km 2,5','Jardim Limoeiro','Serra','ES','29164140'
-
-('TRANSPORTES FIOROTI LTDA','Rua Severino Zanol n∫ 135','Planalto de Carapina','Serra','ES','29162726'
-
-('TRANSPORTES HAVARIO LTDA ME','Rua 09 - Qda 13 - Lote 05 - N∫ 05','Arlindo Vilasch','Viana','ES','29135000'
-
-('TRANSPORTES ICONHA LTDA','Av. Danilo Monteirode Castro, n∞ 278','Centro','Iconha','ES','29280000'
-
-
-('TRANSPORTES M.A.L.U LTDA (MALU TRANSPORTES)','Av. Central, s/n, Campo Verde CEP:29135-000 - Viana/ES	Viana
-('TRANSPORTES SEM LIMITE LTDA ME','Rua AmÈrica - 500 - Campo Grande Cep: 29150-790 - Cariacica - ES	Cariacica
-('TRANSPORTES SERVI«OS E REPRESENTA«’ES TENORIO LTDA  ME','Rua Rosa Vermelha, 777 - Novo MÈxico Cep: 29104 - 030 - Vila Velha ES Vila Velha
-
-
-('TRANSPAPINHA TRANSP. LOG. ARMAZENAGEM LTDA R. Orlando Caliman, n∫ 275, Jardim Camburi  VitÛria/ES - CEP: 29.090-220 n∫ Caixa postal: 19246 EndereÁo para correspondencia: Av™ Brasil, n∫ 1322 ñ Sala 07, Novo Horizonte - Serra  -  ES CEP: 29.163-331 - P·tio Posto Novo Horizonte (Bandeira Ipiranga)
-('TRANSPOSUL TRANSPORTES LTDA Rua Maranh„o, n∫10, Jardim AmÈrica, CEP:29140-482 - Cariacica/ES	Cariacica
-('TRANSUI«A LOCA«√O E PRESTA«√O DE SERVI«OS LTDA Rua Geraldo Del Puppo s/n Lotes 11 e 13 quadra VII ñ CIVIT II ñ SERRA - ES - CEP 29.168-074 ( Ao lado da empresa Perfilados Rio Doce )
-('TRANSZERO TRANSPORTADORA DE VEÕCULOS LTDA Av. Civit I, 497 - Bairro Civit I - Serra - ES - CEP: 29168-045"	Serra
-('TRES TRANSPORTES LTDA Rod. BR 101, km265, s/n, Laranjeiras Velha Serra/ES CEP: 29162-122	Serra
-('TRESELES TRANSPORTE DE CARGAS LTDA (PRETTI CARGAS) Rua 06 D ñ Quadra XIII D Civit II ñCEP:29168-070 ñ Serra/ES"	SERRA
-('TRD TRANSPORTE E LOGÕSTICA Rua GuardÍnia, n∞112 - Serra Dourada II - Serra - ES - Cep: 29171-239"	Serra	
-('TURRA & ARTILLES LTDA R. Samuel Meira Brasil, n∫ 95, Gleba L Taquara II - CEP: 29.166.800 - Serra/ES
-('UNIENG LOGÕSTICA LTDA Rua Antonio Velozo de Azevedo s/n ñ Jardim Limoeiro ñ Serra-ES ñ Cep: 29164-066 Serra
-('USIFAST LOGÕSTICA INDUSTRIAL S/A Rod. BR 101 Norte - 2320 - Sala: 08 - KM 267,73 - S„o Geraldo - Serra - ES - CEP: 29.163-387 - Posto Planalto ( em frente a Hiunday )                                                                                                                                                                   Caixa Postal 040-099 - Av. Presidente Castelo branco, n∫1460 ñ Carapina - Serra ñ ES - CEP 29160-970	Serra
-('VANAMA TRANSPORTES LTDA Rod. Governador JosÈ Henrique Sete n∫ 01 ñ Bairro: Planeta ñ Cariacica-ES  Cep: 29156-775	Viana
-('VINHEDOS TRANSPORTES LTDA Rua Nove ñ Lote 07 ñ Quadra 13 ñ s/n ñ Loteamento Arlindo Vilaschi - Viana ñ ES  - CEP 29135-000 Viana
-('VIRC COMERCIO E TRANSPORTES LTDA Rodovia Br 262 - Km 6,5 - Loja 09 - Pavilh„o 02 Ceasa  Cep: 29145-906 - Cariaca ES	Cariacica
-('VIX LOGÕSTICA S/A Av. JerÙnimo Vervloet, n∫ 275 - Goiabeiras  VitÛria - ES   CEP 29070-350	VitÛria
-('WALDEMIRO BERGER - TRANSPORTES BERGER Rodovia. Afonso Schwab - km 01 - Santa Maria de Jetib· ñ ES  CEP  29645-000 	Santa Maria de Jetib·
-('WID TRANSPORTES LTDA Av. Marechal Humberto de Alencar, n 1311, Cobil‚ndia - CEP: 29111-500 - Vila Velha/ES	Vila Velha
-('WINSTON TRANSPORTES LTDA Rua Euclides da Cunha - 33 ñ ParaÌso - Cachoeiro de Itapemirim ñ ES CEP 29304-130 Cachoeiro de Itapemirim
-('WORK TRANSPORTES LTDA Rua Coelho Neto, 93 - Jardim Limoeiro Cep: 26164 - 045 - Serra ES Serra
-('YPIRANGA TRANSP.  PESADOS LTDA-ME Rua Estrada Cais de Capuaba, 999 - Sl 03 Ilha das Flores - Vila Velha - Cep: 29115-486 Vila Velha
-	
