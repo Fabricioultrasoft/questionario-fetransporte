@@ -53,7 +53,6 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-
         public void Excluir (int Id )
         {
             Empresa empresaExcluir = Banco.Empresa.Where(x => x.EmpresaID == Id).First();

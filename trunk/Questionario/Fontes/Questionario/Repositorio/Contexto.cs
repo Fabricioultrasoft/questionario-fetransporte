@@ -9,17 +9,13 @@ using Dominio;
 
 namespace Repositorio
 {
-    public class Contexto: DbContext
+    public class Contexto : DbContext
     {
         public DbSet<Cargo> Cargo { get; set; }
         public DbSet<Federacao> Federacao { get; set; }
-        public DbSet<Sindicato> Sindicato  { get; set; }
-        public DbSet<Funcionario> Funcionario  { get; set; }
-        public DbSet<SetorArea> SetorArea  { get; set; }
-
-        //public DbSet<UsuarioEmpresa> UsuarioEmpresa  { get; set; }
-        //public DbSet<UsuarioFederacao> UsuarioFederacao  { get; set; }
-        //public DbSet<UsuarioSindicato> UsuarioSindicato { get; set; }
+        public DbSet<Sindicato> Sindicato { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
+        public DbSet<SetorArea> SetorArea { get; set; }
 
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
@@ -30,14 +26,6 @@ namespace Repositorio
 
         public DbSet<Questionario> Questionario { get; set; }
         public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
-
         public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
-
-        //public Contexto()
-        //    : base("name=Contexto")
-        //{
-
-        //}        
-
     }
 }

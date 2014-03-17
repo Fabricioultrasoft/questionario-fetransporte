@@ -56,7 +56,6 @@
     <Compile Include="AppUsuarioFederacao.cs" />
     <Compile Include="AppUsuarioSindicato.cs" />
     <Compile Include="dto\DtoCargo.cs" />
-    <Compile Include="dto\DtoCidadeBairro.cs" />
     <Compile Include="dto\DtoEmpresa.cs" />
     <Compile Include="dto\DtoSindicato.cs" />
     <Compile Include="dto\DtoSetorArea.cs" />
