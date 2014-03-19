@@ -16,6 +16,7 @@ namespace ConsoleTeste
             ConsoleKeyInfo cki = new ConsoleKeyInfo();
             Console.WriteLine("Digite: F1 PARA ACESSAR AS OPÇÕES DE SINDICATOS");
             Console.WriteLine("Digite: F2 PARA ACESSAR AS OPÇÕES DE USUÁRIOS");
+            Console.WriteLine("Digite: F3 PARA ACESSAR AS OPÇÕES DE SETORES E AREAS");
             cki = Console.ReadKey(true);
             #endregion
 
@@ -25,10 +26,10 @@ namespace ConsoleTeste
                 AppSindicato SindicatoApp = new AppSindicato();
 
                 Console.WriteLine("\t Digite: 1 para listar os sindicatos e as empresas");
+                
                 cki = Console.ReadKey(true);
                 if (cki.Key == ConsoleKey.D1)
                 {
-                    cki = Console.ReadKey(true);
                     Console.WriteLine("-----");
                     var listaDeSindicatos = SindicatoApp.Listar();
                     foreach (var sindicato in listaDeSindicatos)
@@ -49,6 +50,8 @@ namespace ConsoleTeste
             {
                 Console.WriteLine("\t Digite: 1 para Inserir novo usuário.");
                 Console.WriteLine("\t Digite: 2 para validar usuário.");
+
+                cki = Console.ReadKey(true);
 
                 DtoUsuario usuarioDto = new DtoUsuario();
                 AppUsuario UsuarioApp = new AppUsuario();
@@ -84,15 +87,35 @@ namespace ConsoleTeste
                         Console.WriteLine("USUARIO NAO EXISTE.");
                     }
                 }
-
+            }
             #endregion
+            #region -- SETORAREA
+            else if (cki.Key == ConsoleKey.F3)
+            {
+                AppSetorArea SetorAreaApp = new AppSetorArea();
 
-                else if (cki.Key == ConsoleKey.D0)
+                Console.WriteLine("\t Digite: 1 para listar as areas");
+                
+                cki = Console.ReadKey(true);
+                
+                if (cki.Key == ConsoleKey.D1)
                 {
-                    Console.WriteLine("Console FINALIZADO");
+                    Console.WriteLine("-----");
+                    var listaDeSetoresAreas = SetorAreaApp.Listar();
+                    foreach (var setorarea in listaDeSetoresAreas )
+                    {
+                        Console.WriteLine("{0} - {1} ", setorarea.SetorAreaID, setorarea.NomeSetorArea );
+                    }
+                    Console.ReadKey();
                 }
             }
-            Console.ReadKey();
+            #endregion
+
+           else if (cki.Key == ConsoleKey.D0)
+           {
+               Console.WriteLine("Console FINALIZADO");
+           }
+        Console.ReadKey();
         }
     }
 }

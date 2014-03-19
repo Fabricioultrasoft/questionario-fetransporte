@@ -20,10 +20,18 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public IEnumerable<SetorArea> Listar()
+        public IEnumerable<DtoSetorArea> Listar()
         {
-            var retorno = Banco.SetorArea.ToList();
+            var retorno = (from s in Banco.SetorArea
+                           select new DtoSetorArea
+                           {
+                               SetorAreaID = s.SetorAreaID,
+                               NomeSetorArea = s.NomeSetorArea
+                           }).ToList();
             return retorno;
+
+            //var retorno = Banco.SetorArea.ToList();
+            //return retorno;
         }
 
     }
