@@ -1,0 +1,492 @@
+
+
+
+SINDICATO: GVBus
+EMPRESA: Expresso Santa Paula LTDA.
+ 
+SETOR/ÁREA;CARGO;MATRÍCULA;FUNCIONÁRIO;AÇÃO
+Administrativo;Arrecadação;88;555;N!r
+Administrativo;Arrecadação;;A;N!r
+Administrativo;Arrecadação;###;fafa;N!r
+Administrativo;Arrecadação;;sss;N!r
+Operação;Assistente/Auxiliar de Tráfego;5823;Fabiana Pereira Dos Santos;N!r
+Operação;Fiscal;2105;Maricharle Rodrigues Gregório;N!r
+Operação;Motorista;215;Aldemir Emiliano Barbosa;N!r
+Operação;Motorista;226;Alexo Gama Ribeiro;N!r
+Operação;Motorista;223;Alidelson Alves;N!r
+Operação;Motorista;12;Cristiano Pablo De Bortoli;N!r
+Operação;Motorista;228;Daniel Alvarinto Dos Santos;N!r
+Operação;Motorista;219;Elton Batista Dos Santos;N!r
+Operação;Motorista;214;Fabiano Gomes;N!r
+Operação;Motorista;229;Fabiano Teixeira Cardoso;N!r
+Operação;Motorista;238;Fabio Junior De Souza;N!r
+Operação;Motorista;230;Flavio Soares Nunes;N!r
+Operação;Motorista;2121;Igo Nunes De Souza;N!r
+Operação;Motorista;225;Jose Dos Anjos Ferreira;N!r
+Operação;Motorista;220;Leoni Tetelof Dos Santos;N!r
+Operação;Motorista;143;Marcos Paulo Simões;N!r
+Operação;Motorista;78;Misael Piol Rosa;N!r
+Operação;Motorista;234;Robson Prado Dos Santos;N!r
+Operação;Motorista;224;Tyago Teixeira Lessa;N!r
+Operação;Motorista;6057;Washington Humberto Dos Santos;N!r
+
+
+*********************************************************************************
+
+SINDICATO: GVBus
+EMPRESA: Floramar Auto Homnibus Ltda.
+ 
+SETOR/ÁREA;CARGO;MATRÍCULA;FUNCIONÁRIO;AÇÃO
+Administrativo;Arrecadação;123;Laisa Breda;N!r
+Operação;Motorista;260;Adenilson Da Silva Alves;N!r
+Operação;Motorista;1338;Alessandra Araujo Gonçalves;N!r
+Operação;Motorista;1337;Alex Da Silva Ferreira;N!r
+Operação;Motorista;1282;Alexsandro Da Silva Gama;N!r
+Operação;Motorista;1446;Antônio Ricardo Costa;N!r
+Operação;Motorista;1333;Gilberto Costa Pereira;N!r
+Operação;Motorista;1132;Janine Amaral Oliveira Motta;N!r
+Operação;Motorista;1238;Moizés Vieira Junior;N!r
+
+
+
+###########################################################################################
+
+
+SINDICATO: SETPES
+EMPRESA: VIAÇÃO FLECHA BRANCA LTDA.
+ 
+SETOR/ÁREA;CARGO;MATRÍCULA;FUNCIONÁRIO;AÇÃO
+Administrativo;Auxiliar / Assistente / Analista;4674;ALINE FERNANDES VIEIRA DUARTE;N!r
+Administrativo;Auxiliar / Assistente / Analista;5673;BRUNA MAYRA SÁTOLO GUALANDI;N!r
+Administrativo;Auxiliar / Assistente / Analista;5193;DIOGENES MOZER DA SILVA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5239;DRUZILA NUNES NAVARRO;N!r
+Administrativo;Auxiliar / Assistente / Analista;4554;EDUARDO VALDO GOMES;N!r
+Administrativo;Auxiliar / Assistente / Analista;5666;GERLANE MACHADO CORDEIRO BAIÔCO;N!r
+Administrativo;Auxiliar / Assistente / Analista;5674;GISELLE COUTINHO GONÇALVES;N!r
+Administrativo;Auxiliar / Assistente / Analista;5451;GUSTAVO DA CARVALO PAIVA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5015;JAQUELINE DOMINGUES LOMAR;N!r
+Administrativo;Auxiliar / Assistente / Analista;4973;JHONATAN AUGUSTO MINTO;N!r
+Administrativo;Auxiliar / Assistente / Analista;4624;JOSE WILSON DE SALLES;N!r
+Administrativo;Auxiliar / Assistente / Analista;4341;JOSELY FRANCO TEIXEIRA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5667;JOSIANE NUNES NAVARRO LOPES;N!r
+Administrativo;Auxiliar / Assistente / Analista;5658;KERLON GOMES DA SILVA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5680;LETICIA CUNHA DIAS;N!r
+Administrativo;Auxiliar / Assistente / Analista;531;LIVIA DA SILVA ALCANTRA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5414;LUCAS TELES SANTANA;N!r
+Administrativo;Auxiliar / Assistente / Analista;5208;LUCIENE FERNANDES DE COUTO NASCIMENTO;N!r
+Administrativo;Auxiliar / Assistente / Analista;5661;MARCELO E. SANTOS;N!r
+Administrativo;Auxiliar / Assistente / Analista;5531;TATYANA SANTOS MENEGUSSI;N!r
+Administrativo;Compras;5396;DYONIS CARDOSO LEITE;N!r
+Administrativo;Serviços Gerais;4653;ADEMIR MOREIRA;N!r
+Administrativo;Serviços Gerais;5658;ADILSON PEREIRA DA CONCEIÇÃO;N!r
+Administrativo;Serviços Gerais;5017;ALDOMAR DE SOUZA;N!r
+Administrativo;Serviços Gerais;4387;CLAUDIMAR DOS SANTOS MAGALHAES;N!r
+Administrativo;Serviços Gerais;3971;DEOCREMES VENTURA BORGES;N!r
+Administrativo;Serviços Gerais;5083;FABIO DA SILVA CORREA;N!r
+Administrativo;Serviços Gerais;3207;JOSE CARLOS ZARDO;N!r
+Administrativo;Serviços Gerais;5045;JOSE RUBENS BAIENSE GARCIA;N!r
+Administrativo;Serviços Gerais;5456;LUIZ CLAUDIO MENON ROCHA;N!r
+Administrativo;Serviços Gerais;5150;MARCIANO CARDOSO GOMES;N!r
+Administrativo;Serviços Gerais;5663;SEBASTIAO SERGIO THOME ABREU;N!r
+Administrativo;Serviços Gerais;5664;SEBASTIAO SOUZA DA SILVA;N!r
+Comercial;Bilheteiro;2896;MARY ELLEN RAMOS DA COSTA;N!r
+Contabilidade;Assistente;5513;TISSIANE SANTOS LUCAS;N!r
+Financeiro;Analista;4158;SORAYA FERNANDES CANHOLATO LIMA;N!r
+Financeiro;Assistente;5485;FLÁVIA PEREIRA FERREIRA;N!r
+Financeiro;Assistente;5382;YVE OLIVEIRA FERREIRA;N!r
+Gestão de Pessoas;Analista;4605;ANANIEL PEREIRA DOS SANTOS;N!r
+Gestão de Pessoas;Assistente;5637;DIEGO MANCINI TRES;N!r
+Gestão de Pessoas;Auxiliar;5453;BRUNIELLE ALMEIDA CARDOZO;N!r
+Gestão de Pessoas;Auxiliar;5384;EDILANE GOULARTE DA FONSECA;N!r
+Gestão de Pessoas;Auxiliar;5679;MAYARA GOMES DA SILVA DESSAUNE;N!r
+Gestão de Pessoas;Auxiliar;5518;PATRICIA CARVALHO SERRINHA;N!r
+Gestão de Pessoas;Supervisor / Encarregado / Coordenador;4558;ALCIMAR LEITE LEMOS;N!r
+Gestão de Pessoas;Supervisor / Encarregado / Coordenador;5543;ENILSON BARBOSA SILVA;N!r
+Gestão de Pessoas;Supervisor / Encarregado / Coordenador;5435;MARCOS RIBEIRO LAURIANO;N!r
+Manutenção;Abastecimento;4391;ENIVALDO MACHADO CAMILO;N!r
+Manutenção;Abastecimento;5612;NILTON CÉZAR MIRANDA DA ROCHA;N!r
+Manutenção;Abastecimento;5617;WILSON PINTO DE OLIVEIRA;N!r
+Manutenção;Almoxarifado;5618;AMARO NORBIATO;N!r
+Manutenção;Almoxarifado;5671;MARCOS PAULO CRUZ SABRA;N!r
+Manutenção;Almoxarifado;5621;RICARDO DUSSONI CARLETTE;N!r
+Manutenção;ASG (Limpeza de frota);5675;ARISTOMENIS DE OLIVEIRA;N!r
+Manutenção;ASG (Limpeza de frota);5593;CARLOS MAGNO RIBEIRO CASSIMIRO;N!r
+Manutenção;ASG (Limpeza de frota);4521;ELIZABETE RODRIGUES DE SOUZA;N!r
+Manutenção;ASG (Limpeza de frota);5607;FERNANDO RIBEIRO CASSIMIRO;N!r
+Manutenção;ASG (Limpeza de frota);5631;GEDSON MOREIRA DA SILVA;N!r
+Manutenção;ASG (Limpeza de frota);5433;HELENA DEBONA MACHADO;N!r
+Manutenção;ASG (Limpeza de frota);3226;IVANETE NALIM DE ALMEIDA;N!r
+Manutenção;ASG (Limpeza de frota);5600;IZABEL CARVALHO CAPAZ;N!r
+Manutenção;ASG (Limpeza de frota);5596;JOSE NATAL SANTANA DE LIMA;N!r
+Manutenção;ASG (Limpeza de frota);5601;LUCIO ANTONIO DE JESUS;N!r
+Manutenção;ASG (Limpeza de frota);5608;MARCO AURELIO MOREIRA CLARINDO;N!r
+Manutenção;ASG (Limpeza de frota);5613;OSVALDO MOREIRA DE SOUZA;N!r
+Manutenção;ASG (Limpeza de frota);5598;RENATO CABRAL;N!r
+Manutenção;ASG (Limpeza de frota);5599;RONALDO DA SILVA EVARISTO DE A.;N!r
+Manutenção;ASG (Limpeza de frota);5606;ROSIVANE MOZER FARIAS MENDES;N!r
+Manutenção;ASG (Limpeza de frota);5540;SARA INOCENCIO BASILIO REZENDE;N!r
+Manutenção;ASG (Limpeza de frota);5684;WALDIR SOARES NOGUEIRA;N!r
+Manutenção;Borracheiro;5541;CARLOS EDUARDO RAINHA;N!r
+Manutenção;Borracheiro;5590;MARCIO CLARINDO MOREIRA JUNIOR;N!r
+Manutenção;Borracheiro;5591;NILTON CESAR CASSIMIRO;N!r
+Manutenção;Eletricista;5578;JOSE LUIZ DA SILVA;N!r
+Manutenção;Lanterneiro;1672;ALCENY DOS SANTOS;N!r
+Manutenção;Lanterneiro;2084;ANDRE LUIZ MIRANDA;N!r
+Manutenção;Lanterneiro;5626;ANTONIO AILTON LOPES;N!r
+Manutenção;Lanterneiro;2236;CELSO GONÇALVES DE JESUS;N!r
+Manutenção;Lanterneiro;2480;CLEBER COLLARES ROZA;N!r
+Manutenção;Lanterneiro;5630;ENES LUIZ DOS ANJOS;N!r
+Manutenção;Lanterneiro;4774;GELSON DE BRITO JORDAO;N!r
+Manutenção;Lanterneiro;5574;JAIME CORREA FERREIRA;N!r
+Manutenção;Lanterneiro;5577;JOSE CARLOS POHNEER RAMOS;N!r
+Manutenção;Lanterneiro;5633;JOSE DE OLIVEIRA;N!r
+Manutenção;Lanterneiro;5634;ROBERTO DE ALMEIDA;N!r
+Manutenção;Lanterneiro;5635;VALTER FERREIRA NEVES;N!r
+Manutenção;Lanterneiro;5672;VERILDO PACHECO DA SILVA;N!r
+Manutenção;Lanterneiro;5636;WALASE SOUZA MACHADO;N!r
+Manutenção;Manobra;5595;ELIAS INACIO;N!r
+Manutenção;Manobra;5377;JOSUEL MOREIRA REIS;N!r
+Manutenção;Manobra;5687;REINALDO PEREIRA DA ROCHA;N!r
+Manutenção;Manobra;5616;RODRIGO DA SILVA INOCENCIO;N!r
+Manutenção;Mecânico;1932;ANTONIO FERNANDO GOMES;N!r
+Manutenção;Mecânico;4339;DILCELIO DA SILVA ASSUNÇÃO;N!r
+Manutenção;Mecânico;5100;ELDER ALTOE;N!r
+Manutenção;Mecânico;5567;FABRICIO RORIGUES DA COSTA;N!r
+Manutenção;Mecânico;5545;FERNANDO CHAVES DOS SANTOS;N!r
+Manutenção;Mecânico;4616;GABRIEL SOUSA ABREU;N!r
+Manutenção;Mecânico;5573;IVANILDO DE ARAUJO;N!r
+Manutenção;Mecânico;5575;JORGE LUIZ LIMA;N!r
+Manutenção;Mecânico;5579;JULIO SIRINO SANTOS;N!r
+Manutenção;Mecânico;5544;LUCIANO DE OLIVEIRA SHAYDER;N!r
+Manutenção;Mecânico;4732;MAGNO BENEVIDES MARQUES;N!r
+Manutenção;Mecânico;5220;OBERTO CIRINO DE FREITAS;N!r
+Manutenção;Mecânico;5582;PAULO HENRIQUE SABINO DE SOUZA;N!r
+Manutenção;Mecânico;5583;RODRIGO GUIMARAES ABREU;N!r
+Manutenção;Mecânico;5584;RONALDO GOMES;N!r
+Manutenção;Mecânico;5585;SEBASTIÃO ANTÔNIO BENTO;N!r
+Manutenção;Mecânico;5586;UEDSON CAMARGO RODRIGUES;N!r
+Manutenção;Mecânico;3098;VALDECI LAZARO GOMES;N!r
+Manutenção;Mecânico;5588;VITOR SILVA MANIFESTO;N!r
+Manutenção;Mecânico;5589;WAGNER MACHADO BRITO;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;5564;DEUSDETH BARRETO;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;4521;EDIMAR MENDES DA SILVA;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;5609;EDIMAR MENDES DA SILVA;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;5592;RAIMUNDO PONTES ARAUJO;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;4372;THIAGO SOUZA DIAS;N!r
+Operação;Assistente/Auxiliar de Tráfego;5328;CARLOS EDUARDO SPADA NEVES;N!r
+Operação;Assistente/Auxiliar de Tráfego;4673;ISABEL CRISTINA DE ALMEIDA;N!r
+Operação;Assistente/Auxiliar de Tráfego;4151;JORGE LUIS CIPRIANO;N!r
+Operação;Assistente/Auxiliar de Tráfego;5653;JOSE RICARDO GUIMARAES;N!r
+Operação;Assistente/Auxiliar de Tráfego;5158;RODRIGO BETTCHER RODRIGUES;N!r
+Operação;Assistente/Auxiliar de Tráfego;4878;ZILENE CASSIANO;N!r
+Operação;Cobrador;4101;ADEMIR JOSÉ ROLA;N!r
+Operação;Cobrador;5552;ADER LOURENÇO DOS SANTOS;N!r
+Operação;Cobrador;5524;ADILSON MISAEL DA SILVA;N!r
+Operação;Cobrador;5400;ALCELEA PORTO DE SOUZA CUNHA;N!r
+Operação;Cobrador;5248;ALCENI PAULO CARDOSO;N!r
+Operação;Cobrador;5364;ALESSANDRA APARECIDA RANGEL;N!r
+Operação;Cobrador;5253;ALEXANDRE ALMEIA DOS SANTOS;N!r
+Operação;Cobrador;4481;ALEXANDRE RODRIGUES MORAIS;N!r
+Operação;Cobrador;5479;ALOISIO DE OLIVEIRA DUCINO;N!r
+Operação;Cobrador;4313;AMARILDO JOSÉ DE FREITAS;N!r
+Operação;Cobrador;5357;ANDERSON MARTINS PINTO;N!r
+Operação;Cobrador;5506;ANDRÉ SANTOS DE JESUS;N!r
+Operação;Cobrador;5202;ANDREA LIRA PIRES FELICIANO;N!r
+Operação;Cobrador;5291;ANGELA MARIA GONÇALVES DE REZENDE;N!r
+Operação;Cobrador;5516;ANGELA MARIA PEREIRA GOMES;N!r
+Operação;Cobrador;5021;ANTONIO FRANCISCO GOMES;N!r
+Operação;Cobrador;3615;ARLINDO FRANCISCO FIGUEIRÓ;N!r
+Operação;Cobrador;5500;BRUNO SANTOS GOMES;N!r
+Operação;Cobrador;5511;CARLOS ALEXANDRE PEREIRA DA SILVA;N!r
+Operação;Cobrador;5455;CARLOS AUGUSTO MARIN;N!r
+Operação;Cobrador;5368;CRISTIANO ANSELME;N!r
+Operação;Cobrador;5498;CRISTIANO BARBOSA MOREIRA;N!r
+Operação;Cobrador;4941;DANIEL PEREIRA PAGANOTI;N!r
+Operação;Cobrador;5430;DORALICE DE OLIVEIRA SATURMINO;N!r
+Operação;Cobrador;5469;DOUGLAS RIBEIRO CARVALHO;N!r
+Operação;Cobrador;5478;EDER FARIA RODRIGUES;N!r
+Operação;Cobrador;5459;EDIANE CARVALHO DO NASCIMENTO;N!r
+Operação;Cobrador;5107;EDILEIMAR POPPE DA COSTA;N!r
+Operação;Cobrador;3519;EDMILSON JOSÉ MARCHEZI;N!r
+Operação;Cobrador;5542;EDNA SANTOS GOULARTE DA FONSECA;N!r
+Operação;Cobrador;5279;EDUARDO IGNÁCIO DOS SANTOS;N!r
+Operação;Cobrador;5484;ELIAS JUNIORCAMPOS;N!r
+Operação;Cobrador;5503;ELISEU JOAQUIM RIBEIRO;N!r
+Operação;Cobrador;5125;ELIZABETH DE OLIVEIRA SERPA;N!r
+Operação;Cobrador;4676;ELIZABETH DE SOUZA FELICIANO;N!r
+Operação;Cobrador;5091;ELIZANGELA FERREIRA NASCIMENTO;N!r
+Operação;Cobrador;5271;ELSO BORGES DOS SANTOS;N!r
+Operação;Cobrador;5690;EMERSON LUIS JUBINI;N!r
+Operação;Cobrador;5224;FAUSER MENINI MADEIRA;N!r
+Operação;Cobrador;5559;FERNANDO BINO FERRARI;N!r
+Operação;Cobrador;5175;FERNANDO JULIO DA SILVA;N!r
+Operação;Cobrador;5426;FRANCISCO JOSÉ PEIXOTO;N!r
+Operação;Cobrador;5491;GEUARLES COSTA DA SILVA;N!r
+Operação;Cobrador;5298;GICEA MONTEIRO BOVIAL DA SILVA;N!r
+Operação;Cobrador;4835;GILCEA BRITES DE OLIVEIRA;N!r
+Operação;Cobrador;4881;GILMARA TIAGO MANTOVANELI;N!r
+Operação;Cobrador;4447;GILSON COSTA;N!r
+Operação;Cobrador;5278;GISELE COSTA VIGUETI;N!r
+Operação;Cobrador;5295;GLAUCILETE MAGANHA TEIXEIRA;N!r
+Operação;Cobrador;5420;HELIO TORRES FAVORIS;N!r
+Operação;Cobrador;5558;JACQUES BERNARDO DA SILVA;N!r
+Operação;Cobrador;5460;JAQUELINE RODRIGUES DE SOUSA;N!r
+Operação;Cobrador;5557;JETER JOSE SILVA;N!r
+Operação;Cobrador;3318;JOÃO BATISTA RODRIGUES;N!r
+Operação;Cobrador;5428;JOCIVANIA FERREIRA;N!r
+Operação;Cobrador;5075;JOELMA S. SILVA;N!r
+Operação;Cobrador;5280;JONATHAN DE CASTRO NERYS;N!r
+Operação;Cobrador;4579;JONIMAR FELISBERTO DE SOUZA;N!r
+Operação;Cobrador;5317;JORCILENE GRACIANO ABREU;N!r
+Operação;Cobrador;4020;JORGE SILVA;N!r
+Operação;Cobrador;5556;JOSE AILTON LIMA FERREIRA;N!r
+Operação;Cobrador;5539;JOSE COSME MENDES DE LIRIO;N!r
+Operação;Cobrador;2659;JOSÉ MARCELO CARREIRO;N!r
+Operação;Cobrador;4657;JOSÉ MARIO DA SILVA BARRETO;N!r
+Operação;Cobrador;5548;JOSIMAR PEREIRA ROCHA;N!r
+Operação;Cobrador;5641;KATIA ELANI GOMES DA SILVA;N!r
+Operação;Cobrador;5074;LAUDICEIA MENEZES;N!r
+Operação;Cobrador;5431;LEIDI DAIANA SANTIAGO DE SOUZA;N!r
+Operação;Cobrador;5321;LORENA PEREIRA COCO;N!r
+Operação;Cobrador;5183;LUCIA FERNANDES TONCHEFF;N!r
+Operação;Cobrador;4662;LUCIANO DA ANDRADE RAIMUNDO;N!r
+Operação;Cobrador;5247;LUCIANO DOMICIANO DOS ANJOS;N!r
+Operação;Cobrador;5336;LUCIENE SANTOS DE JESUS COSTA;N!r
+Operação;Cobrador;5263;MARCELO JOSÉ CONCEIÇÃO;N!r
+Operação;Cobrador;5441;MARCIA GUMIEIRO TEXEIRA;N!r
+Operação;Cobrador;5415;MARCOS ANTONIO BERNARDO;N!r
+Operação;Cobrador;4096;MARCOS ANTONIO MOTA MINGUTA;N!r
+Operação;Cobrador;5268;MARCOS DOS SANTOS;N!r
+Operação;Cobrador;5446;MARGARETH CAMARGO MARTINS;N!r
+Operação;Cobrador;5445;MARIA APARECIDA DE MIRANDA;N!r
+Operação;Cobrador;4722;MARIA DA PENHA BIZI GONÇALVES;N!r
+Operação;Cobrador;4728;MARIA DO SOCORRO COELHO DE OLIVEIRA;N!r
+Operação;Cobrador;4858;MARIA NAZARETH PATRICIO DE OLIVEIRA;N!r
+Operação;Cobrador;5190;MARIA ROSA MARVILA;N!r
+Operação;Cobrador;0756;MARICEIA LUCIA PESTANA;N!r
+Operação;Cobrador;5490;MARILENE DA SILVA GOMES;N!r
+Operação;Cobrador;5512;MARLY MARINS DA SILVA;N!r
+Operação;Cobrador;5528;MESSIAS DOS ANJOS PEREIRA;N!r
+Operação;Cobrador;5538;MICHELE VIEIRA BELEM NUNES;N!r
+Operação;Cobrador;5037;MIRIAN AUREA DA SILVA;N!r
+Operação;Cobrador;5425;NILCE NOGUEIRA MUNIZ;N!r
+Operação;Cobrador;5242;OZEAS CARDOSO FERREIRA;N!r
+Operação;Cobrador;3257;PAULO COUTINHO;N!r
+Operação;Cobrador;4736;PAULO HENRIQUE OLIVEIRA SILVA;N!r
+Operação;Cobrador;5019;RAIMUNDO MONATO DE SOUSA;N!r
+Operação;Cobrador;4859;RAQUEL DE JESUS GAMBARTE;N!r
+Operação;Cobrador;4829;RITA APARECIDA GUILHERME DE OLIVEIRA;N!r
+Operação;Cobrador;5283;ROBERTA DUSSONI CARLETTE;N!r
+Operação;Cobrador;4265;ROGERIO CRESCÊNCIO;N!r
+Operação;Cobrador;5366;ROGERIO DA SILVA CAXIAS;N!r
+Operação;Cobrador;4069;RONALDO BITENCOURT DOS SANTOS;N!r
+Operação;Cobrador;4826;ROSAILDA PEREIRA DOS SANTOS;N!r
+Operação;Cobrador;5172;ROSANE MARQUES DE LIMA;N!r
+Operação;Cobrador;4671;ROSANGELA SILVA CEZAR;N!r
+Operação;Cobrador;5547;ROSEMBERG RIBAS FILHO;N!r
+Operação;Cobrador;4810;SALVADOR BELLATO BONANDI;N!r
+Operação;Cobrador;4841;SANDRA PEREIRA P. SANTANA;N!r
+Operação;Cobrador;4841;SANDRA PEREIRA PINHEIRO SANTANA;N!r
+Operação;Cobrador;4453;SANDRO MILHEIROS DE AZEVEDO;N!r
+Operação;Cobrador;5243;SELMA GOMES DOS SANTOS SANTIAGO;N!r
+Operação;Cobrador;5221;SILVIA FERRAZ;N!r
+Operação;Cobrador;5151;SIMONE MARIA MEZINI RODRIGUES;N!r
+Operação;Cobrador;5335;SUELI MARTINS MEIRELES;N!r
+Operação;Cobrador;5345;TATIANE MARCELINO;N!r
+Operação;Cobrador;5162;TEREZINHA DE FATIMA J. ASEVEDO;N!r
+Operação;Cobrador;5162;TEREZINHA JARDIM;N!r
+Operação;Cobrador;5041;VALDECI CABRAL ANTUNES;N!r
+Operação;Cobrador;5055;VALERIA APARECIDA GOMES;N!r
+Operação;Cobrador;4872;VALERIA MARIA DA SILVA;N!r
+Operação;Cobrador;4635;VALERIO MACHADO;N!r
+Operação;Cobrador;5522;VANILDO AGUIAR DA SILVA;N!r
+Operação;Cobrador;5560;VINICIUS OLIVEIRA BAPTISTA;N!r
+Operação;Cobrador;5461;WAGNER ALMEIDA RAMOS;N!r
+Operação;Cobrador;5427;WAGNER DE OLIVEIRA MARQUES;N!r
+Operação;Cobrador;5678;WELITON CARDOSO DA SILVA;N!r
+Operação;Fiscal;5338;ADINIL LIMA LEAL;N!r
+Operação;Fiscal;5195;GILSON PEREIRA;N!r
+Operação;Fiscal;5337;HENRIQUE CELSO DA SILVA;N!r
+Operação;Fiscal;5406;JOACYR VOLPATO;N!r
+Operação;Fiscal;5651;JOACYR VOLPATO;N!r
+Operação;Fiscal;5652;JONAS JESUS DIAS;N!r
+Operação;Motorista;4212;ADALTON MARTINS TIBURCIO;N!r
+Operação;Motorista;1310;ADECIR BRAGANÇA DE SOUZA;N!r
+Operação;Motorista;3393;ADEMIR DOS SANTOS SILVA;N!r
+Operação;Motorista;2863;ADILSON SARRIA;N!r
+Operação;Motorista;5510;AILTON DE ALMEIDA SOUZA;N!r
+Operação;Motorista;5254;ALDEIR DA SILVA PASSOS;N!r
+Operação;Motorista;5348;ALEX FERNANDES DA SILVA;N!r
+Operação;Motorista;5379;ALEX SILVA E SILVA;N!r
+Operação;Motorista;4064;ANDERSON ADMIRAL BETTCHER;N!r
+Operação;Motorista;5424;ANDERSON P. GOMES;N!r
+Operação;Motorista;1221;ANTONIO CARLOS PEREIRA;N!r
+Operação;Motorista;1224;ANTONIO CARLOS PEREIRA MERELLE;N!r
+Operação;Motorista;4153;ARIDELSON DINIZ SALES;N!r
+Operação;Motorista;4758;ARTUR SAMPAIO SILVA;N!r
+Operação;Motorista;4076;BENEDITO FERREIRA;N!r
+Operação;Motorista;5311;BRUNO HIPOLITO CARDOSO DOS SANTOS;N!r
+Operação;Motorista;5122;CARLOS ALBERTO VIANA DA ROCHA;N!r
+Operação;Motorista;4018;CARLOS ANTONIO DA SILVA;N!r
+Operação;Motorista;5269;CARLOS AUGUSTO FERREIRA DA COSTA;N!r
+Operação;Motorista;3815;CARLOS AUGUSTO SILVA;N!r
+Operação;Motorista;4058;CARLOS ROBERTO PETRI;N!r
+Operação;Motorista;4909;CHARLES FRANCIOLI CAMPOS;N!r
+Operação;Motorista;4024;CLEVIO RAMIRO DA SILVA;N!r
+Operação;Motorista;4865;CREMILSON VIANA;N!r
+Operação;Motorista;5519;CRISTIANO MAMEDE DURAES;N!r
+Operação;Motorista;4557;DANIEL MADEIRA;N!r
+Operação;Motorista;4127;DANIEL RANGEL RAMOS;N!r
+Operação;Motorista;4252;DEROCI BOSSOIS;N!r
+Operação;Motorista;4768;DEUSIMAR DE DEUS DA SILVA;N!r
+Operação;Motorista;3846;DIOGO DOS SANTOS SILVA;N!r
+Operação;Motorista;5215;EDIVAL BERNARDO DA SILVA;N!r
+Operação;Motorista;5492;EDIVALDO FERRARE NASCIMENTO;N!r
+Operação;Motorista;5042;EDUARDO CUSTODIO PEREIRA;N!r
+Operação;Motorista;4454;ELIANDRO DA SILVA CORREA;N!r
+Operação;Motorista;4454;ELIANDRO DA SILVA CORREIA;N!r
+Operação;Motorista;4537;ELIAS MIRANDA;N!r
+Operação;Motorista;4904;ELIEL MARTINS VALADARES;N!r
+Operação;Motorista;3852;ELIÉSIO BENEVIDES ESTEVES;N!r
+Operação;Motorista;4301;ERIVALDO FRANCISCO FERNANDES;N!r
+Operação;Motorista;5111;ERLON DE PAULA FERREIRA;N!r
+Operação;Motorista;4104;EZEQUIEL DA SILVA RAMOS;N!r
+Operação;Motorista;5489;FARLEI SILVERIO LOPES;N!r
+Operação;Motorista;3105;FRANCISCO ANTONIO DE OLIVEIRA;N!r
+Operação;Motorista;3710;FRANCISCO DA ASSIS BALBINO LEAL;N!r
+Operação;Motorista;5056;GEDSON MARCHIORI FIGUEIRA;N!r
+Operação;Motorista;5308;GELBER DE SOUZA PEREIRA;N!r
+Operação;Motorista;4873;GELIO MANOEL DOS SANTOS;N!r
+Operação;Motorista;4902;GENESIO DE SOUZA DOMINGUES;N!r
+Operação;Motorista;5638;GEOLINDO ALEXANDRE FERREIRA;N!r
+Operação;Motorista;5419;GERALDO PALMEIRAS;N!r
+Operação;Motorista;5391;GERVASIO DE SOUZA;N!r
+Operação;Motorista;4852;GILMAR JOSÉ DA COSTA;N!r
+Operação;Motorista;5375;GUSTAVO OLIVEIRA PORFIRIO;N!r
+Operação;Motorista;3992;ILSON GOMES DA SILVA;N!r
+Operação;Motorista;4988;ISMAEL SOUZA SIMOES;N!r
+Operação;Motorista;4815;ISMAEL VICENTE DE OLIVEIRA;N!r
+Operação;Motorista;5458;JADER JOSE ALOCHIO JORGE;N!r
+Operação;Motorista;1992;JASSON CARDOZO OLIVEIRA;N!r
+Operação;Motorista;5508;JEFFERSON DAS NEVES DE JESUS;N!r
+Operação;Motorista;4134;JOAO BATISTA BASILIO;N!r
+Operação;Motorista;5274;JOAO BATISTA DE OLIVEIRA;N!r
+Operação;Motorista;5274;JOAO BATISTA DE OLIVEIRA;N!r
+Operação;Motorista;5163;JOAO LUCIO BALIANA;N!r
+Operação;Motorista;3178;JOAQUIM ROBERTO;N!r
+Operação;Motorista;5395;JOBEL MIGUEL NOGUEIRA LIQUES;N!r
+Operação;Motorista;5327;JOCIMAR DA SILVA;N!r
+Operação;Motorista;5681;JOEL EUPHRASIO DE OLIVEIRA;N!r
+Operação;Motorista;5245;JORGE COELHO BENTO;N!r
+Operação;Motorista;5245;JORGE COELHO BENTO;N!r
+Operação;Motorista;4411;JOSAEL ASSIS DE MELO;N!r
+Operação;Motorista;5117;JOSÉ ANTONIO DE AZEVEDO;N!r
+Operação;Motorista;2461;JOSE BOLHOES DE ASSIS;N!r
+Operação;Motorista;4017;JOSÉ CARLOS NUNES;N!r
+Operação;Motorista;4377;JOSE EVALDO VIEIRA;N!r
+Operação;Motorista;5310;JOSE FELIPE DE OLIVEIRA;N!r
+Operação;Motorista;4084;JOSE FRANCISCO MENDES;N!r
+Operação;Motorista;5112;JOSE GILMAR CAPETINE;N!r
+Operação;Motorista;4940;JOSE LUIZ BONICENHA;N!r
+Operação;Motorista;3789;JOSE LUIZ MARTINS MACHADO;N!r
+Operação;Motorista;3266;JOSE LUIZ VALPASSO;N!r
+Operação;Motorista;5550;JOSÉ MARIA CAETANO MENDES;N!r
+Operação;Motorista;4955;JOSE RENATO MARINATO CARLETTI;N!r
+Operação;Motorista;3034;JOSENIR HEMETERIO;N!r
+Operação;Motorista;5444;JOVANI DE OLIVEIRA;N!r
+Operação;Motorista;4416;JUAREZ MORAIS DA SILVA;N!r
+Operação;Motorista;4759;JUDSON SUHETT DOMICIANO;N!r
+Operação;Motorista;5520;JULIO CESAR COLUCIO;N!r
+Operação;Motorista;5132;JUSCEI GOMES PEREIRA;N!r
+Operação;Motorista;5424;LEANDERSON DIAS GOMES;N!r
+Operação;Motorista;5436;LECI BERTÃO;N!r
+Operação;Motorista;4645;LEONCI PROVENSI;N!r
+Operação;Motorista;4656;LUCIANO DO AMARAL RAMOS;N!r
+Operação;Motorista;5642;LUIZ PEREIRA FELICIO;N!r
+Operação;Motorista;3682;LUIZ ROGERIO SARRIA FERREIRA;N!r
+Operação;Motorista;5639;MARCELO CUNHA;N!r
+Operação;Motorista;4811;MARCELO FERNANDES FRAGA;N!r
+Operação;Motorista;5454;MARCELO GOMES FERRARI;N!r
+Operação;Motorista;3325;MARCELO MARTINS DE MATTOS;N!r
+Operação;Motorista;2063;MARCIOLINO MONTEIRO;N!r
+Operação;Motorista;5121;MARCO ANTONIO DE LIMA PEREIRA;N!r
+Operação;Motorista;5285;MARCO ANTONIO VICENTE DE ARAUJO;N!r
+Operação;Motorista;5089;MAURO CÉSAR LOPES BELTCHER;N!r
+Operação;Motorista;5549;NILSON VIANA;N!r
+Operação;Motorista;3472;NILTON SERGIO M. PEREIRA;N!r
+Operação;Motorista;3472;NILTON SERGIO MANGIFESTE PEREIRA;N!r
+Operação;Motorista;5193;NOBERTO NOGUEIRA DA ROCHA;N!r
+Operação;Motorista;5365;OCIMAR QUARESMA MENEGUCI;N!r
+Operação;Motorista;5418;PAULO DA SILVA ARRUDA;N!r
+Operação;Motorista;5411;REGINALDO ERNESTO MARQUES;N!r
+Operação;Motorista;5371;RENATO BELMOND;N!r
+Operação;Motorista;5536;RICARDO LIMA DA SILVA;N!r
+Operação;Motorista;4866;ROBSON BARBOZA NEVES;N!r
+Operação;Motorista;5189;ROBSON PEREIRA DA SILVA;N!r
+Operação;Motorista;5473;ROBSON VIEIRA PÁ;N!r
+Operação;Motorista;4550;ROGERIO LOUZADA TEIXEIRA;N!r
+Operação;Motorista;4115;ROGERIO PERES HERNANDES;N!r
+Operação;Motorista;5065;ROMARIO SOARES PASSOS;N!r
+Operação;Motorista;5640;ROMILDO SILVA FILHO;N!r
+Operação;Motorista;4290;RONALDO LUIZ ARLEU;N!r
+Operação;Motorista;4711;ROSENILDO DOS SANTOS;N!r
+Operação;Motorista;5416;SEBASTIAO JOSE DA SILVA FILHO;N!r
+Operação;Motorista;5417;SEBASTIAO ROBERTO DE OLIVEIRA;N!r
+Operação;Motorista;5553;SIDNEI ANDRADE BERNARDE;N!r
+Operação;Motorista;4005;SILAS ANIBAL;N!r
+Operação;Motorista;5392;THIAGO BELIDIO ROCHA;N!r
+Operação;Motorista;5227;TONI OZANA CARVALHO;N!r
+Operação;Motorista;5685;VAGNER FABIANO CLAUSS;N!r
+Operação;Motorista;4897;VAGNER LOUZADA BOTELHO;N!r
+Operação;Motorista;5494;VALDECI ABREU BOSSOIS;N!r
+Operação;Motorista;5514;VALDECI FRANÇA DOS REIS;N!r
+Operação;Motorista;4288;VALTER GINO DOS SANTOS;N!r
+Operação;Motorista;4987;WAGNER LOUZADA BOTELHO;N!r
+Operação;Motorista;4315;WALMIR FERREIRA DE OLIVEIRA;N!r
+Operação;Motorista;3786;WANDERLEY CIPRIANO;N!r
+Operação;Motorista;4837;WANDERSON BREMIDE SOARES;N!r
+Operação;Motorista;5025;WILKILANES ANGELINO CAMPOS;N!r
+Operação;Supervisor / Encarregado / Coordenador;5407;ALTEMAR DARDENGO MARTINS;N!r
+Operação;Supervisor / Encarregado / Coordenador;5423;CREMILSON GOMES;N!r
+Operação;Supervisor / Encarregado / Coordenador;5654;JOSE VALTER CAMPANHARO;N!r
+Operação;Supervisor / Encarregado / Coordenador;5450;ODAIR JOSÉ CORREIA CANOLATO;N!r
+Operação;Supervisor / Encarregado / Coordenador;3705;RAFAEL TAVARES DA SILVA;N!r
+
+
+INDICATO: SETPES
+EMPRESA: VIAÇÃO GRANDE VITÓRIA LTDA.
+ 
+SETOR/ÁREA;CARGO;MATRÍCULA;FUNCIONÁRIO;AÇÃO
+Gestão de Pessoas;Supervisor / Encarregado / Coordenador;6737;Sônia Maria Soella Galão;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;7074;Jamilson Rodrigues Tomé;N!r
+Manutenção;Supervisor / Encarregado / Coordenador;8398;Reginaldo Baptista de Mello;N!r
+Operação;Assistente/Auxiliar de Tráfego;7699;Aureliano Gouveia Moreira;N!r
+Operação;Assistente/Auxiliar de Tráfego;8071;Gutierres da Vitoria Brito;N!r
+Operação;Assistente/Auxiliar de Tráfego;8291;Jady Barreto do Couto;N!r
+Operação;Assistente/Auxiliar de Tráfego;7485;Neris Lopes Guilherme;N!r
+Operação;Assistente/Auxiliar de Tráfego;8266;Vanderson da Silva Miossi;N!r
+Operação;Fiscal;7900;Adriano Gomes dos Santos;N!r
+Operação;Fiscal;8015;Altamiro Cardoso Rocha;N!r
+Operação;Fiscal;7686;Cristian Cesar C. Andrade;N!r
+Operação;Fiscal;7923;Mauro Queiroz;N!r
+Operação;Motorista;8949;Anderson Favoretti;N!r
+Operação;Motorista;7986;Flavio Rogerio M de Oliveira;N!r
+Operação;Motorista;7927;Ronaldo Adriano Malveira;N!r
+Operação;Motorista;7839;Rondinely Carlos de Oliveira;N!r
+Operação;Motorista;8592;WesleynFigueiredo Mariano;N!r
+Operação;Supervisor / Encarregado / Coordenador;8175;Jeferson Carriço;N!r
+   buscar   ;   incluir   ;   menu   
+   
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
