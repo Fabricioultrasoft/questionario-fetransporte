@@ -17,11 +17,5 @@ namespace Aplicacao
         {
             Banco = new Contexto();
         }
-
-
-
-
     }
-
-
 }
