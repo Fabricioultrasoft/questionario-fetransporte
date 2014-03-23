@@ -56,22 +56,8 @@ namespace Aplicacao
 
         public void Deletar(int codSindicato)
         {
-            //var sindicato = Banco.Sindicato.Find(codSindicato);
 
-            var sindicato = (from s in Banco.Sindicato
-                             select new Sindicato
-                             {
-                                 SindicatoID = s.SindicatoID,
-                                 Empresa = s.Empresa.Select(e => new DtoEmpresa { NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa }).ToList()
-                             }).ToList();
-
-            //var q =  from s in retorno where 
-
-            //if (sindicato != null)
-            //{
-            //    Banco.Sindicato.Remove(sindicato);
-            //    //    Banco.SaveChanges();
-            //}
+            
         }
 
 

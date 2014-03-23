@@ -29,18 +29,16 @@ namespace Repositorio
         public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
         public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+     //       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             
-        //    modelBuilder.Entity<Sindicato>()
-        //        .HasRequired(t => t.Empresa)
-        //        .WithMany(t => t.)
-        //        .HasForeignKey(d => d.SindicatoID)
-        //        .WillCascadeOnDelete(false);
-        //}
+        }
     }
 
 }

@@ -99,3 +99,4 @@ F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.M
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._004.resources
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._005.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._005.resources
+F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._006.resources
