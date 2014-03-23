@@ -22,7 +22,7 @@ namespace UI.Controllers
             sindicato = new Sindicato();
             sindicatoApp = new AppSindicato();
 
-            IEnumerable<DtoSindicato> listaDeSindicatos = sindicatoApp.Listar();
+            IEnumerable<DtoSindicato> listaDeSindicatos = sindicatoApp.ListarSindicatoEmpresas();
 
             return View(listaDeSindicatos);
         }

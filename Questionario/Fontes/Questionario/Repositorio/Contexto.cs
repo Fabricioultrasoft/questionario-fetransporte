@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 
 using Dominio;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Repositorio
 {
@@ -27,5 +28,19 @@ namespace Repositorio
         public DbSet<Questionario> Questionario { get; set; }
         public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
         public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+
+        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            
+        //    modelBuilder.Entity<Sindicato>()
+        //        .HasRequired(t => t.Empresa)
+        //        .WithMany(t => t.)
+        //        .HasForeignKey(d => d.SindicatoID)
+        //        .WillCascadeOnDelete(false);
+        //}
     }
+
 }
