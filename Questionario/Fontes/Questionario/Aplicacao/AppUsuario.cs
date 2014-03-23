@@ -14,8 +14,6 @@ namespace Aplicacao
         public AppUsuario()
         {
             Banco = new Contexto();
-
-            
         }
 
         public void Cadastrar(DtoUsuario DtoUsuario)
@@ -31,7 +29,7 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-        public bool VerificarLogin (string Login, string Senha)
+        public bool VerificarLogin(string Login, string Senha)
         {
             var retorno = Banco.Usuario.Where(x => x.LoginUsuario == Login && x.SenhaUsuario == Senha).FirstOrDefault();
 
@@ -63,6 +61,21 @@ namespace Aplicacao
             UsuarioSalvar.NomeUsuario = DtoUsuario.NomeUsuario;
 
             Banco.SaveChanges();
+        }
+
+
+        public IEnumerable<DtoUsuario> Obter(int codUsuario)
+        {
+            var retorno = (from s in Banco.Usuario
+                           where s.UsuarioID == codUsuario
+                           select new DtoUsuario
+                           {
+                               UsuarioID = codUsuario,
+                               LoginUsuario = s.LoginUsuario,
+                               NomeUsuario = s.NomeUsuario,
+                               TipoUsuario = s.TipoUsuario
+                           }).ToList();
+            return retorno;
         }
 
 

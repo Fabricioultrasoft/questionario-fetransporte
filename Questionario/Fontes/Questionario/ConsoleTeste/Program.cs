@@ -72,6 +72,7 @@ namespace ConsoleTeste
                 Console.WriteLine("\t Digite: 2 para validar usuário.");
                 Console.WriteLine("\t Digite: 3 para listar usuário.");
                 Console.WriteLine("\t Digite: 4 para Alterar usuário.");
+                Console.WriteLine("\t Digite: 5 para obter o usuário por ID.");
 
                 cki = Console.ReadKey(true);
 
@@ -111,15 +112,13 @@ namespace ConsoleTeste
                 }
                 else if (cki.Key == ConsoleKey.D3)
                 {
-                    var ListaDeUsuario = UsuarioApp.Listar();
-
-                    foreach (var Usuario in ListaDeUsuario)
+                    foreach (var Usuario in UsuarioApp.Listar())
                     {
                         Console.WriteLine("Login: {0} - Nome completo: {1}", Usuario.LoginUsuario, Usuario.NomeUsuario);
                     }
                 }
                 else if (cki.Key == ConsoleKey.D4)
-                { 
+                {
                     DtoUsuario DtoUsuarioParaSalvar = new DtoUsuario();
 
                     Console.WriteLine("Digite o ID do Usuario: ");
@@ -130,8 +129,19 @@ namespace ConsoleTeste
                     DtoUsuarioParaSalvar.NomeUsuario = Nome;
                     UsuarioApp.Alterar(DtoUsuarioParaSalvar);
                 }
+                else if (cki.Key == ConsoleKey.D5)
+                {
+                    Console.WriteLine("Digite o código do usuário.");
+                    int codigoUsuario = Convert.ToInt32(Console.ReadLine());
+
+                    foreach (var Usuario in UsuarioApp.Obter(codigoUsuario))
+                    {
+                        Console.WriteLine("Id do Usuario: {0} - Nome do Usuario:{1} ", Usuario.UsuarioID, Usuario.NomeUsuario);
+                    }
+                }
             }
             #endregion
+
             #region -- SETORAREA
             else if (cki.Key == ConsoleKey.F3)
             {
