@@ -20,7 +20,7 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public void Inserir(Empresa empresa) 
+        public void Inserir(Empresa empresa)
         {
             empresa.Sindicato = Banco.Sindicato.ToList().Where(x => x.SindicatoID == empresa.Sindicato.SindicatoID).FirstOrDefault();
             Banco.Empresa.Add(empresa);
@@ -34,32 +34,32 @@ namespace Aplicacao
 
         public IEnumerable<Empresa> ListarEmpresa(int identificador)
         {
-            return Banco.Empresa.Where(x=> x.EmpresaID == identificador).ToList();
+            return Banco.Empresa.Where(x => x.EmpresaID == identificador).ToList();
         }
 
         public void Alterar(Empresa empresa)
         {
-            Empresa EmpresaSalvar = Banco.Empresa.Where( x=> x.EmpresaID == empresa.EmpresaID).First();
+            Empresa EmpresaSalvar = Banco.Empresa.Where(x => x.EmpresaID == empresa.EmpresaID).First();
 
-            EmpresaSalvar.NomeEmpresa = empresa.NomeEmpresa ;
-            EmpresaSalvar.EmailEmpresa= empresa.EmailEmpresa;
-            EmpresaSalvar.LogoMarca= empresa.LogoMarca;
-            EmpresaSalvar.Observacao= empresa.Observacao;
-            EmpresaSalvar.Endereco= empresa.Endereco;
-            EmpresaSalvar.Bairro= empresa.Bairro;
+            EmpresaSalvar.NomeEmpresa = empresa.NomeEmpresa;
+            EmpresaSalvar.EmailEmpresa = empresa.EmailEmpresa;
+            EmpresaSalvar.LogoMarca = empresa.LogoMarca;
+            EmpresaSalvar.Observacao = empresa.Observacao;
+            EmpresaSalvar.Endereco = empresa.Endereco;
+            EmpresaSalvar.Bairro = empresa.Bairro;
             EmpresaSalvar.Complemento = empresa.Complemento;
             EmpresaSalvar.Cep = empresa.Cep;
 
             Banco.SaveChanges();
         }
 
-        public void Excluir (int Id )
+        public void Excluir(int Id)
         {
             Empresa empresaExcluir = Banco.Empresa.Where(x => x.EmpresaID == Id).First();
             Banco.Set<Empresa>().Remove(empresaExcluir);
             Banco.SaveChanges();
         }
 
-       
+
     }
 }

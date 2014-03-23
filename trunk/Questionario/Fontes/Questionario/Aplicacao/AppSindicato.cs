@@ -20,28 +20,7 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public IEnumerable<DtoSindicato> Listar()
-        {
-            var retorno = (from s in Banco.Sindicato
-                           select new DtoSindicato
-                           {
-                               SindicatoID = s.SindicatoID,
-                               NomeSindicato = s.NomeSindicato,
-                               Empresas = s.Empresa.Select(e => new DtoEmpresa{NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa}).ToList()
-                           }).ToList();
-
-
-            return retorno;
-        }
-
-        //public IEnumerable<Sindicato> ListarSindicato()
-        //{
-        //    var retorno = Banco.Sindicato.Include(x => x.Empresa).ToList();
-
-        //    return retorno;
-        //}
-
-        public IEnumerable<DtoSindicato> ListarEmpresasDoSindicatoPorCodigo(int codigo)
+        public IEnumerable<DtoSindicato> ListarSindicatoEmpresas()
         {
             var retorno = (from s in Banco.Sindicato
                            select new DtoSindicato
@@ -50,13 +29,20 @@ namespace Aplicacao
                                NomeSindicato = s.NomeSindicato,
                                Empresas = s.Empresa.Select(e => new DtoEmpresa { NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa }).ToList()
                            }).ToList();
+            return retorno;
+        }
 
+
+        public IEnumerable<DtoSindicato> Listar()
+        {
+            var retorno = (from s in Banco.Sindicato
+                           select new DtoSindicato
+                           {
+                               SindicatoID = s.SindicatoID,
+                               NomeSindicato = s.NomeSindicato
+                           }).ToList();
 
             return retorno;
-
-
-            //var retorno = Banco.Sindicato.Include(x => x.Empresa).Where(x => x.SindicatoID == codigo).ToList();
-            //return retorno;
         }
 
 
@@ -70,12 +56,22 @@ namespace Aplicacao
 
         public void Deletar(int codSindicato)
         {
-            var sindicato = Banco.Sindicato.Find(codSindicato);
-            if (sindicato != null)
-            {
-                Banco.Sindicato.Remove(sindicato);
-                Banco.SaveChanges();
-            }
+            //var sindicato = Banco.Sindicato.Find(codSindicato);
+
+            var sindicato = (from s in Banco.Sindicato
+                             select new Sindicato
+                             {
+                                 SindicatoID = s.SindicatoID,
+                                 Empresa = s.Empresa.Select(e => new DtoEmpresa { NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa }).ToList()
+                             }).ToList();
+
+            //var q =  from s in retorno where 
+
+            //if (sindicato != null)
+            //{
+            //    Banco.Sindicato.Remove(sindicato);
+            //    //    Banco.SaveChanges();
+            //}
         }
 
 

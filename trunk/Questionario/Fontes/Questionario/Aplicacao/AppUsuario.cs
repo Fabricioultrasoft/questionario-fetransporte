@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Aplicacao.dto;
 using Dominio;
@@ -17,6 +14,8 @@ namespace Aplicacao
         public AppUsuario()
         {
             Banco = new Contexto();
+
+            
         }
 
         public void Cadastrar(DtoUsuario DtoUsuario)
@@ -41,6 +40,31 @@ namespace Aplicacao
             else
                 return false;
         }
+
+        public IEnumerable<DtoUsuario> Listar()
+        {
+            var retorno = (from s in Banco.Usuario
+                           select new DtoUsuario
+                           {
+                               UsuarioID = s.UsuarioID,
+                               NomeUsuario = s.NomeUsuario,
+                               LoginUsuario = s.LoginUsuario,
+                               SenhaUsuario = s.SenhaUsuario,
+                               TipoUsuario = s.TipoUsuario
+                           }).ToList();
+
+            return retorno;
+        }
+
+        public void Alterar(DtoUsuario DtoUsuario)
+        {
+            var UsuarioSalvar = Banco.Usuario.Where(x => x.UsuarioID == DtoUsuario.UsuarioID).First();
+
+            UsuarioSalvar.NomeUsuario = DtoUsuario.NomeUsuario;
+
+            Banco.SaveChanges();
+        }
+
 
     }
 }
