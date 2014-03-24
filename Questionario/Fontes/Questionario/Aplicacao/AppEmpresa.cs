@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 
 using Aplicacao.dto;
 using Dominio;
@@ -20,10 +16,17 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
-        public void Inserir(Empresa empresa)
+        public void Inserir(DtoEmpresa DtoEmpresa, int codSindicato)
         {
-            empresa.Sindicato = Banco.Sindicato.ToList().Where(x => x.SindicatoID == empresa.Sindicato.SindicatoID).FirstOrDefault();
-            Banco.Empresa.Add(empresa);
+            var Empresa = new Empresa();
+
+            Empresa.NomeEmpresa = DtoEmpresa.NomeEmpresa;
+            Empresa.EmailEmpresa = DtoEmpresa.EmailEmpresa;
+            Empresa.LogoMarca = DtoEmpresa.LogoMarca;
+            Empresa.Observacao = DtoEmpresa.Observacao;
+            //Empresa.Sindicato = DtoSindicato;
+
+            Banco.Empresa.Add(Empresa);
             Banco.SaveChanges();
         }
 

@@ -17,10 +17,11 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F1 PARA ACESSAR AS OPÇÕES DE SINDICATOS");
             Console.WriteLine("Digite: F2 PARA ACESSAR AS OPÇÕES DE USUÁRIOS");
             Console.WriteLine("Digite: F3 PARA ACESSAR AS OPÇÕES DE SETORES E AREAS");
+            Console.WriteLine("Digite: F4 PARA ACESSAR AS OPÇÕES DE EMPRESAS");
             cki = Console.ReadKey(true);
             #endregion
 
-            #region -- SINDICATOS
+            #region SINDICATOS
             if (cki.Key == ConsoleKey.F1)
             {
                 AppSindicato SindicatoApp = new AppSindicato();
@@ -112,7 +113,9 @@ namespace ConsoleTeste
                 }
                 else if (cki.Key == ConsoleKey.D3)
                 {
-                    foreach (var Usuario in UsuarioApp.Listar())
+                    Console.WriteLine("Digite o tipo de Usuário.");
+                    int tipoUsuario = Convert.ToInt32(Console.ReadLine());
+                    foreach (var Usuario in UsuarioApp.Listar(tipoUsuario))
                     {
                         Console.WriteLine("Login: {0} - Nome completo: {1}", Usuario.LoginUsuario, Usuario.NomeUsuario);
                     }
@@ -142,7 +145,7 @@ namespace ConsoleTeste
             }
             #endregion
 
-            #region -- SETORAREA
+            #region SETORAREA
             else if (cki.Key == ConsoleKey.F3)
             {
                 AppSetorArea SetorAreaApp = new AppSetorArea();
@@ -161,6 +164,36 @@ namespace ConsoleTeste
                     }
                     Console.ReadKey();
                 }
+            }
+            #endregion
+
+            #region EMPRESA
+            else if (cki.Key == ConsoleKey.F4)
+            {
+
+                Console.WriteLine("Digite 1 Para Inserir uma Nova Empresa");
+                cki = Console.ReadKey(true);
+
+                if (cki.Key == ConsoleKey.D1)
+                {
+                    Console.WriteLine("Digite o codigo do Sindicato.");
+                    var Codigo = Convert.ToInt32(Console.ReadLine());
+
+                    AppSindicato SindicatoApp = new AppSindicato();
+
+                    var SindicatoObtido = SindicatoApp.Obter(Codigo);
+
+                    AppEmpresa EmpresaApp = new AppEmpresa();
+                    DtoEmpresa EmpresaDto = new DtoEmpresa();
+
+                    Console.WriteLine("Digite o nome da Empresa");
+                    EmpresaDto.NomeEmpresa = Console.ReadLine();
+
+                    EmpresaApp.Inserir(EmpresaDto, Codigo);
+                }
+
+
+
             }
             #endregion
 

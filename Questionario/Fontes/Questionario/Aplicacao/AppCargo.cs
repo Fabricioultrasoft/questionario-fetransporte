@@ -23,20 +23,5 @@ namespace Aplicacao
             var retorno = Banco.Cargo.Include(x=> x.SetorArea).ToList();
             return retorno;
         }
-
-
-        //public IEnumerable<DtoCargo> Listar()
-        //{ 
-        //    var retorno = ( from s in Banco.Cargo
-        //                    select new DtoCargo
-        //                    {
-        //                        CargoID  =      s.CargoID,
-        //                        NomeCargos  =   s.NomeCargos,
-        //                        Observacao  =   s.Observacao, 
-        //                        Funcionario =   s.Funcionario,
-        //                        SetorArea  =    s.SetorArea
-        //                    }).ToList();
-        //    return retorno ;
-        //}
     }
 }
