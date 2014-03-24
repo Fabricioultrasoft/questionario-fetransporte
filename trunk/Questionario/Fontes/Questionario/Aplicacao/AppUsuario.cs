@@ -43,9 +43,10 @@ namespace Aplicacao
                 return false;
         }
 
-        public IEnumerable<DtoUsuario> Listar()
+        public IEnumerable<DtoUsuario> Listar(int tipoUsuario)
         {
             var retorno = (from s in Banco.Usuario
+                           where s.TipoUsuario == tipoUsuario
                            select new DtoUsuario
                            {
                                UsuarioID = s.UsuarioID,
