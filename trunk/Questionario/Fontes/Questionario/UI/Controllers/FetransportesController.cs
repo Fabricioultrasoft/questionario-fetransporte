@@ -51,9 +51,5 @@ namespace UI.Controllers
             appUsuario.Cadastrar(usuario);
         }
 
-        public JsonResult ObterUsuario(int idUsuario) {
-            appUsuario = new AppUsuario();
-        
-        }
     }
 }
