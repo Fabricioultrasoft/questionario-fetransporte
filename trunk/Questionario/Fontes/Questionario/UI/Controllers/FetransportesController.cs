@@ -1,4 +1,5 @@
 ﻿using Aplicacao;
+using Aplicacao.dto;
 using Dominio;
 using System;
 using System.Collections.Generic;
@@ -13,33 +14,46 @@ namespace UI.Controllers
         //
         // GET: /Fetransportes/
 
+        private AppUsuario appUsuario;
         private AppUsuarioFederacao appFederacao;
 
         public ActionResult Usuarios()
         {
+            appUsuario = new AppUsuario();
             appFederacao = new AppUsuarioFederacao();
             return View();
         }
 
-        public JsonResult ListarUsuarios() {
+        public JsonResult ListarUsuarios(int tipoUsuario) {
 
-            //List<UsuarioFederacao> usuarios = new List<UsuarioFederacao>();
+            appUsuario = new AppUsuario();
+            var result = appUsuario.Listar(tipoUsuario);
 
-            //var listResult = appFederacao.ListarUsuarioFederacao();
+            if (result.Count() == 0) {
+                result = null;
+            }
 
-            //foreach (var usuario in listResult) {
-            //    usuarios.Add(new UsuarioFederacao() { 
-            //        UsuarioFederacaoID = usuario.UsuarioFederacaoID,
-            //        LoginUsuarioFederacao = usuario.LoginUsuarioFederacao,
-            //        NomeUsuarioFederacao = usuario.NomeUsuarioFederacao,
-            //        SenhaUsuarioFederacao = usuario.SenhaUsuarioFederacao
-            //    });
-            //}
-
-            return new JsonResult() { 
-            //    Data = usuarios
+            return new JsonResult() {
+                Data = result
             };
         }
 
+        public void CadastrarUsuario(string nome, string login, string senha, int tipoUsuario) {
+
+            appUsuario = new AppUsuario();
+            DtoUsuario usuario = new DtoUsuario() { 
+                NomeUsuario = nome,
+                LoginUsuario = login,
+                SenhaUsuario = senha,
+                TipoUsuario = tipoUsuario,
+            };
+
+            appUsuario.Cadastrar(usuario);
+        }
+
+        public JsonResult ObterUsuario(int idUsuario) {
+            appUsuario = new AppUsuario();
+        
+        }
     }
 }

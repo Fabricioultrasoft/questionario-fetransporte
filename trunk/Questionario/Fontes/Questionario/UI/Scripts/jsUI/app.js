@@ -21,35 +21,74 @@
         });
     },
     openFrmCadastrarUsuario: function () {
+       
         var html = '<form id="frmCadastrarUsuario">';
-        html += '<select id="empresaID" name="empresaID" size="1"></select>';
-        html += 'Usuário:<input type="text" id="usuario" name="usuario"/>';
-        html += 'Senha:<input type="text" id="senha" name="senha"/>';
+        html += '<b>Cadastrar Usuário<b><br/><br/><input type="hidden" id="tipoUsuario" name="tipoUsuario" value="' + tipo_usuario + '"/>';
+        html += 'Nome:<br/><br/><input type="text" id="nome" name="nome"/><br/><br/>';
+        html += 'Usuário:<br/><br/><input type="text" id="usuario" name="usuario"/><br/><br/>';
+        html += 'Senha:<br/><br/><input type="password" id="senha" name="senha"/><br/><br/>';
+        html += '<input type="button" id="cadastrarUsuario" onclick="App.CadastrarUsuario()" value="Cadastrar"/> ';
+        html += '<input type="button" id="cadastrarUsuario" onclick="modal.close()" value="Cancelar"/>';
         html += '</form>';
 
         modal.open({ content: html });
     },
-    Listar: function (usuariosFrom) {
-        console.log(usuariosFrom + ": ListarUsuarios()");
-        if (usuariosFrom == 'Fetransportes') {
+    ListarUsuarios: function (tipo_usuario) {
+        console.log(tipo_usuario + ": ListarUsuarios()");
+       
             $.ajax({
                 url: 'ListarUsuarios',
                 type: 'post',
+                data: { tipoUsuario: tipo_usuario },
                 dataType: 'json',
                 success: function (json) {
+                    console.log(json);
                     if (json != null) {
+                        console.log('Usuários encontrados.');
+                        $('#lista').remove('tr');
                         $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.UsuarioFederacaoID + '</td><td>' + json.LoginUsuarioFederacao + '</td><td>' + json.NomeUsuarioFederacao + '</td><td>' + json.LoginUsuarioFederacao + '</td></tr>');
+                            
+                            $('#lista').append('<tr><td>' + json[item].UsuarioID + '</td><td>' + json[item].NomeUsuario + '</td><td>' + json[item].LoginUsuario
+                                + '</td><td><a href="javascript:;" title="Editar" onclick="App.getUsuario(' + json[item].UsuarioID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                                + '<a href="javascript:;" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
+                    } else {
+                        console.log('Nenhum usuário cadastrado');
+                        $('#lista').html('<tr><td colspan="4">Não existe usuários cadastrados.</td></tr>');
                     }
                 }
             });
+       
+    },
+    getUsuario: function (idUsuario) {
+        if (idUsuario != 0) {
+            $.ajax({
+                url: 'ObterUsuario',
+                type: 'post',
+                data: { UsuarioID: idUsuario },
+                dataType: 'json',
+                success: function (json) {
+                    App.openFrmCadastrarUsuario();
+                    $('#nome').val(json.NomeUsuario);
+                    $('#tipoUsuario').val(json.TipoUsuario);
+                    $('#usuario').val(json.Loginusuario);
+                    $('#senha').val(json.SenhaUsuario);
+                    $('#cadastrarUsuario').attr('id', 'alterarUsuario');
+                }
+            });
         }
-        else if (usuariosFrom == 'Sindicato') {
-
-        } else if (usuariosFrom == 'Empresas') {
-
-        }
+    },
+    CadastrarUsuario: function () {
+        $.ajax({
+            url: 'CadastrarUsuario',
+            type: 'post',
+            data: { nome: $('#nome').val(), login: $('#usuario').val(), senha: $('#senha').val(), tipoUsuario: parseInt($('#tipoUsuario').val()) },
+            dataType: 'json',
+            success: function (json) {
+                modal.close();
+                App.ListarUsuarios(1);
+            }
+        });
     },
     ListarEntidade: function (entidade) {
         if (entidade == 'Sindicato') {

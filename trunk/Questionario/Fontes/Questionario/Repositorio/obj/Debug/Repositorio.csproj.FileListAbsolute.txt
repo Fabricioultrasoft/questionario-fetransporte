@@ -100,3 +100,8 @@ F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.M
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._005.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._005.resources
 F:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._006.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._003.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._004.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._005.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._006.resources
