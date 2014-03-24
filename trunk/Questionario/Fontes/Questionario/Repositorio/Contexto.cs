@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 using Dominio;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -33,11 +28,8 @@ namespace Repositorio
         {
             base.OnModelCreating(modelBuilder);
 
-     //       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-
-            
         }
     }
 

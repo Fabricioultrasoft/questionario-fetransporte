@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 
 using Aplicacao.dto;
 using Dominio;
@@ -20,6 +16,19 @@ namespace Aplicacao
             Banco = new Contexto();
         }
 
+        public IEnumerable<DtoSindicato> ListarSindicatoEmpresas(int codSindicato)
+        {
+            var retorno = (from s in Banco.Sindicato
+                           where s.SindicatoID == codSindicato
+                           select new DtoSindicato
+                           {
+                               SindicatoID = s.SindicatoID,
+                               NomeSindicato = s.NomeSindicato,
+                               Empresas = s.Empresa.Select(e => new DtoEmpresa { NomeEmpresa = e.NomeEmpresa, EmailEmpresa = e.EmailEmpresa }).ToList()
+                           }).ToList();
+            return retorno;
+        }
+
         public IEnumerable<DtoSindicato> ListarSindicatoEmpresas()
         {
             var retorno = (from s in Banco.Sindicato
@@ -32,7 +41,6 @@ namespace Aplicacao
             return retorno;
         }
 
-
         public IEnumerable<DtoSindicato> Listar()
         {
             var retorno = (from s in Banco.Sindicato
@@ -41,14 +49,25 @@ namespace Aplicacao
                                SindicatoID = s.SindicatoID,
                                NomeSindicato = s.NomeSindicato
                            }).ToList();
-
             return retorno;
         }
 
+        public IEnumerable<DtoSindicato> Obter(int codSindicato)
+        {
+            var retorno = (from s in Banco.Sindicato
+                           where s.SindicatoID == codSindicato
+                           select new DtoSindicato
+                           {
+                               SindicatoID = s.SindicatoID,
+                               NomeSindicato = s.NomeSindicato
+                           }).ToList();
+            return retorno;
+        }
 
         public void Inserir(DtoSindicato DtoSindicato)
         {
             var sindicato = new Sindicato();
+
             sindicato.NomeSindicato = DtoSindicato.NomeSindicato;
             Banco.Sindicato.Add(sindicato);
             Banco.SaveChanges();
@@ -57,9 +76,6 @@ namespace Aplicacao
         public void Deletar(int codSindicato)
         {
 
-            
         }
-
-
     }
 }
