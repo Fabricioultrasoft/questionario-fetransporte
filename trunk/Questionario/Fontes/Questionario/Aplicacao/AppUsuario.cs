@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 using Aplicacao.dto;
 using Dominio;
@@ -32,16 +33,7 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-        public IEnumerable<Usuario> Listar(int tipoUsuario) {
-            var retorno = Banco.Usuario.Where(u => u.TipoUsuario == tipoUsuario).ToList();
-
-            if (retorno != null)
-                return retorno;
-            else
-                return null;
-        }
-
-        public bool VerificarLogin (string Login, string Senha)
+        public bool VerificarLogin(string Login, string Senha)
         {
             var retorno = Banco.Usuario.Where(x => x.LoginUsuario == Login && x.SenhaUsuario == Senha).FirstOrDefault();
 
@@ -51,5 +43,42 @@ namespace Aplicacao
                 return false;
         }
 
+        public IEnumerable<DtoUsuario> Listar()
+        {
+            var retorno = (from s in Banco.Usuario
+                           select new DtoUsuario
+                           {
+                               UsuarioID = s.UsuarioID,
+                               NomeUsuario = s.NomeUsuario,
+                               LoginUsuario = s.LoginUsuario,
+                               SenhaUsuario = s.SenhaUsuario,
+                               TipoUsuario = s.TipoUsuario
+                           }).ToList();
+
+            return retorno;
+        }
+        public void Alterar(DtoUsuario DtoUsuario)
+        {
+            var UsuarioSalvar = Banco.Usuario.Where(x => x.UsuarioID == DtoUsuario.UsuarioID).First();
+
+            UsuarioSalvar.NomeUsuario = DtoUsuario.NomeUsuario;
+
+            Banco.SaveChanges();
+        }
+
+
+        public IEnumerable<DtoUsuario> Obter(int codUsuario)
+        {
+            var retorno = (from s in Banco.Usuario
+                           where s.UsuarioID == codUsuario
+                           select new DtoUsuario
+                           {
+                               UsuarioID = codUsuario,
+                               LoginUsuario = s.LoginUsuario,
+                               NomeUsuario = s.NomeUsuario,
+                               TipoUsuario = s.TipoUsuario
+                           }).ToList();
+            return retorno;
+        }
     }
 }
