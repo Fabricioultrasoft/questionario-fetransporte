@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aplicacao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,17 +11,22 @@ namespace UI.Controllers
     {
         //
         // GET: /Login/
-        private static string login = "felicio";
-        private static string password = "123";
-
+        //private static string login = "felicio";
+        //private static string password = "123";
+        private AppUsuario appUsuario;
         public ActionResult Index()
         {
+            
             return View();
         }
 
         public JsonResult EfetuarLogin(string usuario, string senha) {
 
-            if (login.Equals(usuario) && senha.Equals(password))
+            appUsuario = new AppUsuario();
+            
+            bool verificar = appUsuario.VerificarLogin(usuario,senha);
+
+            if (verificar)
             {
                 return new JsonResult
                 {

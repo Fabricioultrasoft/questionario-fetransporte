@@ -51,5 +51,38 @@ namespace UI.Controllers
             appUsuario.Cadastrar(usuario);
         }
 
+        public JsonResult ObterUsuarioPorID(int UsuarioID)
+        {
+            appUsuario = new AppUsuario();
+            var result = appUsuario.Obter(UsuarioID);
+
+            if (result.Count() == 0)
+            {
+                result = null;
+            }
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+        }
+
+        public void AlterarUsuario(int id, string nome, string login, string senha, int tipoUsuario)
+        {
+            appUsuario = new AppUsuario();
+            DtoUsuario usuario = new DtoUsuario();
+
+            usuario.UsuarioID = id;
+            usuario.NomeUsuario = nome;
+            usuario.LoginUsuario = login;
+            usuario.TipoUsuario = tipoUsuario;
+
+            if(!senha.Equals(""))
+            {
+                usuario.SenhaUsuario = senha;
+            }
+
+            appUsuario.Alterar(usuario);
+        }
     }
 }
