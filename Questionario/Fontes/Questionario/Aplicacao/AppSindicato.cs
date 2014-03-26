@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
 using Aplicacao.dto;
 using Dominio;
@@ -52,7 +53,7 @@ namespace Aplicacao
             return retorno;
         }
 
-        public IEnumerable<DtoSindicato> Obter(int codSindicato)
+        public DtoSindicato Obter(int codSindicato)
         {
             var retorno = (from s in Banco.Sindicato
                            where s.SindicatoID == codSindicato
@@ -60,7 +61,8 @@ namespace Aplicacao
                            {
                                SindicatoID = s.SindicatoID,
                                NomeSindicato = s.NomeSindicato
-                           }).ToList();
+                           }).FirstOrDefault();
+
             return retorno;
         }
 
@@ -73,9 +75,24 @@ namespace Aplicacao
             Banco.SaveChanges();
         }
 
-        public void Deletar(int codSindicato)
+        public void Excluir(int codSindicato)
         {
+            var empresaDeSindicato = (from s in Banco.Empresa
+                                      where s.Sindicato.SindicatoID == codSindicato
+                                      select s).Count();
 
+            if (empresaDeSindicato == 0)
+            {
+                var sindicatoExcluir = (from s in Banco.Sindicato
+                                        where s.SindicatoID == codSindicato
+                                        select s).FirstOrDefault();
+                Banco.Sindicato.Remove(sindicatoExcluir);
+                Banco.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("O Sindicato não pode ser excluido porque existem empresas ligadas a ele.");
+            }
         }
     }
 }

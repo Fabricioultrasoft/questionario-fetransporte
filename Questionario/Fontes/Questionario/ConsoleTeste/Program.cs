@@ -53,14 +53,14 @@ namespace ConsoleTeste
                         Console.WriteLine("{0} - {1} ", sindicato.SindicatoID, sindicato.NomeSindicato);
                     }
                 }
-                else if (cki.Key == ConsoleKey.D3)
+                else if (cki.Key == ConsoleKey.D3 || cki.Key == ConsoleKey.NumPad3)
                 {
                     Console.WriteLine("-----");
                     Console.WriteLine("Digite o código do sindicato a ser deletado.");
 
-                    int ID = Convert.ToInt32(Console.ReadLine());
+                    int codigoSindicato = Convert.ToInt32(Console.ReadLine());
 
-                    SindicatoApp.Deletar(ID);
+                    SindicatoApp.Excluir(codigoSindicato);
                 }
 
             }
@@ -74,6 +74,7 @@ namespace ConsoleTeste
                 Console.WriteLine("\t Digite: 3 para listar usuário.");
                 Console.WriteLine("\t Digite: 4 para Alterar usuário.");
                 Console.WriteLine("\t Digite: 5 para obter o usuário por ID.");
+                Console.WriteLine("\t Digite: 6 para Excluir o usuário por ID.");
 
                 cki = Console.ReadKey(true);
 
@@ -142,6 +143,14 @@ namespace ConsoleTeste
                         Console.WriteLine("Id do Usuario: {0} - Nome do Usuario:{1} ", Usuario.UsuarioID, Usuario.NomeUsuario);
                     }
                 }
+                else if (cki.Key == ConsoleKey.D6)
+                {
+                    Console.WriteLine("Digite o código do usuário.");
+                    int codigoUsuario = Convert.ToInt32(Console.ReadLine());
+
+                    UsuarioApp.Excluir(codigoUsuario);
+                }
+
             }
             #endregion
 
@@ -183,17 +192,17 @@ namespace ConsoleTeste
 
                     var SindicatoObtido = SindicatoApp.Obter(Codigo);
 
-                    AppEmpresa EmpresaApp = new AppEmpresa();
                     DtoEmpresa EmpresaDto = new DtoEmpresa();
+
+                    EmpresaDto.Sindicato = SindicatoObtido;
 
                     Console.WriteLine("Digite o nome da Empresa");
                     EmpresaDto.NomeEmpresa = Console.ReadLine();
 
-                    EmpresaApp.Inserir(EmpresaDto, Codigo);
+                    AppEmpresa EmpresaApp = new AppEmpresa();
+
+                    EmpresaApp.Inserir(EmpresaDto);
                 }
-
-
-
             }
             #endregion
 
