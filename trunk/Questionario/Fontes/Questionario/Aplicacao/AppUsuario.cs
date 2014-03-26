@@ -57,7 +57,12 @@ namespace Aplicacao
         public void Alterar(DtoUsuario DtoUsuario)
         {
             var UsuarioSalvar = Banco.Usuario.Where(x => x.UsuarioID == DtoUsuario.UsuarioID).First();
+
             UsuarioSalvar.NomeUsuario = DtoUsuario.NomeUsuario;
+            UsuarioSalvar.LoginUsuario = DtoUsuario.LoginUsuario;
+            UsuarioSalvar.SenhaUsuario = DtoUsuario.SenhaUsuario;
+            UsuarioSalvar.TipoUsuario = DtoUsuario.TipoUsuario;
+
             Banco.SaveChanges();
         }
 
@@ -74,5 +79,19 @@ namespace Aplicacao
                            }).ToList();
             return retorno;
         }
+
+        public void Excluir(int codUsuario)
+        {
+            var retorno = (from s in Banco.Usuario
+                           where s.UsuarioID == codUsuario
+                           select s).FirstOrDefault();
+
+            if (retorno != null)
+            {
+                Banco.Usuario.Remove(retorno);
+                Banco.SaveChanges();
+            }
+        }
+
     }
 }
