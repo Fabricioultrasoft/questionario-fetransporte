@@ -1,4 +1,5 @@
 ﻿var App = {
+    obterUsuario: false,
     init: function () {
         
     },
@@ -23,12 +24,20 @@
     openFrmCadastrarUsuario: function () {
        
         var html = '<form id="frmCadastrarUsuario">';
-        html += '<b>Cadastrar Usuário<b><br/><br/><input type="hidden" id="tipoUsuario" name="tipoUsuario" value="' + tipo_usuario + '"/>';
+        html += '<b>Cadastrar Usuário<b><br/><br/><input type="hidden" id="idUsuario" name="idUsuario" />'
+            +'<input type="hidden" id="tipoUsuario" name="tipoUsuario" value="' + tipo_usuario + '"/>';
         html += 'Nome:<br/><br/><input type="text" id="nome" name="nome"/><br/><br/>';
         html += 'Usuário:<br/><br/><input type="text" id="usuario" name="usuario"/><br/><br/>';
-        html += 'Senha:<br/><br/><input type="password" id="senha" name="senha"/><br/><br/>';
-        html += '<input type="button" id="cadastrarUsuario" onclick="App.CadastrarUsuario()" value="Cadastrar"/> ';
-        html += '<input type="button" id="cadastrarUsuario" onclick="modal.close()" value="Cancelar"/>';
+        html += 'Senha:<br/><br/><input type="password" id="senha" name="senha"/><br/>';
+
+        if (App.obterUsuario) {
+            html += '<small>Para manter a senha atual deixe o campo em branco.</small>';
+            html += '<br/><br/><input type="button" id="alterarUsuario" onclick="App.AlterarUsuario()" value="Alterar"/> ';
+        } else {
+            html += '<br/><br/><input type="button" id="cadastrarUsuario" onclick="App.CadastrarUsuario()" value="Cadastrar"/> ';
+        }
+     
+        html += '<input type="button" id="cadastrarUsuario" onclick="App.closeModal()" value="Cancelar"/>';
         html += '</form>';
 
         modal.open({ content: html });
@@ -61,19 +70,21 @@
        
     },
     getUsuario: function (idUsuario) {
+        App.obterUsuario = true;
         if (idUsuario != 0) {
             $.ajax({
-                url: 'ObterUsuario',
+                url: 'ObterUsuarioPorID',
                 type: 'post',
                 data: { UsuarioID: idUsuario },
                 dataType: 'json',
                 success: function (json) {
+                    console.log(json);
                     App.openFrmCadastrarUsuario();
-                    $('#nome').val(json.NomeUsuario);
-                    $('#tipoUsuario').val(json.TipoUsuario);
-                    $('#usuario').val(json.Loginusuario);
-                    $('#senha').val(json.SenhaUsuario);
-                    $('#cadastrarUsuario').attr('id', 'alterarUsuario');
+                    $('#idUsuario').val(json[0].UsuarioID);
+                    $('#nome').val(json[0].NomeUsuario);
+                    $('#tipoUsuario').val(json[0].TipoUsuario);
+                    $('#usuario').val(json[0].LoginUsuario);
+                    $('#senha').val(json[0].SenhaUsuario);
                 }
             });
         }
@@ -86,7 +97,25 @@
             dataType: 'json',
             success: function (json) {
                 modal.close();
-                App.ListarUsuarios(1);
+                App.ListarUsuarios(parseInt($('#tipoUsuario').val()));
+            }
+        });
+    },
+   AlterarUsuario: function () {
+        $.ajax({
+            url: 'AlterarUsuario',
+            type: 'post',
+            data: { id: $('#idUsuario').val(), nome: $('#nome').val(), login: $('#usuario').val(), senha: $('#senha').val(), tipoUsuario: parseInt($('#tipoUsuario').val()) },
+            dataType: 'json',
+            success: function (json) {
+                modal.close();
+                $('#idUsuario').val('');
+                $('#nome').val('');
+                $('#tipoUsuario').val('');
+                $('#usuario').val('');
+                $('#senha').val('');
+                App.closeModal();
+                App.ListarUsuarios(parseInt($('#tipoUsuario').val()));
             }
         });
     },
@@ -157,5 +186,9 @@
                 }
             });
         }
+    },
+    closeModal: function () {
+        App.obterUsuario = false;
+        modal.close();
     }
 }
