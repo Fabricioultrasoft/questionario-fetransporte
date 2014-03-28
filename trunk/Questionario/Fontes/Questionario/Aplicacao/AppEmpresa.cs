@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Aplicacao.dto;
 using Dominio;
 using Repositorio;
@@ -14,6 +15,7 @@ namespace Aplicacao
         public AppEmpresa()
         {
             Banco = new Contexto();
+            Banco.Configuration.LazyLoadingEnabled = true;
         }
 
         public Empresa ObterEmpresa(int codigoEmpresa)
@@ -31,7 +33,6 @@ namespace Aplicacao
                 throw new Exception("Empresa não localizada.");
             }
         }
-
 
         public void Inserir(DtoEmpresa DtoEmpresa)
         {
@@ -61,7 +62,7 @@ namespace Aplicacao
             var DtoEmpresa = (from s in Banco.Empresa
                               where s.EmpresaID == codEmpresa
                               select new DtoEmpresa
-                              {   
+                              {
                                   NomeEmpresa = s.NomeEmpresa,
                                   EmailEmpresa = s.EmailEmpresa,
                                   LogoMarca = s.LogoMarca,
@@ -116,7 +117,7 @@ namespace Aplicacao
                 Banco.Empresa.Remove(empresaExcluir);
                 Banco.SaveChanges();
             }
-            else 
+            else
             {
                 throw new Exception("Existem funcionarios ligados a esta empresa não é possivel exclui-la.");
             }
