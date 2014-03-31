@@ -42,7 +42,6 @@ namespace Aplicacao
                                  where s.SindicatoID == DtoEmpresa.Sindicato.SindicatoID
                                  select s).FirstOrDefault();
 
-
             Empresa.NomeEmpresa = DtoEmpresa.NomeEmpresa;
             Empresa.EmailEmpresa = DtoEmpresa.EmailEmpresa;
             Empresa.LogoMarca = DtoEmpresa.LogoMarca;
@@ -54,7 +53,10 @@ namespace Aplicacao
 
         public IEnumerable<Empresa> ListarEmpresa()
         {
-            return Banco.Empresa.ToList();
+            var retorno = (from s in Banco.Empresa
+                           select s).ToList();
+            
+            return retorno;
         }
 
         public DtoEmpresa Obter(int codEmpresa)
