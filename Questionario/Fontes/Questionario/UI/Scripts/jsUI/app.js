@@ -45,29 +45,30 @@
     ListarUsuarios: function (tipo_usuario) {
         console.log(tipo_usuario + ": ListarUsuarios()");
        
-            $.ajax({
-                url: 'ListarUsuarios',
-                type: 'post',
-                data: { tipoUsuario: tipo_usuario },
-                dataType: 'json',
-                success: function (json) {
-                    console.log(json);
-                    if (json != null) {
-                        console.log('Usuários encontrados.');
-                        $('#lista').remove('tr');
-                        $.each(eval(json), function (item, index) {
+        $.ajax({
+            url: 'ListarUsuarios',
+            type: 'post',
+            data: { tipoUsuario: tipo_usuario },
+            dataType: 'json',
+            success: function (json) {
+                console.log(json);
+                if (json != null) {
+                    console.log('Usuários encontrados.');
+                    $('#lista').find($('#lista tr')).remove();
+                    $.each(eval(json), function (item, index) {
                             
-                            $('#lista').append('<tr><td>' + json[item].UsuarioID + '</td><td>' + json[item].NomeUsuario + '</td><td>' + json[item].LoginUsuario
-                                + '</td><td><a href="javascript:;" title="Editar" onclick="App.getUsuario(' + json[item].UsuarioID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
-                                + '<a href="javascript:;" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
-                        });
-                    } else {
-                        console.log('Nenhum usuário cadastrado');
-                        $('#lista').html('<tr><td colspan="4">Não existe usuários cadastrados.</td></tr>');
-                    }
+                        $('#lista').append('<tr><td>' + json[item].UsuarioID + '</td><td>' + json[item].NomeUsuario + '</td><td>' + json[item].LoginUsuario
+                            + '</td><td><a href="javascript:;" title="Editar" onclick="App.getUsuario(' + json[item].UsuarioID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirUsuario('+json[item].UsuarioID+')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
+                    });
+                } else {
+                    console.log('Nenhum usuário cadastrado');
+                    $('#lista').html('<tr><td colspan="4">Não existe usuários cadastrados.</td></tr>');
                 }
-            });
-       
+            }
+            
+        });
+        tUsuario = tipo_usuario;
     },
     getUsuario: function (idUsuario) {
         App.obterUsuario = true;
@@ -97,7 +98,7 @@
             dataType: 'json',
             success: function (json) {
                 modal.close();
-                App.ListarUsuarios(parseInt($('#tipoUsuario').val()));
+                App.ListarUsuarios(tUsuario);
             }
         });
     },
@@ -115,10 +116,20 @@
                 $('#usuario').val('');
                 $('#senha').val('');
                 App.closeModal();
-                App.ListarUsuarios(parseInt($('#tipoUsuario').val()));
+                App.ListarUsuarios(tUsuario);
             }
         });
-    },
+   },
+   ExcluirUsuario: function (id) {
+       $.ajax({
+           url: 'ExcluirUsuario',
+           type: 'post',
+           data: { codUsuario: id },
+           success: function () {
+               App.ListarUsuarios(tUsuario);
+           }
+       });
+   },
     ListarEntidade: function (entidade) {
         if (entidade == 'Sindicato') {
             $.ajax({

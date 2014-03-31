@@ -94,6 +94,12 @@ namespace UI.Controllers
             appUsuario.Alterar(usuario);
         }
 
+        public void ExcluirUsuario(int codUsuario)
+        {
+            appUsuario = new AppUsuario();
+            appUsuario.Excluir(codUsuario);
+        }
+
         #endregion
     }
 }
