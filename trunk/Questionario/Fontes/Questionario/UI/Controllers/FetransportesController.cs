@@ -17,6 +17,8 @@ namespace UI.Controllers
         private AppUsuario appUsuario;
         private AppUsuarioFederacao appFederacao;
 
+        #region ======= Usuarios
+
         public ActionResult Usuarios()
         {
             appUsuario = new AppUsuario();
@@ -84,5 +86,7 @@ namespace UI.Controllers
 
             appUsuario.Alterar(usuario);
         }
+
+        #endregion
     }
 }
