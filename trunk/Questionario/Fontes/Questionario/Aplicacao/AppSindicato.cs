@@ -15,6 +15,7 @@ namespace Aplicacao
         public AppSindicato()
         {
             Banco = new Contexto();
+            Banco.Configuration.LazyLoadingEnabled = true;
         }
 
         public IEnumerable<DtoSindicato> ListarSindicatoEmpresas(int codSindicato)
@@ -91,7 +92,7 @@ namespace Aplicacao
             }
             else
             {
-                throw new Exception("O Sindicato não pode ser excluido porque existem empresas ligadas a ele.");
+                throw new Exception("O Sindicato não pode ser excluido porque existem EMPRESAS ligadas a ele.");
             }
         }
     }

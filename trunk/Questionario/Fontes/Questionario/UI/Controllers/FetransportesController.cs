@@ -15,14 +15,14 @@ namespace UI.Controllers
         // GET: /Fetransportes/
 
         private AppUsuario appUsuario;
-        private AppUsuarioFederacao appFederacao;
+      //  private AppUsuarioFederacao appFederacao;
 
         #region ======= Usuarios
 
         public ActionResult Usuarios()
         {
             appUsuario = new AppUsuario();
-            appFederacao = new AppUsuarioFederacao();
+            //appFederacao = new AppUsuarioFederacao();
             return View();
         }
 
@@ -50,7 +50,7 @@ namespace UI.Controllers
                 TipoUsuario = tipoUsuario,
             };
 
-            appUsuario.Cadastrar(usuario);
+            appUsuario.Inserir(usuario);
         }
 
         public JsonResult ObterUsuarioPorID(int UsuarioID)

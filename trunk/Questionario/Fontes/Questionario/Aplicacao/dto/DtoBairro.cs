@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Dominio;
 
 namespace Aplicacao.dto
 {
@@ -10,5 +8,7 @@ namespace Aplicacao.dto
     {
         public int BairroID { get; set; }
         public String NomeBairro { get; set; }
+
+        public DtoCidade Cidade { get; set; }
     }
 }

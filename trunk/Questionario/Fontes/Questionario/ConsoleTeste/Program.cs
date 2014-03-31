@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 using Aplicacao;
 using Aplicacao.dto;
@@ -18,6 +19,7 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F2 PARA ACESSAR AS OPÇÕES DE USUÁRIOS");
             Console.WriteLine("Digite: F3 PARA ACESSAR AS OPÇÕES DE SETORES E AREAS");
             Console.WriteLine("Digite: F4 PARA ACESSAR AS OPÇÕES DE EMPRESAS");
+            Console.WriteLine("Digite: F5 PARA ACESSAR AS OPÇÕES DE USUARIOS");
             cki = Console.ReadKey(true);
             #endregion
 
@@ -33,6 +35,9 @@ namespace ConsoleTeste
                 cki = Console.ReadKey(true);
                 if (cki.Key == ConsoleKey.D1)
                 {
+                    Stopwatch stopwatch = new Stopwatch();
+                    stopwatch.Start();
+
                     Console.WriteLine("-----");
                     var listaDeSindicatos = SindicatoApp.ListarSindicatoEmpresas();
                     foreach (var sindicato in listaDeSindicatos)
@@ -43,6 +48,10 @@ namespace ConsoleTeste
                             Console.WriteLine("         {0} ", sindicatoEmpresa.NomeEmpresa);
                         }
                     }
+
+                    Console.WriteLine("----------------");
+                    stopwatch.Stop();
+                    Console.WriteLine("Tempo decorrido em milisegundos: {0} ", stopwatch.Elapsed);
                 }
                 else if (cki.Key == ConsoleKey.D2)
                 {
@@ -92,7 +101,7 @@ namespace ConsoleTeste
                     Console.WriteLine("Tipo");
                     usuarioDto.TipoUsuario = Int32.Parse(Console.ReadLine());
 
-                    UsuarioApp.Cadastrar(usuarioDto);
+                    UsuarioApp.Inserir(usuarioDto);
                 }
 
                 else if (cki.Key == ConsoleKey.D2)
@@ -202,6 +211,98 @@ namespace ConsoleTeste
                     AppEmpresa EmpresaApp = new AppEmpresa();
 
                     EmpresaApp.Inserir(EmpresaDto);
+                }
+            }
+            #endregion
+
+            #region ENDERECOS
+            else if (cki.Key == ConsoleKey.F5)
+            {
+                Console.WriteLine("DIGITE F1 NOVAMENTE PARA LISTAR AS OPÇÕES DE CADASTRO DE ESTADOS");
+
+                configuraAmbiente.PularLinha(2);
+
+                cki = Console.ReadKey(true);
+                if (cki.Key == ConsoleKey.F1)
+                {
+                    Console.WriteLine("Digite 1 para inserir um ESTADO.");
+                    Console.WriteLine("Digite 2 para listar um ESTADO.");
+                    Console.WriteLine("Digite 3 para Obter um ESTADO.");
+                    Console.WriteLine("Digite 4 para alterar um ESTADO.");
+                    Console.WriteLine("Digite 5 para Deletar um ESTADO.");
+
+                    cki = Console.ReadKey(true);
+
+                    AppEndereco EnderecoApp = new AppEndereco();
+                    DtoEstado EstadoDto = new DtoEstado();
+
+                    if (cki.Key == ConsoleKey.D1)
+                    {
+                        Console.WriteLine("Digite o nome do Estado");
+                        string nomeEstado = Console.ReadLine();
+
+                        Console.WriteLine("Digite a sigla do Estado");
+                        string sigla = Console.ReadLine();
+                        
+                        EstadoDto.NomeEstado = nomeEstado;
+                        EstadoDto.UF = sigla;
+
+                        EnderecoApp.InserirEstado(EstadoDto);
+
+                        configuraAmbiente.EmitirFinaldeProcessamento("Estado Inserido.");
+                    }
+                    else if (cki.Key == ConsoleKey.D2)
+                    {
+                        var listaDeEstados = EnderecoApp.ListarEstado();
+
+                        foreach (var item in listaDeEstados)
+                        {
+                            Console.WriteLine("Nome estado: {0}  -  UF: {1}", item.NomeEstado, item.UF);
+                        }
+
+                        configuraAmbiente.EmitirFinaldeProcessamento("Estados listados.");
+                    }
+                    else if (cki.Key == ConsoleKey.D3)
+                    {
+                        Console.WriteLine("Digite o codigo do estado.");
+                        int codEstado = Convert.ToInt32(Console.ReadLine());
+
+                        var estadoObtido = EnderecoApp.ObterEstado(codEstado);
+
+                        foreach (var item in estadoObtido)
+                        {
+                            Console.WriteLine("Estado encontrado: {0}", item.NomeEstado);    
+                        }
+
+                        configuraAmbiente.EmitirFinaldeProcessamento("Fim.");
+                    }
+                    else if (cki.Key == ConsoleKey.D4)
+                    {
+                        Console.WriteLine("Insira o código do estado.");
+                        int codEstado = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Insira o nome do estado.");
+                        string nomeEstado = Console.ReadLine();
+
+                        Console.WriteLine("Insira o UF do estado.");
+                        string ufEstado = Console.ReadLine();
+
+                        EstadoDto.EstadoID = codEstado;
+                        EstadoDto.NomeEstado = nomeEstado;
+                        EstadoDto.UF = ufEstado;
+
+                        EnderecoApp.AlterarEstado(EstadoDto);
+
+                        configuraAmbiente.EmitirFinaldeProcessamento("Fim");
+                    }
+                    else if (cki.Key == ConsoleKey.D5)
+                    {
+                        Console.WriteLine("Digite o código do estado a ser deletado.");
+
+                        int codEstado = Convert.ToInt32(Console.ReadLine());
+
+                        EnderecoApp.ExcluirEstado(codEstado);
+                    }
                 }
             }
             #endregion

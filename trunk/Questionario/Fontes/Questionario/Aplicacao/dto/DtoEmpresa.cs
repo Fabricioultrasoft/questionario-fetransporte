@@ -5,7 +5,6 @@ namespace Aplicacao.dto
 {
     public class DtoEmpresa
     {
-
         public int EmpresaID { get; set; }
         public String NomeEmpresa { get; set; }
         public String EmailEmpresa { get; set; }

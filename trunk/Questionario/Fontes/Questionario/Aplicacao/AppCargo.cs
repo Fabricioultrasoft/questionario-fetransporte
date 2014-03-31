@@ -15,6 +15,7 @@ namespace Aplicacao
         public AppCargo()
         {
             Banco = new Contexto();
+            Banco.Configuration.LazyLoadingEnabled = true;
         }
 
 

@@ -18,6 +18,7 @@ namespace Aplicacao
         public AppSetorArea()
         {
             Banco = new Contexto();
+            Banco.Configuration.LazyLoadingEnabled = true;
         }
 
         public IEnumerable<DtoSetorArea> Listar()

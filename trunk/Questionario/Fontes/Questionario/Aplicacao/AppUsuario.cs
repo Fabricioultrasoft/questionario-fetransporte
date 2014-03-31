@@ -14,9 +14,10 @@ namespace Aplicacao
         public AppUsuario()
         {
             Banco = new Contexto();
+            Banco.Configuration.LazyLoadingEnabled = true;
         }
 
-        public void Cadastrar(DtoUsuario DtoUsuario)
+        public void Inserir(DtoUsuario DtoUsuario)
         {
             var Usuario = new Usuario
                 {
