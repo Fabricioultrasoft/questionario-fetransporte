@@ -12,3 +12,8 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Releas
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.csproj.GenerateResource.Cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.Migrations._002.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.Migrations._003.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.Migrations._004.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.Migrations._005.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Release\Repositorio.Migrations._006.resources
