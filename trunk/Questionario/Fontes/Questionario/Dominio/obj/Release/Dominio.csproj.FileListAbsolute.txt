@@ -2,3 +2,4 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Release\Do
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Release\Dominio.pdb
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Release\Dominio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Release\Dominio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Release\Dominio.csprojResolveAssemblyReference.cache
