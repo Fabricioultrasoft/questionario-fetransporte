@@ -47,7 +47,6 @@ namespace UI.Controllers
 
         public void CadastrarUsuario(string nome, string login, string senha, int tipoUsuario)
         {
-
             appUsuario = new AppUsuario();
             DtoUsuario usuario = new DtoUsuario()
             {
@@ -57,7 +56,7 @@ namespace UI.Controllers
                 TipoUsuario = tipoUsuario,
             };
 
-            appUsuario.Cadastrar(usuario);
+            appUsuario.Inserir(usuario);
         }
 
         public JsonResult ObterUsuarioPorID(int UsuarioID)

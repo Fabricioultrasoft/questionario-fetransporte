@@ -29,7 +29,15 @@ namespace Aplicacao
 
             return Cidade;
         }
+        private Bairro ObterBairro(DtoBairro DtoBairro)
+        { 
+            var Bairro = ( from s in Banco.Bairro
+                           where s.BairroID == DtoBairro.BairroID
+                           select s).FirstOrDefault();
 
+            return Bairro;
+        }
+        
         private bool qtdCidadesPorEstado(int codEstado)
         {
             var cidadePorEstado = (from s in Banco.Cidade
@@ -44,8 +52,7 @@ namespace Aplicacao
                 return false;
             }
         }
-
-        private bool qtdBairrosPorCidade(int codCidade) 
+        private bool qtdBairrosPorCidade(int codCidade)
         {
             var bairroPorCidade = (from s in Banco.Bairro
                                    where s.Cidade.CidadeID == codCidade
@@ -60,7 +67,6 @@ namespace Aplicacao
                 return false;
             }
         }
-
         #endregion
 
         #region ESTADOS
@@ -112,8 +118,8 @@ namespace Aplicacao
         public void AlterarEstado(DtoEstado DtoEstado)
         {
             var EstadoAlterar = (from s in Banco.Estado
-                                where s.EstadoID == DtoEstado.EstadoID
-                                select s).First();
+                                 where s.EstadoID == DtoEstado.EstadoID
+                                 select s).First();
 
             EstadoAlterar.NomeEstado = DtoEstado.NomeEstado;
             EstadoAlterar.UF = DtoEstado.UF;
@@ -132,7 +138,7 @@ namespace Aplicacao
                 Banco.Estado.Remove(Estado);
                 Banco.SaveChanges();
             }
-            else 
+            else
             {
                 throw new Exception("Não foi possivel deletar o Estado pois existem CIDADES ligadas a ele.");
             }
@@ -140,8 +146,9 @@ namespace Aplicacao
 
         #endregion
 
-        public void InserirCidades(DtoCidade DtoCidade)
-        { 
+        #region CIDADES
+        public void InserirCidade(DtoCidade DtoCidade)
+        {
             var Cidade = new Cidade();
 
             Cidade.Estado = (from s in Banco.Estado
@@ -157,6 +164,7 @@ namespace Aplicacao
         public IEnumerable<DtoCidade> ListarCidadePorEstado(int codEstado)
         {
             var retorno = (from s in Banco.Cidade
+                           where s.Estado.EstadoID == codEstado
                            select new DtoCidade
                            {
                                CidadeID = s.CidadeID,
@@ -200,9 +208,95 @@ namespace Aplicacao
             {
                 var Cidade = (from s in Banco.Cidade
                               where s.CidadeID == codCidade
-                              select 
+                              select s).FirstOrDefault();
+
+                if (Cidade != null)
+                {
+                    Banco.Cidade.Remove(Cidade);
+                    Banco.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Não foi possível deletar a cidade");
+                }
             }
         }
+        #endregion
 
+        #region BAIRROS
+        public void InserirBairro(DtoBairro DtoBairro)
+        {
+            var Bairro = new Bairro();
+
+            Bairro.Cidade = ( from s in Banco.Cidade
+                              where s.CidadeID == DtoBairro.Cidade.CidadeID
+                              select s).FirstOrDefault();
+
+            Bairro.NomeBairro = DtoBairro.NomeBairro;
+
+            Banco.Bairro.Add(Bairro);
+            Banco.SaveChanges();
+        }
+
+        public IEnumerable<DtoBairro> ListasBairrosPorCidade(int codCidade)
+        {
+            var retorno = (from s in Banco.Bairro
+                          where s.Cidade.CidadeID == codCidade
+                          select new DtoBairro
+                          {
+                              BairroID = s.BairroID,
+                              NomeBairro = s.NomeBairro,
+                          }).ToList();
+
+            return retorno;
+        }
+
+        public IEnumerable<DtoBairro> ObterBairro(int codEstado)
+        { 
+            var retorno = ( from s in Banco.Bairro
+                            where s.BairroID == codEstado
+                            select new DtoBairro
+                            {
+                                BairroID = s.BairroID,
+                                NomeBairro = s.NomeBairro,
+                            }).ToList();
+            return retorno;
+        }
+
+        public void AlterarBairro(DtoBairro DtoBairro)
+        {
+            var BairroAlterar = ObterBairro(DtoBairro);
+
+            var CidadeAlterar = ( from s in Banco.Cidade
+                                  where s.CidadeID == DtoBairro.Cidade.CidadeID
+                                  select s).FirstOrDefault();
+
+            BairroAlterar.BairroID = DtoBairro.BairroID;
+            BairroAlterar.NomeBairro = DtoBairro.NomeBairro;
+            BairroAlterar.Cidade = CidadeAlterar;
+
+            Banco.SaveChanges();
+        }
+
+        public void ExcluirBairro(int codBairro)
+        {
+            if (qtdBairrosPorCidade(codBairro) == false)
+            {
+                var BairroExcluir = (from s in Banco.Bairro
+                              where s.BairroID == codBairro
+                              select s).FirstOrDefault();
+
+                if (BairroExcluir != null)
+                {
+                    Banco.Bairro.Remove(BairroExcluir);
+                    Banco.SaveChanges();
+                }
+                else 
+                {
+                    throw new Exception("Não foi possível Excluir o Bairro.");
+                }
+            }
+        }
+        #endregion
     }
 }

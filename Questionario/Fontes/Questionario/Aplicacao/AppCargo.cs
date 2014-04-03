@@ -18,7 +18,6 @@ namespace Aplicacao
             Banco.Configuration.LazyLoadingEnabled = true;
         }
 
-
         public IEnumerable<Cargo> Listar()
         {
             var retorno = Banco.Cargo.Include(x=> x.SetorArea).ToList();
