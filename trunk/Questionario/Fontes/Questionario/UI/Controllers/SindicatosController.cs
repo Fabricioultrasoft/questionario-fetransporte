@@ -60,7 +60,7 @@ namespace UI.Controllers
                 TipoUsuario = tipoUsuario,
             };
 
-            appUsuario.Cadastrar(usuario);
+            appUsuario.Inserir(usuario);
         }
 
         public JsonResult ObterUsuarioPorID(int UsuarioID)
