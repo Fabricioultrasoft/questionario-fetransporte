@@ -106,3 +106,4 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._006.resources
+D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._007.resources
