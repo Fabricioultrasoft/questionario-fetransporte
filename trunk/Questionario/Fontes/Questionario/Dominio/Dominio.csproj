@@ -49,6 +49,7 @@
     <Compile Include="Estado.cs" />
     <Compile Include="Federacao.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="Pergunta.cs" />
     <Compile Include="PerguntasQuestionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Questionario.cs" />
