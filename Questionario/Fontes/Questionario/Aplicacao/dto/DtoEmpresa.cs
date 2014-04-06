@@ -19,6 +19,6 @@ namespace Aplicacao.dto
 
         
         //public Funcionario Funcionario { get; set; }
-        //public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
+        //public virtual IEnumerable<PerguntaQuestionario> PerguntaQuestionario { get; set; }
     }
 }

@@ -4,14 +4,15 @@
 	select * From Empresas 
 
 */
+
 Begin tran
-	Insert Into Federacao ( Descricaofederacao ) Values ( 'FETRANSPORTES' )
+	Insert Into Federacoes ( Descricaofederacao ) Values ( 'FETRANSPORTES' )
 
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'GVBUS', 1 )
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'SETPES', 1 )
 	Insert Into Sindicatos ( NomeSindicato, Federacao_federacaoid ) Values ( 'TRANSCARES', 1 )
 	
-	Insert into Usuarios ( NomeUsuario, LoginUsuario, SenhaUsuario, TipoUsuario, Federacao_FederacaoID ) values ('FETRANSPORTES','FETRANSPORTES','FETRANS', 1,1)
+	Insert into Usuarios ( NomeUsuario, LoginUsuario, SenhaUsuario, TipoUsuario, Federacao_FederacaoID, Ativo ) values ('FETRANSPORTES','FETRANSPORTES','FETRANS', 1,1,1)
 
 	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'CONSORCIO CENTRO SUL	',	'X',	NULL	,'00000000'	,'Empresa líder Viação Praia Sol')
 	Insert Into Empresas ( Sindicato_SindicatoID, NomeEmpresa, Endereco, Bairro_BairroID, Cep, Complemento ) values (	1,	 'CONSORCIO CIDADANIA	',	'X',	NULL	,'00000000'	,'Empresa líder Serramar Serra')

@@ -21,6 +21,22 @@ namespace Aplicacao
             Banco.Configuration.LazyLoadingEnabled = true;
         }
 
+        public SetorArea ObterSetorArea(int codigoSetorArea)
+        {
+            var SetorArea = (from s in Banco.SetorArea
+                             where s.SetorAreaID == codigoSetorArea
+                             select s).FirstOrDefault();
+
+            if (SetorArea != null)
+            {
+                return SetorArea;
+            }
+            else
+            {
+                throw new Exception("Setor/Área não localizado.");
+            }
+        }
+
         public IEnumerable<DtoSetorArea> Listar()
         {
             var retorno = (from s in Banco.SetorArea
@@ -30,10 +46,17 @@ namespace Aplicacao
                                NomeSetorArea = s.NomeSetorArea
                            }).ToList();
             return retorno;
-
-            //var retorno = Banco.SetorArea.ToList();
-            //return retorno;
         }
 
+        public DtoSetorArea Obter(int codigoSetorArea)
+        {
+            var SetorArea = ObterSetorArea(codigoSetorArea);
+
+            return new DtoSetorArea()
+            {
+                SetorAreaID = SetorArea.SetorAreaID,
+                NomeSetorArea = SetorArea.NomeSetorArea,
+            };
+        }
     }
 }

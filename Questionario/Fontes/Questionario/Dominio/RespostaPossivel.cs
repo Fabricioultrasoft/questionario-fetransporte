@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio
 {
-    [Table("RespostaPossivel")]
+    [Table("RespostasPossiveis")]
     public class RespostaPossivel
     {
         public int RespostaPossivelID { get; set; }
@@ -17,8 +17,6 @@ namespace Dominio
         [MaxLength(255, ErrorMessage = "Quantidade máxima de caracteres: 255")]
         public String DescricaoRespostaPossivel { get; set; }
 
-        public List<PerguntasQuestionario> PerguntasQuestionario { get; set; }
-
-        public List<Funcionario> Funcionario { get; set; }
+        public PerguntaQuestionario PerguntaQuestionario { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 using Aplicacao.dto;
 using Dominio;
@@ -20,7 +21,7 @@ namespace Aplicacao
 
         public Empresa ObterEmpresa(int codigoEmpresa)
         {
-            var Empresa = (from s in Banco.Empresa
+            var Empresa = (from s in Banco.Empresa.Include(e => e.Sindicato)
                            where s.EmpresaID == codigoEmpresa
                            select s).FirstOrDefault();
 
@@ -55,7 +56,7 @@ namespace Aplicacao
         {
             var retorno = (from s in Banco.Empresa
                            select s).ToList();
-            
+
             return retorno;
         }
 
@@ -65,6 +66,7 @@ namespace Aplicacao
                               where s.EmpresaID == codEmpresa
                               select new DtoEmpresa
                               {
+                                  EmpresaID = s.EmpresaID,
                                   NomeEmpresa = s.NomeEmpresa,
                                   EmailEmpresa = s.EmailEmpresa,
                                   LogoMarca = s.LogoMarca,
@@ -78,7 +80,12 @@ namespace Aplicacao
                                                 NomeBairro = x.NomeBairro
                                             }).FirstOrDefault(),
                                   Complemento = s.Complemento,
-                                  Cep = s.Cep
+                                  Cep = s.Cep,
+                                  Sindicato = new DtoSindicato()
+                                  {
+                                      NomeSindicato = s.Sindicato.NomeSindicato,
+                                      SindicatoID = s.Sindicato.SindicatoID,
+                                  },
                               }
                               ).FirstOrDefault();
 

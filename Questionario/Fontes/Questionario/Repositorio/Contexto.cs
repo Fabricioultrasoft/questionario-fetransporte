@@ -21,10 +21,9 @@ namespace Repositorio
         public DbSet<Bairro> Bairro { get; set; }
 
         public DbSet<Questionario> Questionario { get; set; }
-        public DbSet<PerguntasQuestionario> PerguntasQuestionario { get; set; }
+        public DbSet<PerguntaQuestionario> PerguntasQuestionario { get; set; }
         public DbSet<RespostaPossivel> RespostaPossivel { get; set; }
-
-        public DbSet<Pergunta> Pergunta { get; set; }
+        public DbSet<RespostaFuncionario> RespostaFuncionario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

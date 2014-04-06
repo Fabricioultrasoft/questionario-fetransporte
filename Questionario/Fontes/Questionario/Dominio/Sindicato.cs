@@ -23,6 +23,6 @@ namespace Dominio
 
         public Federacao Federacao { get; set; }
 
-        public virtual IEnumerable<PerguntasQuestionario> PerguntasQuestionario { get; set; }
+        public virtual IEnumerable<PerguntaQuestionario> PerguntasQuestionario { get; set; }
     }
 }
