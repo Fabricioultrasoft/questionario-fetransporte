@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio
 {
-    [Table("Bairro")]
+    [Table("Bairros")]
     public class Bairro
     {
         public int BairroID { get; set; }

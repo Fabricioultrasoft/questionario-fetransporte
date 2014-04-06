@@ -107,3 +107,17 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._006.resources
 D:\Projetos\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._007.resources
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.dll.config
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.pdb
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.xml
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._001.resources
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache

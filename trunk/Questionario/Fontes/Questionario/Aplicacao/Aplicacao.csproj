@@ -51,12 +51,14 @@
     <Compile Include="AppEmpresa.cs" />
     <Compile Include="AppCargo.cs" />
     <Compile Include="AppEndereco.cs" />
+    <Compile Include="AppFuncionario.cs" />
     <Compile Include="AppUsuario.cs" />
     <Compile Include="dto\DtoBairro.cs" />
     <Compile Include="dto\DtoCargo.cs" />
     <Compile Include="dto\DtoCidade.cs" />
     <Compile Include="dto\DtoEmpresa.cs" />
     <Compile Include="dto\DtoEstado.cs" />
+    <Compile Include="dto\DtoFuncionario.cs" />
     <Compile Include="dto\DtoSindicato.cs" />
     <Compile Include="dto\DtoSetorArea.cs" />
     <Compile Include="dto\DtoUsuario.cs" />

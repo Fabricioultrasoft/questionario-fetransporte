@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio
 {
-    [Table("Federacao")]
+    [Table("Federacoes")]
     public class Federacao
     {
         public int FederacaoID { get; set; }

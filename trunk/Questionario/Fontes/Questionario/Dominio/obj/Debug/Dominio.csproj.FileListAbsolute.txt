@@ -23,3 +23,8 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Domi
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
+F:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb

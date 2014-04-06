@@ -23,9 +23,16 @@ namespace Dominio
         [MaxLength(255, ErrorMessage = "Quantidade máxima de caracteres: 255")]
         public String EmailDoFuncionario { get; set; }
 
+        public bool Ativo { get; set; }
+
         public Cargo Cargo { get; set; }
 
         public Empresa Empresa { get; set; }
+
+        public Funcionario()
+        {
+            Ativo = true;
+        }
 
     }
 }

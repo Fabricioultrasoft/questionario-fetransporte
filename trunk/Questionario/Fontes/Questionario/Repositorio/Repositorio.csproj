@@ -33,10 +33,11 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -49,33 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201403102243311_001.cs" />
-    <Compile Include="Migrations\201403102243311_001.Designer.cs">
-      <DependentUpon>201403102243311_001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403102247125_002.cs" />
-    <Compile Include="Migrations\201403102247125_002.Designer.cs">
-      <DependentUpon>201403102247125_002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403122221182_003.cs" />
-    <Compile Include="Migrations\201403122221182_003.Designer.cs">
-      <DependentUpon>201403122221182_003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403122302494_004.cs" />
-    <Compile Include="Migrations\201403122302494_004.Designer.cs">
-      <DependentUpon>201403122302494_004.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403152051024_005.cs" />
-    <Compile Include="Migrations\201403152051024_005.Designer.cs">
-      <DependentUpon>201403152051024_005.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403231913405_006.cs" />
-    <Compile Include="Migrations\201403231913405_006.Designer.cs">
-      <DependentUpon>201403231913405_006.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404042104005_007.cs" />
-    <Compile Include="Migrations\201404042104005_007.Designer.cs">
-      <DependentUpon>201404042104005_007.cs</DependentUpon>
+    <Compile Include="Migrations\201404062016293_001.cs" />
+    <Compile Include="Migrations\201404062016293_001.Designer.cs">
+      <DependentUpon>201404062016293_001.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,26 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201403102243311_001.resx">
-      <DependentUpon>201403102243311_001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403102247125_002.resx">
-      <DependentUpon>201403102247125_002.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403122221182_003.resx">
-      <DependentUpon>201403122221182_003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403122302494_004.resx">
-      <DependentUpon>201403122302494_004.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403152051024_005.resx">
-      <DependentUpon>201403152051024_005.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403231913405_006.resx">
-      <DependentUpon>201403231913405_006.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404042104005_007.resx">
-      <DependentUpon>201404042104005_007.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201404062016293_001.resx">
+      <DependentUpon>201404062016293_001.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

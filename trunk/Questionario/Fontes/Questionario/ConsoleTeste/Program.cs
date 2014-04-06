@@ -20,6 +20,7 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F3 PARA ACESSAR AS OPÇÕES DE SETORES E AREAS");
             Console.WriteLine("Digite: F4 PARA ACESSAR AS OPÇÕES DE EMPRESAS");
             Console.WriteLine("Digite: F5 PARA ACESSAR AS OPÇÕES DE USUARIOS");
+            Console.WriteLine("Digite: F6 PARA ACESSAR AS OPÇÕES DE FUNCIONÁRIOS");
             cki = Console.ReadKey(true);
             #endregion
 
@@ -306,6 +307,121 @@ namespace ConsoleTeste
                 }
             }
             #endregion
+
+            #region FUNCIONARIOS
+            else if (cki.Key == ConsoleKey.F6)
+            {
+                Console.WriteLine("Digite 1 para listar os dtos funcionarios");
+                Console.WriteLine("Digite 2 para inserir um novo funcionario");
+                Console.WriteLine("Digite 3 para alterar um funcionario");
+                Console.WriteLine("Digite 4 Para excluir um funcionario");
+                Console.WriteLine("Digite 5 Para obter um dto funcionario");
+                cki = Console.ReadKey(true);
+
+                var app = new AppFuncionario();
+
+                if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
+                {
+                    #region Listar
+                    var funcionarios = app.Listar();
+
+                    foreach (var funcionario in funcionarios)
+                    {
+                        Console.WriteLine("Id: " + funcionario.FuncionarioID);
+                        Console.WriteLine("Nome: " + funcionario.NomeDoFuncionairo);
+                        Console.WriteLine("Matricula: " + funcionario.Matricula);
+                        Console.WriteLine("Email: " + funcionario.EmailDoFuncionario);
+                        Console.WriteLine("Empresa: " + funcionario.Empresa.NomeEmpresa);
+                        Console.WriteLine("Cargo: " + funcionario.Cargo.NomeCargos);
+                    } 
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                {
+                    #region Inserir
+                    var dtoFuncionario = new DtoFuncionario();
+
+                    Console.Write("Digite o Id da empresa: ");
+                    var codigoEmpresa = Convert.ToInt32(Console.ReadLine());
+
+                    dtoFuncionario.Empresa = new AppEmpresa().Obter(codigoEmpresa);
+
+                    Console.Write("Digite o Id do cargo: ");
+                    var codigoCargo = Convert.ToInt32(Console.ReadLine());
+
+                    dtoFuncionario.Cargo = new AppCargo().Obter(codigoCargo);
+
+                    Console.Write("Digite o nome do funcionario: ");
+                    dtoFuncionario.NomeDoFuncionairo = Console.ReadLine();
+
+                    Console.Write("Digite a matricula: ");
+                    dtoFuncionario.Matricula = Console.ReadLine();
+
+                    Console.Write("Digite o email: ");
+                    dtoFuncionario.EmailDoFuncionario = Console.ReadLine();
+
+                    app.Inserir(dtoFuncionario); 
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D3 || cki.Key == ConsoleKey.NumPad3)
+                {
+                    #region Alterar
+                    var dtoFuncionario = new DtoFuncionario();
+
+                    Console.Write("Digite o Id do funcionario: ");
+                    dtoFuncionario.FuncionarioID = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Digite o Id da empresa: ");
+                    var codigoEmpresa = Convert.ToInt32(Console.ReadLine());
+
+                    dtoFuncionario.Empresa = new AppEmpresa().Obter(codigoEmpresa);
+
+                    Console.Write("Digite o Id do cargo: ");
+                    var codigoCargo = Convert.ToInt32(Console.ReadLine());
+
+                    dtoFuncionario.Cargo = new AppCargo().Obter(codigoCargo);
+
+                    Console.Write("Digite o nome do funcionario: ");
+                    dtoFuncionario.NomeDoFuncionairo = Console.ReadLine();
+
+                    Console.Write("Digite a matricula: ");
+                    dtoFuncionario.Matricula = Console.ReadLine();
+
+                    Console.Write("Digite o email: ");
+                    dtoFuncionario.EmailDoFuncionario = Console.ReadLine();
+
+                    app.Alterar(dtoFuncionario); 
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
+                {
+                    #region Excluir
+                    Console.Write("Digite o Id do funcionario: ");
+                    var codigoFuncionario = Convert.ToInt32(Console.ReadLine());
+
+                    app.Excluir(codigoFuncionario);
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D5 || cki.Key == ConsoleKey.NumPad5)
+                {
+                    #region Obter
+                    Console.Write("Digite o Id do funcionario: ");
+                    var codigoFuncionario = Convert.ToInt32(Console.ReadLine());
+
+                    var funcionario = app.Obter(codigoFuncionario);
+
+                    Console.WriteLine("Id: " + funcionario.FuncionarioID);
+                    Console.WriteLine("Nome: " + funcionario.NomeDoFuncionairo);
+                    Console.WriteLine("Matricula: " + funcionario.Matricula);
+                    Console.WriteLine("Email: " + funcionario.EmailDoFuncionario);
+                    Console.WriteLine("Empresa: " + funcionario.Empresa.NomeEmpresa);
+                    Console.WriteLine("Cargo: " + funcionario.Cargo.NomeCargos);
+
+                    #endregion
+                }
+            }
+            #endregion
+
 
             else if (cki.Key == ConsoleKey.D0)
             {

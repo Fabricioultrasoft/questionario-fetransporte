@@ -11,7 +11,7 @@ namespace Aplicacao.dto
         public int CargoID { get; set; }
         public String NomeCargos { get; set; }
         public string Observacao { get; set; }
-        public virtual IEnumerable<Funcionario> Funcionario { get; set; }
-        public SetorArea SetorArea { get; set; }
+        //public virtual IEnumerable<Funcionario> Funcionario { get; set; }
+        public DtoSetorArea SetorArea { get; set; }
     }
 }
