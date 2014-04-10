@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aplicacao;
+using Dominio;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -14,105 +16,41 @@ namespace UI.Controllers
     {
         //
         // GET: /SetorArea/
-        //string path = "H:\\files\\data.xml";
-        private XmlDocument doc;
-        public ActionResult Index()
+        private AppSetorArea appSetorArea;
+
+        public ActionResult Home()
         {
+            appSetorArea = new AppSetorArea();
             return View();
         }
 
-        public JsonResult Listar(string path)
+        public JsonResult Listar()
         {
-            doc = new XmlDocument();
-            doc.Load(path);
-            List<Dominio.SetorArea> lista = new List<Dominio.SetorArea>();
- 
-            XmlNodeList nodes = doc.SelectNodes(@"/dados/setorAreas/setorArea");
+            appSetorArea = new AppSetorArea();
+            var result = appSetorArea.Listar();
 
-            if (nodes.Count > 0)
+            if (result.Count() == 0)
             {
-                foreach (XmlNode node in nodes)
-                {
-                    var SetorArea = new Dominio.SetorArea()
-                    {
-                        SetorAreaID = int.Parse(node["id"].InnerText),
-                        NomeSetorArea = node["nome"].InnerText
-                    };
-                    lista.Add(SetorArea);
-                }
-            }
-            return new JsonResult() { 
-                Data = lista
-            };
-        }
-
-        public void Adicionar(string id,string name,string path) {
-            doc = new XmlDocument();
-            doc.Load(path);
-
-            XmlNode linha = doc.CreateElement("setorArea");
-
-            XmlNode Id = doc.CreateElement("id");
-            XmlNode SetorArea = doc.CreateElement("nome");
-
-            Id.InnerText = id;
-            SetorArea.InnerText = name;
-
-            linha.AppendChild(Id);
-            linha.AppendChild(SetorArea);
-
-            doc.SelectSingleNode("/dados/setorAreas").AppendChild(linha);
-
-            doc.Save(path);
-        }
-
-        public JsonResult getSetorArea(string id, string path) 
-        {
-            doc = new XmlDocument();
-            doc.Load(path);
-            List<Dominio.SetorArea> lista = new List<Dominio.SetorArea>();
-
-            XmlNodeList nodes = doc.SelectNodes(@"/dados/setorAreas/setorArea");
-            XmlNodeList xnList = doc.GetElementsByTagName("setorAreas");
-
-            foreach (XmlNode node in nodes)
-            {
-                if (node["id"].InnerText==id)
-                {
-                    var SetorArea = new Dominio.SetorArea()
-                    {
-                        SetorAreaID = int.Parse(node["id"].InnerText),
-                        NomeSetorArea = node["nome"].InnerText
-                    };
-                    lista.Add(SetorArea);
-                }
+                result = null;
             }
 
             return new JsonResult()
             {
-                Data = lista
+                Data = result
             };
         }
 
-        public void Alterar(string id, string name, string path)
+        public void Cadastrar(string nome,string cargo)
         {
-            doc = new XmlDocument();
-            doc.Load(path);
-            XmlNode no;
-            no = doc.SelectSingleNode(String.Format("/dados/setorAreas/setorArea[id={0}]", id));
-            no.SelectSingleNode("./nome").InnerText = name;
-            doc.Save(path);
+            SetorArea setorArea = new SetorArea() {
+                NomeSetorArea = nome,
+            };
         }
 
-        public void DeletarSetorArea(string id, string path)
+        public void Alterar(int idSetorArea, string nome, string cargo) 
         {
-            doc = new XmlDocument();
-            doc.Load(path);
-
-            XmlNode t = doc.SelectSingleNode(String.Format("/dados/setorAreas/setorArea[id={0}]", id));
-            t.ParentNode.RemoveChild(t);
-
-            doc.Save(path);
+        
         }
+        public void Excluir(int idSetorArea) { }
     }
 }

@@ -1083,4 +1083,4 @@
 		Insert Into Bairros ( Cidade_CidadeID, NomeBairro )  Select CidadeID,UPPER('Santa Maria de JetibA') From Fetransportes_questionario.Dbo.Cidades Where Descricao = 'SÃO MATEUS'
 		Insert Into Bairros ( Cidade_CidadeID, NomeBairro )  Select CidadeID,UPPER('Centro') From Fetransportes_questionario.Dbo.Cidades Where Descricao = 'Manhumirim'
 		Insert Into Bairros ( Cidade_CidadeID, NomeBairro )  Select CidadeID,UPPER('Cachoeira do Campo') From Fetransportes_questionario.Dbo.Cidades Where Descricao = 'Ouro Preto'
-	--COMMIT
+	COMMIT

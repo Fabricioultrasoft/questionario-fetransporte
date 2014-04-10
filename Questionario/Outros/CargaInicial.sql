@@ -271,5 +271,5 @@ Begin tran
 	Insert Into Cargos ( Setorarea_setorareaid, Nomecargos ) Values ( 7,	'Motorista')
 	Insert Into Cargos ( Setorarea_setorareaid, Nomecargos ) Values ( 7,	'Supervisor / Encarregado / Coordenador')
 		
--- COMMIT
+COMMIT
 
