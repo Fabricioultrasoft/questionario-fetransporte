@@ -14,14 +14,71 @@ namespace UI.Controllers
         //
         
         // GET: /Sindicatos/
+        private AppSindicato appSindicato;
         private AppUsuario appUsuario;
 
         public ActionResult Home()
         {
-            AppSindicato appSindicato = new AppSindicato();
+            appSindicato = new AppSindicato();
             return View();
         }
 
+        public JsonResult Listar() 
+        {
+            appSindicato = new AppSindicato();
+            var result = appSindicato.Listar();
+
+            if (result.Count() == 0) 
+            {
+                result = null;
+            }
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+        }
+
+        public JsonResult ObterSindicatoPorID(int SindicatoID)
+        {
+            appSindicato = new AppSindicato();
+            var result = appSindicato.Obter(SindicatoID);
+           
+            return new JsonResult()
+            {
+                Data = result
+            };           
+        }
+
+        public void Cadastrar(string nome,string logomarca) 
+        {
+           
+            appSindicato = new AppSindicato();
+
+            DtoSindicato sindicato = new DtoSindicato() {
+                NomeSindicato = nome,  
+            };
+
+            appSindicato.Inserir(sindicato);
+        }
+
+        public void Alterar(int idSindicato,string nome, string logomarca)
+        {
+            appSindicato = new AppSindicato();
+
+            DtoSindicato sindicato = new DtoSindicato()
+            {
+                NomeSindicato = nome ,
+                
+            };
+            
+        }
+
+        public void Deletar(int codSindicato) 
+        {
+            appSindicato = new AppSindicato();
+            appSindicato.Excluir(codSindicato);
+        }
 
         #region ======= Usuarios
 

@@ -1,5 +1,6 @@
 ﻿var App = {
     obterUsuario: false,
+    obterSindicato: false,
     init: function () {
         
     },
@@ -21,8 +22,8 @@
             },
         });
     },
-    openFrmCadastrarUsuario: function () {
-       
+    //usuarios
+    openFrmCadastrarUsuario: function () {    
         var html = '<form id="frmCadastrarUsuario">';
         html += '<b>Cadastrar Usuário<b><br/><br/><input type="hidden" id="idUsuario" name="idUsuario" />'
             +'<input type="hidden" id="tipoUsuario" name="tipoUsuario" value="' + tipo_usuario + '"/>';
@@ -102,7 +103,7 @@
             }
         });
     },
-   AlterarUsuario: function () {
+    AlterarUsuario: function () {
         $.ajax({
             url: 'AlterarUsuario',
             type: 'post',
@@ -119,50 +120,134 @@
                 App.ListarUsuarios(tUsuario);
             }
         });
-   },
-   ExcluirUsuario: function (id) {
-       $.ajax({
-           url: 'ExcluirUsuario',
-           type: 'post',
-           data: { codUsuario: id },
-           success: function () {
-               App.ListarUsuarios(tUsuario);
-           }
-       });
-   },
-    ListarEntidade: function (entidade) {
-        if (entidade == 'Sindicato') {
+    },
+    ExcluirUsuario: function (id) {
+        $.ajax({
+            url: 'ExcluirUsuario',
+            type: 'post',
+            data: { codUsuario: id },
+            success: function () {
+                App.ListarUsuarios(tUsuario);
+            }
+        });
+    },
+    //sindicatos
+    getSindicato: function (idSindicato) {
+        App.obterSindicato = true;
+        if (idSindicato != 0) {
             $.ajax({
-                url: 'ListarSindicatos',
+                url: 'ObterSindicatoPorID',
+                type: 'post',
+                data: { SindicatoID: idSindicato },
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+                    App.openFrmCadastrarSindicato();
+                    $('#nomeSindicato').val(json.NomeSindicato);
+                    $('#logo').val(json.l);
+                }
+            });
+        }
+    },
+    openFrmCadastrarSindicato: function () {
+        var html = '<form id="frmCadastrarSindicato">';
+        html += '<b>Cadastrar Sindicato<b><br/><br/><input type="hidden" id="idSindicato" name="idSindicato" />';
+        html += 'Nome:<br/><br/><input type="text" id="nomeSindicato" name="nomeSindicato"/><br/><br/>';
+        html += 'Logomarca:<br/><br/><input type="file" id="logomarca" name="logomarca"/><br/><br/><small id="logo">(Deixe o campo vazio para manter a logo atual)</small><br/>';
+
+        if (App.obterSindicato) {
+            html += '<br/><br/><input type="button" id="alterarSindicato" onclick="App.AlterarSindicato()" value="Alterar"/> ';
+        } else {
+            html += '<br/><br/><input type="button" id="cadastrarSindicato" onclick="App.CadastrarSindicato()" value="Cadastrar"/> ';
+        }
+
+        html += '<input type="button" id="cadastrarSindicato" onclick="App.closeModal()" value="Cancelar"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
+    },
+    CadastrarSindicato: function(){
+        $.ajax({
+            url: 'Cadastrar',
+            type: 'post',
+            data: { nome: $('#nomeSindicato').val(), logomarca: $('#logomarca').val() },
+            dataType: 'json',
+            success: function () {
+                App.Listar('Sindicatos');
+                $('#nomeSindicato').val('');
+                $('#logomarca').val('');
+            }
+        });
+    },
+    AlterarSindicato: function () {
+        $.ajax({
+            url: 'Alterar',
+            type: 'post',
+            data: { idSindicato: $('#idSindicato').val(), nome: $('#nomeSindicato').val(), logomarca: $('#logomarca').val() },
+            dataType: 'json',
+            success: function () {
+                App.Listar('Sindicatos');
+                $('#nomeSindicato').val('');
+                $('#logomarca').val('');
+            }
+        });
+    },
+    ExcluirSindicato: function (id) {
+        $.ajax({
+            url: 'Excluir',
+            type: 'post',
+            data: { codSindicato: id },
+            success: function () {
+                $('#lista').find($('#lista tr')).remove();
+                App.Listar('Sindicatos');
+            }
+        });
+    },
+    ListarEntidade: function (entidade) {
+        if (entidade == 'Sindicatos') {
+            $.ajax({
+                url: 'Listar',
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
+                    $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                            $('#lista').append('<tr><td>' + json[item].SindicatoID + '</td><td>' + json[item].NomeSindicato + '</td><td><a href="javascript:;" title="Editar" onclick="App.getSindicato(' + json[item].SindicatoID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirSindicato(' + json[item].SindicatoID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
+                    } else {
+                        console.log('Nenhum sindicato cadastrado');
+                        $('#lista').html('<tr><td colspan="4">Não existe sindicatos cadastrados.</td></tr>');
                     }
                 }
             });
         } else if (entidade == 'Empresas') {
             $.ajax({
-                url: 'ListarEmpresas',
+                url: 'Listar',
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
+                    console.log(json);
+                    $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.NomeEmpresa + '</td><td>' + json.EmailEmpresa + '</td></tr>');
+                            $('#lista').append('<tr><td>' + json[item].EmpresaID + '</td><td>' + json[item].NomeEmpresa + '</td><td><a href="javascript:;" title="Editar" onclick="App.getSindicato(' + json[item].SindicatoID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirSindicato(' + json[item].EmpresaID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
+                    } else {
+                        console.log('Nenhum sindicato cadastrado');
+                        $('#lista').html('<tr><td colspan="4">Não existe sindicatos cadastrados.</td></tr>');
                     }
                 }
             });
         } else if (entidade == 'Funcionarios') {
             $.ajax({
-                url: 'ListarFuncionarios',
+                url: 'Listar',
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
+                    $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
                             $('#lista').html('<tr><td>' + json.FuncionarioID + '</td><td>' + json.NomeFuncionario + '</td><td>' + json.EmailFuncionario + '</td><td>' + json.CargoFuncionario +  '</td><td>' + json.EmpresaFuncionario + + '</td></tr>');
@@ -172,10 +257,11 @@
             });
         } else if (entidade == 'SetorArea') {
             $.ajax({
-                url: 'ListarSetorArea',
+                url: 'Listar',
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
+                    $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
                             $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
@@ -185,10 +271,11 @@
             });
         } else if (entidade == 'Cargos') {
             $.ajax({
-                url: 'ListarCargos',
+                url: 'Listar',
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
+                    $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
                             $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');

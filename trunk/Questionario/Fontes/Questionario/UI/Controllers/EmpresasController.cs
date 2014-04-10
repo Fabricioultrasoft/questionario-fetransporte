@@ -12,13 +12,30 @@ namespace UI.Controllers
     {
         //
         // GET: /UsuariosEmpresa/
-
+        private AppEmpresa appEmpresa;
         private AppUsuario appUsuario;
 
         public ActionResult Home()
         {
             return View();
         }
+
+        public JsonResult Listar()
+        {
+            appEmpresa = new AppEmpresa();
+            var result = appEmpresa.ListarEmpresa();
+
+            if (result.Count() == 0)
+            {
+                result = null;
+            }
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+        }
+        
 
         #region ======= Usuarios
 
