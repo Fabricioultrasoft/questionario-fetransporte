@@ -281,7 +281,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\files\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\NewFolder1\" />
+    <Folder Include="Views\SetorArea\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
