@@ -45,6 +45,7 @@ namespace UI.Controllers
             SetorArea setorArea = new SetorArea() {
                 NomeSetorArea = nome,
             };
+
         }
 
         public void Alterar(int idSetorArea, string nome, string cargo) 
