@@ -101,8 +101,6 @@ namespace UI.Controllers
             appEmpresa.Excluir(codEmpresa);
         }
 
-        #region 
-        #endregion
 
         #region ======= Usuarios
 

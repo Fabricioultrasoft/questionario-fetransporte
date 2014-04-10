@@ -2,6 +2,8 @@
     obterUsuario: false,
     obterSindicato: false,
     obterEmpresa: false,
+    obterSetorArea: false,
+    obterCargo: false,
     init: function () {
         
     },
@@ -259,10 +261,53 @@
             data: { codEmpresa: idEmpresa },
             success: function () {
                 $('#lista').find($('#lista tr')).remove();
-                App.Listar('Sindicatos');
+                App.Listar('Empresas');
             }
         });
     },
+    //SetorArea
+    getSetorArea: function (idSetorArea) {
+        App.obterSetorArea = true;
+        if (idSetorArea != 0) {
+            $.ajax({
+                url: 'ObterSetorAreaPorID',
+                type: 'post',
+                data: { SetorAreaID: idSetorArea },
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+                    App.openFrmCadastrarSetorArea();
+
+                }
+            });
+        }
+    },
+    openFrmCadastrarSetorArea: function () {
+
+    },
+    CadastrarSetorArea: function () { },
+    AlterarSetorArea: function () { },
+    ExcluirSetorArea: function (idSetorArea) { },
+    //Cargos
+    getCargo: function (idCargo) {
+        App.obterCargo = true;
+        if (idCargo != 0) {
+            $.ajax({
+                url: 'ObterCargoPorID',
+                type: 'post',
+                data: { CargoID: idCargo },
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+                    App.openFrmCadastrarCargo();
+                }
+            });
+        }
+    },
+    CadastrarCargo: function () { },
+    AlterarCargo: function () { },
+    ExcluirCargo: function (idCargo) { },
+    //global
     ListarEntidade: function (entidade) {
         if (entidade == 'Sindicatos') {
             $.ajax({
