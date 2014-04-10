@@ -1,6 +1,7 @@
 ﻿var App = {
     obterUsuario: false,
     obterSindicato: false,
+    obterEmpresa: false,
     init: function () {
         
     },
@@ -203,6 +204,65 @@
             }
         });
     },
+    //empresas
+    getEmpresa: function (idEmpresa) {
+        App.obterEmpresa = true;
+        if (idEmpresa != 0) {
+            $.ajax({
+                url: 'ObterEmpresaPorID',
+                type: 'post',
+                data: { EmpresaID: idEmpresa },
+                dataType: 'json',
+                success: function (json) {
+                    console.log(json);
+                    App.openFrmCadastrarEmpresa();
+                    $('#idEmpresa').val(json.EmpresaID);
+                    $('#nomeEmpresa').val(json.NomeEmpresa);
+                    $('#emailEmpresa').val(json.EmailEmpresa);
+                    $('#endereco').val(json.Endereco);
+                    $('#complemento').val(json.Complemento);
+                    $('#cep').val(json.Cep);
+                    $('#idSindicato').val(json.Sindicato_SindicatoID);
+                }
+            });
+        }
+    },
+    openFrmCadastrarEmpresa: function () {
+
+        var html = '<form id="frmCadastrarEmpresa">';
+        html += '<b>Cadastrar Empresa<b><br/><br/><input type="hidden" id="idEmpresa" name="idEmpresa" />';
+        html += 'Nome:<br/><br/><input type="text" id="nomeEmpresa" name="nomeEmpresa"/><br/><br/>';
+        html += 'E-mail:<br/><br/><input type="text" id="emailEmpresa" name="emailEmpresa"/><br/><br/>';
+        html += 'Cep:<br/><br/><input type="text" id="cep" name="cep"/><br/><br/>';
+        html += 'Endereço:<br/><br/><input type="text" id="endereco" name="endereco"/><br/><br/>';
+        html += 'Complemeto:<br/><br/><input type="text" id="complemento" name="complemento"/><br/><br/>';
+        html += '<select id="idBairro"></select>';
+        html += '<select id="idSindicato"></select>';
+
+        if (App.obterEmpresa) {
+            html += '<br/><br/><input type="button" id="alterarEmpresa" onclick="App.AlterarEmpresa()" value="Alterar"/> ';
+        } else {
+            html += '<br/><br/><input type="button" id="cadastrarEmpresa" onclick="App.CadastrarEmpresa()" value="Cadastrar"/> ';
+        }
+
+        html += '<input type="button" id="cadastrarSindicato" onclick="App.closeModal()" value="Cancelar"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
+    },
+    CadastrarEmpresa: function () { },
+    AlterarEmpresa: function () { },
+    ExcluirEmpresa: function (idEmpresa) {
+        $.ajax({
+            url: 'Excluir',
+            type: 'post',
+            data: { codEmpresa: idEmpresa },
+            success: function () {
+                $('#lista').find($('#lista tr')).remove();
+                App.Listar('Sindicatos');
+            }
+        });
+    },
     ListarEntidade: function (entidade) {
         if (entidade == 'Sindicatos') {
             $.ajax({
@@ -232,8 +292,8 @@
                     $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
-                            $('#lista').append('<tr><td>' + json[item].EmpresaID + '</td><td>' + json[item].NomeEmpresa + '</td><td><a href="javascript:;" title="Editar" onclick="App.getSindicato(' + json[item].SindicatoID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
-                            + '<a href="javascript:;" onclick="App.ExcluirSindicato(' + json[item].EmpresaID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
+                            $('#lista').append('<tr><td>' + json[item].EmpresaID + '</td><td>' + json[item].NomeEmpresa + '</td><td><a href="javascript:;" title="Editar" onclick="App.getEmpresa(' + json[item].EmpresaID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirEmpresa(' + json[item].EmpresaID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
                     } else {
                         console.log('Nenhum sindicato cadastrado');
@@ -290,3 +350,4 @@
         modal.close();
     }
 }
+

@@ -12,8 +12,13 @@ namespace UI.Controllers
     {
         //
         // GET: /UsuariosEmpresa/
+        private AppEndereco appEndereco;
+        private AppSindicato appSindicato;
         private AppEmpresa appEmpresa;
         private AppUsuario appUsuario;
+        private DtoSindicato sindicato;
+        private DtoBairro bairro;
+        private DtoEmpresa empresa;
 
         public ActionResult Home()
         {
@@ -35,7 +40,69 @@ namespace UI.Controllers
                 Data = result
             };
         }
-        
+
+        public JsonResult ObterEmpresaPorID(int EmpresaID)
+        {
+            appEmpresa = new AppEmpresa();
+            var result = appEmpresa.Obter(EmpresaID);
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+        }
+
+        public void Cadastrar(string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato)
+        {
+
+            appEmpresa = new AppEmpresa();
+            appEndereco = new AppEndereco();
+            appSindicato = new AppSindicato();
+
+            
+            sindicato = appSindicato.Obter(idSindicato);
+
+            empresa = new DtoEmpresa()
+            {
+                NomeEmpresa = nome,
+                EmailEmpresa = email,
+                Endereco = endereco,
+                Complemento = complemento,
+                Cep = cep,
+                Sindicato = sindicato,
+            };
+
+            appEmpresa.Inserir(empresa);
+        }
+
+        public void Alterar(int idEmpresa, string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato)
+        {
+            appEmpresa = new AppEmpresa();
+            appSindicato = new AppSindicato();
+
+            sindicato = appSindicato.Obter(idSindicato);
+
+            empresa = new DtoEmpresa()
+            {
+                NomeEmpresa = nome,
+                EmailEmpresa = email,
+                Endereco = endereco,
+                Complemento = complemento,
+                Cep = cep,
+                Sindicato = sindicato,
+            };
+
+            appEmpresa.Alterar(empresa);
+        }
+
+        public void Excluir(int codEmpresa)
+        {
+            appEmpresa = new AppEmpresa();
+            appEmpresa.Excluir(codEmpresa);
+        }
+
+        #region 
+        #endregion
 
         #region ======= Usuarios
 
