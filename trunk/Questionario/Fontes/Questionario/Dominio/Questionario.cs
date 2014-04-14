@@ -19,7 +19,7 @@ namespace Dominio
 
         public DateTime DataValidade { get; set; }
 
-        public virtual Empresa Empresa { get; set; }
+        public virtual IEnumerable<Empresa> Empresas { get; set; }
         public virtual IEnumerable<PerguntaQuestionario> PerguntasQuestionario { get; set; }
     }
 }

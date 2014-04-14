@@ -22,7 +22,5 @@ namespace Dominio
         public virtual List<Empresa> Empresa { get; set; }
 
         public Federacao Federacao { get; set; }
-
-        public virtual IEnumerable<PerguntaQuestionario> PerguntasQuestionario { get; set; }
     }
 }
