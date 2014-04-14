@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-
 using Aplicacao;
 using Aplicacao.dto;
 
@@ -21,6 +21,7 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F4 PARA ACESSAR AS OPÇÕES DE EMPRESAS");
             Console.WriteLine("Digite: F5 PARA ACESSAR AS OPÇÕES DE USUARIOS");
             Console.WriteLine("Digite: F6 PARA ACESSAR AS OPÇÕES DE FUNCIONÁRIOS");
+            Console.WriteLine("Digite: F7 PARA ACESSAR AS OPÇÕES DE QUESTIONÁRIOS");
             cki = Console.ReadKey(true);
             #endregion
 
@@ -417,6 +418,106 @@ namespace ConsoleTeste
                     Console.WriteLine("Empresa: " + funcionario.Empresa.NomeEmpresa);
                     Console.WriteLine("Cargo: " + funcionario.Cargo.NomeCargos);
 
+                    #endregion
+                }
+            }
+            #endregion
+
+            #region QUESTIONARIOS
+            else if (cki.Key == ConsoleKey.F7)
+            {
+                Console.WriteLine("Digite 1 inserir um questionarios");
+                Console.WriteLine("Digite 2 para excluir um questionario");
+                Console.WriteLine("Digite 3 para alterar um questionario");
+                Console.WriteLine("Digite 4 adicionar uma pergunta");
+                Console.WriteLine("Digite 5 Para obter um dto questionario");
+                cki = Console.ReadKey(true);
+
+                var app = new AppQuestionario();
+
+                if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
+                {
+                    #region inserir
+
+                    Console.Write("Digite o ano: ");
+                    var ano = Console.ReadLine();
+
+                    Console.Write("Digite a validade: ");
+                    var validade = DateTime.Parse(Console.ReadLine());
+
+                    app.CriarNovoQuestionario(ano, validade);
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                {
+                    #region excluir
+
+                    Console.Write("Digite o Id do questionario: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    app.ExcluirQuestionario(id);
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D3 || cki.Key == ConsoleKey.NumPad3)
+                {
+                    #region Alterar
+
+                    Console.Write("Digite o Id do questionario: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Digite o ano: ");
+                    var ano = Console.ReadLine();
+
+                    Console.Write("Digite a validade: ");
+                    var validade = DateTime.Parse(Console.ReadLine());
+
+                    app.AlterarQuestionario(id, ano, validade);
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
+                {
+                    #region adicionar pergunta
+                    Console.Write("Digite o Id do questionario: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var pergunta = new DtoPerguntaQuestionario();
+
+                    pergunta.Descricao = Console.ReadLine();
+                    pergunta.MultiplaEscolha = Boolean.Parse(Console.ReadLine());
+
+                    var respostas = new List<DtoRespostaPossivel>()
+                    {
+                        new DtoRespostaPossivel()
+                        {
+                             DescricaoRespostaPossivel = "Sim",
+                        },
+                        
+                        new DtoRespostaPossivel()
+                        {
+                             DescricaoRespostaPossivel = "Não",
+                        },
+                    };
+
+                    pergunta.RespostasPossiveis = respostas;
+
+                    app.AdicionarPergunta(id, pergunta);
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D5 || cki.Key == ConsoleKey.NumPad5)
+                {
+                    #region Obter
+                    Console.Write("Digite o Id do questionario: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var questionario = app.Obter(id);
+
+                    Console.WriteLine("Id: " + questionario.QuestionarioID);
+                    Console.WriteLine("Ano: " + questionario.AnoQuestionario);
+                    Console.WriteLine("Validade: " + questionario.DataValidade);
+                    
                     #endregion
                 }
             }
