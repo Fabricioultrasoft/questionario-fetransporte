@@ -19,9 +19,21 @@ namespace Aplicacao
             Banco.Configuration.LazyLoadingEnabled = true;
         }
 
-        public IEnumerable<Cargo> Listar()
+        public IEnumerable<DtoCargo> Listar()
         {
-            var retorno = Banco.Cargo.Include(x => x.SetorArea).ToList();
+            var retorno = (from c in Banco.Cargo.Include(x => x.SetorArea)
+                           select new DtoCargo()
+                           {
+                               CargoID = c.CargoID,
+                               NomeCargos = c.NomeCargos,
+                               Observacao = c.Observacao,
+                               SetorArea = new DtoSetorArea()
+                               {
+                                   SetorAreaID = c.SetorArea.SetorAreaID,
+                                   NomeSetorArea = c.SetorArea.NomeSetorArea,
+                               }
+                           }).ToList();
+
             return retorno;
         }
 
