@@ -585,6 +585,7 @@ namespace ConsoleTeste
                 Console.WriteLine("Digite 2 para excluir um cargo");
                 Console.WriteLine("Digite 3 para alterar um cargo");
                 Console.WriteLine("Digite 4 para obter um dto cargo");
+                Console.WriteLine("Digite 5 para listar os dto cargo");
                 cki = Console.ReadKey(true);
 
                 var app = new AppCargo();
@@ -657,6 +658,25 @@ namespace ConsoleTeste
                     Console.WriteLine("Id: " + cargo.CargoID);
                     Console.WriteLine("Nome: " + cargo.NomeCargos);
                     Console.WriteLine("Obs: " + cargo.Observacao);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D5 || cki.Key == ConsoleKey.NumPad5)
+                {
+                    #region Listar
+
+                    var cargos = app.Listar();
+
+                    foreach (var cargo in cargos)
+                    {
+                        Console.WriteLine("Id: " + cargo.CargoID);
+                        Console.WriteLine("Nome: " + cargo.NomeCargos);
+                        Console.WriteLine("Obs: " + cargo.Observacao);
+                        Console.WriteLine("Setor: " + cargo.SetorArea.NomeSetorArea);
+                        Console.WriteLine();                    
+                    }
 
                     Console.WriteLine("Fim");
 
