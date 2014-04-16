@@ -22,6 +22,7 @@ namespace ConsoleTeste
             Console.WriteLine("Digite: F5 PARA ACESSAR AS OPÇÕES DE USUARIOS");
             Console.WriteLine("Digite: F6 PARA ACESSAR AS OPÇÕES DE FUNCIONÁRIOS");
             Console.WriteLine("Digite: F7 PARA ACESSAR AS OPÇÕES DE QUESTIONÁRIOS");
+            Console.WriteLine("Digite: F8 PARA ACESSAR AS OPÇÕES DE CARGOS");
             cki = Console.ReadKey(true);
             #endregion
 
@@ -168,21 +169,75 @@ namespace ConsoleTeste
             #region SETORAREA
             else if (cki.Key == ConsoleKey.F3)
             {
-                AppSetorArea SetorAreaApp = new AppSetorArea();
-
-                Console.WriteLine("\t Digite: 1 para listar as areas");
-
+                Console.WriteLine("Digite 1 inserir um Setor/Area");
+                Console.WriteLine("Digite 2 para excluir um Setor/Area");
+                Console.WriteLine("Digite 3 para alterar um Setor/Area");
+                Console.WriteLine("Digite 4 para obter um dto SetorArea");
                 cki = Console.ReadKey(true);
 
-                if (cki.Key == ConsoleKey.D1)
+                var app = new AppSetorArea();
+
+                if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
                 {
-                    Console.WriteLine("-----");
-                    var listaDeSetoresAreas = SetorAreaApp.Listar();
-                    foreach (var setorarea in listaDeSetoresAreas)
-                    {
-                        Console.WriteLine("{0} - {1} ", setorarea.SetorAreaID, setorarea.NomeSetorArea);
-                    }
-                    Console.ReadKey();
+                    #region inserir
+
+                    var dto = new DtoSetorArea();
+
+                    Console.Write("Digite o Nome: ");
+                    dto.NomeSetorArea = Console.ReadLine();
+
+                    app.Inserir(dto);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                {
+                    #region excluir
+
+                    Console.Write("Digite o Id do Setor/Area: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    app.Excluir(id);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D3 || cki.Key == ConsoleKey.NumPad3)
+                {
+                    #region Alterar
+
+                    Console.Write("Digite o Id do Setor/Area: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var dto = new DtoSetorArea();
+
+                    Console.Write("Digite o nome: ");
+                    dto.NomeSetorArea = Console.ReadLine();
+
+                    app.Alterar(id, dto);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
+                {
+                    #region Obter
+
+                    Console.Write("Digite o Id do setorArea: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var setorArea = app.Obter(id);
+
+                    Console.WriteLine("Id: " + setorArea.SetorAreaID);
+                    Console.WriteLine("Nome: " + setorArea.NomeSetorArea);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
                 }
             }
             #endregion
@@ -523,6 +578,92 @@ namespace ConsoleTeste
             }
             #endregion
 
+            #region CARGOS
+            else if (cki.Key == ConsoleKey.F8)
+            {
+                Console.WriteLine("Digite 1 inserir um cargo");
+                Console.WriteLine("Digite 2 para excluir um cargo");
+                Console.WriteLine("Digite 3 para alterar um cargo");
+                Console.WriteLine("Digite 4 para obter um dto cargo");
+                cki = Console.ReadKey(true);
+
+                var app = new AppCargo();
+
+                if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.NumPad1)
+                {
+                    #region inserir
+
+                    var dto = new DtoCargo();
+
+                    Console.Write("Digite o Nome: ");
+                    dto.NomeCargos = Console.ReadLine();
+
+                    Console.Write("Digite a observação: ");
+                    dto.Observacao = Console.ReadLine();
+
+                    dto.SetorArea = new AppSetorArea().Obter(1);
+
+                    app.Inserir(dto);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.NumPad2)
+                {
+                    #region excluir
+
+                    Console.Write("Digite o Id do cargo: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    app.Excluir(id);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D3 || cki.Key == ConsoleKey.NumPad3)
+                {
+                    #region Alterar
+
+                    Console.Write("Digite o Id do cargo: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var dto = new DtoCargo();
+
+                    Console.Write("Digite o nome: ");
+                    dto.NomeCargos = Console.ReadLine();
+
+                    Console.Write("Digite a observação: ");
+                    dto.Observacao = Console.ReadLine();
+
+                    dto.SetorArea = new AppSetorArea().Obter(2);
+
+                    app.Alterar(id, dto);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+                else if (cki.Key == ConsoleKey.D4 || cki.Key == ConsoleKey.NumPad4)
+                {
+                    #region Obter
+
+                    Console.Write("Digite o Id do cargo: ");
+                    var id = Convert.ToInt32(Console.ReadLine());
+
+                    var cargo = app.Obter(id);
+
+                    Console.WriteLine("Id: " + cargo.CargoID);
+                    Console.WriteLine("Nome: " + cargo.NomeCargos);
+                    Console.WriteLine("Obs: " + cargo.Observacao);
+
+                    Console.WriteLine("Fim");
+
+                    #endregion
+                }
+            }
+            #endregion
 
             else if (cki.Key == ConsoleKey.D0)
             {

@@ -58,5 +58,46 @@ namespace Aplicacao
                 NomeSetorArea = SetorArea.NomeSetorArea,
             };
         }
+
+        public void Inserir(DtoSetorArea dto)
+        {
+            var setorArea = new SetorArea()
+            {
+                NomeSetorArea = dto.NomeSetorArea,
+            };
+
+            Banco.SetorArea.Add(setorArea);
+            Banco.SaveChanges();
+        }
+
+        public void Alterar(int idSetorArea, DtoSetorArea dto)
+        {
+            var setor = (from s in Banco.SetorArea
+                         where s.SetorAreaID == idSetorArea
+                         select s).FirstOrDefault();
+
+            if (setor == null)
+                throw new Exception("Setor/Área não encontrado");
+
+            setor.NomeSetorArea = dto.NomeSetorArea;
+
+            Banco.SaveChanges();
+        }
+
+        public void Excluir(int idSetorArea)
+        {
+            var setor = (from s in Banco.SetorArea.Include(s => s.Cargo)
+                         where s.SetorAreaID == idSetorArea
+                         select s).FirstOrDefault();
+
+            if (setor == null)
+                throw new Exception("Setor/Área não encontrado");
+
+            if (setor.Cargo.Count > 0)
+                throw new Exception("Existem cargos cadastrados nesse setor");
+
+            Banco.SetorArea.Remove(setor);
+            Banco.SaveChanges();
+        }
     }
 }
