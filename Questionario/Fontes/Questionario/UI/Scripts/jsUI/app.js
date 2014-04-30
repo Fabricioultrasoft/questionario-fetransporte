@@ -175,9 +175,8 @@
             data: { nome: $('#nomeSindicato').val(), logomarca: $('#logomarca').val() },
             dataType: 'json',
             success: function () {
-                App.Listar('Sindicatos');
-                $('#nomeSindicato').val('');
-                $('#logomarca').val('');
+                App.ListarEntidade('Sindicatos');
+                App.closeModal();
             }
         });
     },
@@ -188,9 +187,8 @@
             data: { idSindicato: $('#idSindicato').val(), nome: $('#nomeSindicato').val(), logomarca: $('#logomarca').val() },
             dataType: 'json',
             success: function () {
-                App.Listar('Sindicatos');
-                $('#nomeSindicato').val('');
-                $('#logomarca').val('');
+                App.ListarEntidade('Sindicatos');
+                App.closeModal();
             }
         });
     },
@@ -310,7 +308,7 @@
             success: function (json)
             {
                 App.ListarEntidade('SetorArea');
-                $('#nomeSetorArea').val('');
+                App.closeModal();
             }
         });
     },
@@ -322,6 +320,7 @@
             dataType: 'json',
             success: function (json) {
                 App.ListarEntidade('SetorArea');
+                App.closeModal();
             }
         });
     },
@@ -370,10 +369,28 @@
         App.ListarSetoresAreas();
     },
     CadastrarCargo: function () {
-
+        $.ajax({
+            url: 'Cadastrar',
+            type: 'post',
+            data: { nomeCargo: $('#nomeCargos').val(), setorArea: $('#setorArea').val() },
+            dataType: 'json',
+            sucess: function () {
+                App.ListarEntidade('Cargos');
+                App.closeModal();
+            }
+        });
     },
     AlterarCargo: function () {
-
+        $.ajax({
+            url: 'Alterar',
+            type: 'post',
+            data: { CargoID: $('#idCargo').val(), nomeCargo: $('#nomeCargos').val(), setorArea: $('#setorArea').val() },
+            dataType: 'json',
+            sucess: function () {
+                App.ListarEntidade('Cargos');
+                App.closeModal();
+            }
+        });
     },
     ExcluirCargo: function (idCargo) {
         $.ajax({
@@ -382,7 +399,7 @@
             data: { CargoID: idCargo },
             dataType: 'json',
             success: function (json) {
-                App.ListarEntidade('SetorArea');
+                App.ListarEntidade('Cargos');
             }
         });
     },
