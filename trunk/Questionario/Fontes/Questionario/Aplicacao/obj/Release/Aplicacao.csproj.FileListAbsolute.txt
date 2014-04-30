@@ -1,0 +1,14 @@
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.dll.config
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Dominio.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.SqlServer.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Repositorio.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Dominio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Repositorio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.xml
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.SqlServer.xml
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.csprojResolveAssemblyReference.cache
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.pdb

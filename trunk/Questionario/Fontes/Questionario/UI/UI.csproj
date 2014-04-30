@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CadastrosController.cs" />
+    <Compile Include="Controllers\CargosController.cs" />
     <Compile Include="Controllers\FetransportesController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -276,12 +277,12 @@
     <Content Include="Views\Sindicatos\Cadastros.cshtml" />
     <Content Include="Views\Funcionarios\Home.cshtml" />
     <Content Include="Views\Cargos\Home.cshtml" />
+    <Content Include="Views\SetorArea\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\files\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\SetorArea\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

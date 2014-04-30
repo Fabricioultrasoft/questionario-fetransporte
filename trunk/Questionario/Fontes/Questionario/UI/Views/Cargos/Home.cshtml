@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Sindicatos";
+    ViewBag.Title = "Cargos";
 }
 <br />
-<h2>Sindicatos (<a href="javascript:;" id="openFrmCadastrarSindicato">Cadastrar Novo</a>)</h2><br /> 
+<h2>Cargos (<a href="javascript:;" id="openFrmCadastrarCargo">Cadastrar Novo</a>)</h2><br /> 
 <input type="hidden" id="nextID" name="nextID"/>
 <input type="hidden" id="Entidade" name="Entidade"/>
 <table class="grid">
@@ -18,8 +18,9 @@
       
     </tbody>
 </table>
+<br /><br /><br />
 <script src="~/Scripts/jquery-1.8.2.js"></script>
 <script src="~/Scripts/jsUI/app.js"></script>
 <script type="text/javascript">
-    App.ListarEntidade('Funcionarios');
+    App.ListarEntidade('Cargos');
 </script>

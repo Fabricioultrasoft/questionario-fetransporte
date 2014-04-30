@@ -1,0 +1,16 @@
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.dll.config
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Repositorio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Dominio.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\Dominio.pdb
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.xml
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._001.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._002.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.Migrations._003.resources
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.csproj.GenerateResource.Cache
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.dll
+D:\Projetos\Questionario\Questionario\Fontes\Questionario\Repositorio\obj\Debug\Repositorio.pdb

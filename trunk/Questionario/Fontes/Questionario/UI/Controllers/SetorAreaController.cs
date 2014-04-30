@@ -1,4 +1,5 @@
 ﻿using Aplicacao;
+using Aplicacao.dto;
 using Dominio;
 using System;
 using System.Collections;
@@ -40,18 +41,41 @@ namespace UI.Controllers
             };
         }
 
-        public void Cadastrar(string nome,string cargo)
+        public JsonResult ObterSetorAreaPorID(int SetorAreaID)
         {
-            SetorArea setorArea = new SetorArea() {
-                NomeSetorArea = nome,
+            appSetorArea = new AppSetorArea();
+            var result = appSetorArea.Obter(SetorAreaID);
+
+            return new JsonResult()
+            {
+                Data = result
             };
-
         }
 
-        public void Alterar(int idSetorArea, string nome, string cargo) 
+        public void Cadastrar(string nomeSetorArea)
         {
-        
+            appSetorArea = new AppSetorArea();
+            DtoSetorArea setorArea = new DtoSetorArea()
+            {
+                NomeSetorArea = nomeSetorArea,
+            };
+            appSetorArea.Inserir(setorArea);
         }
-        public void Excluir(int idSetorArea) { }
+
+        public void Alterar(int idSetorArea, string nomeSetorArea) 
+        {
+            appSetorArea = new AppSetorArea();
+            DtoSetorArea setorArea = new DtoSetorArea()
+            {
+                SetorAreaID = idSetorArea,
+                NomeSetorArea = nomeSetorArea
+            };
+            appSetorArea.Alterar(idSetorArea,setorArea);
+        }
+
+        public void Excluir(int idSetorArea) {
+            appSetorArea = new AppSetorArea();
+            appSetorArea.Excluir(idSetorArea);
+        }
     }
 }
