@@ -52,7 +52,7 @@ namespace UI.Controllers
             };
         }
 
-        public void Cadastrar(string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato)
+        public void Cadastrar(string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato, string obs)
         {
 
             appEmpresa = new AppEmpresa();
@@ -67,9 +67,11 @@ namespace UI.Controllers
                 NomeEmpresa = nome,
                 EmailEmpresa = email,
                 Endereco = endereco,
-                Complemento = complemento,
                 Cep = cep,
+                Complemento = complemento,
+                Bairro = null,
                 Sindicato = sindicato,
+                Observacao = obs
             };
 
             appEmpresa.Inserir(empresa);
@@ -101,6 +103,39 @@ namespace UI.Controllers
             appEmpresa.Excluir(codEmpresa);
         }
 
+        public JsonResult ListarEstados() {
+            appEndereco = new AppEndereco();
+            var result = appEndereco.ListarEstado();
+
+            return new JsonResult() { 
+                Data = result
+            };
+            
+        }
+
+        public JsonResult ListarCidades(int codEstado)
+        {
+            appEndereco = new AppEndereco();
+            var result = appEndereco.ListarCidadePorEstado(codEstado);
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+
+        }
+
+        public JsonResult ListarBairros(int codCidade)
+        {
+            appEndereco = new AppEndereco();
+            var result = appEndereco.ListasBairrosPorCidade(codCidade);
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+
+        }
 
         #region ======= Usuarios
 

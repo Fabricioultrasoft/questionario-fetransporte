@@ -147,7 +147,6 @@
                     console.log(json);
                     App.openFrmCadastrarSindicato();
                     $('#nomeSindicato').val(json.NomeSindicato);
-                    $('#logo').val(json.l);
                 }
             });
         }
@@ -230,16 +229,19 @@
         }
     },
     openFrmCadastrarEmpresa: function () {
-
+  
         var html = '<form id="frmCadastrarEmpresa">';
-        html += '<b>Cadastrar Empresa<b><br/><br/><input type="hidden" id="idEmpresa" name="idEmpresa" />';
-        html += 'Nome:<br/><br/><input type="text" id="nomeEmpresa" name="nomeEmpresa"/><br/><br/>';
-        html += 'E-mail:<br/><br/><input type="text" id="emailEmpresa" name="emailEmpresa"/><br/><br/>';
-        html += 'Cep:<br/><br/><input type="text" id="cep" name="cep"/><br/><br/>';
-        html += 'Endereço:<br/><br/><input type="text" id="endereco" name="endereco"/><br/><br/>';
-        html += 'Complemeto:<br/><br/><input type="text" id="complemento" name="complemento"/><br/><br/>';
-        html += '<select id="idBairro"></select>';
-        html += '<select id="idSindicato"></select>';
+        html += '<b>Cadastrar Empresa<b><input type="hidden" id="idEmpresa" name="idEmpresa" /><br/>';
+        html += 'Nome:<br/><input type="text" id="nomeEmpresa" name="nomeEmpresa"/><br/><br/>';
+        html += 'E-mail:<br/><input type="text" id="emailEmpresa" name="emailEmpresa"/><br/><br/>';
+        // Buscar endereco por cep
+        html += 'Cep:<br/><input type="text" id="cep" name="cep"/><br/><br/>';
+        html += 'Endereço:<br/><input type="text" id="endereco" name="endereco"/><br/><br/>';
+        html += 'Complemeto:<br/><input type="text" id="complemento" name="complemento"/><br/><br/>';
+        html += '<select id="estados" class="small-hard"><option>UF</option></select>';
+        html += '<select id="cidades" class="small"><option>Cidade</option></select><br/><br/>';
+        html += '<select id="bairros" class="small-normal"><option>Bairro</option></select><br/><br/>';
+        html += '<select id="idSindicato" class="small-normal"><option>Sindicato</option></select>';
 
         if (App.obterEmpresa) {
             html += '<br/><br/><input type="button" id="alterarEmpresa" onclick="App.AlterarEmpresa()" value="Alterar"/> ';
@@ -251,6 +253,7 @@
         html += '</form>';
 
         modal.open({ content: html });
+        App.ListarEstados();
     },
     CadastrarEmpresa: function () { },
     AlterarEmpresa: function () { },
@@ -275,19 +278,64 @@
                 data: { SetorAreaID: idSetorArea },
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
                     App.openFrmCadastrarSetorArea();
-
+                    $('#idSetorArea').val(json.SetorAreaID);
+                    $('#nomeSetorArea').val(json.NomeSetorArea);
                 }
             });
         }
     },
     openFrmCadastrarSetorArea: function () {
+        var html = '<form id="frmCadastrarSetorArea">';
+        html += '<b>Cadastrar Setor/Área</b><input type="hidden" id="idSetorArea" name="idSetorArea" /><br/><br/>';
+        html += 'Nome:<br/><input type="text" id="nomeSetorArea" name="nomeSetorArea"/><br/>';
 
+        if (App.obterSetorArea) {
+            html += '<br/><input type="button" id="alterarSetorArea" onclick="App.AlterarSetorArea()" value="Alterar"/> ';
+        } else {
+            html += '<br/><input type="button" id="cadastrarSetorArea" onclick="App.CadastrarSetorArea()" value="Cadastrar"/> ';
+        }
+
+        html += '<input type="button" id="cadastrarCargo" onclick="App.closeModal()" value="Cancelar"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
     },
-    CadastrarSetorArea: function () { },
-    AlterarSetorArea: function () { },
-    ExcluirSetorArea: function (idSetorArea) { },
+    CadastrarSetorArea: function () {
+        $.ajax({
+            url: 'Cadastrar',
+            type: 'post',
+            data: { nomeSetorArea: $('#nomeSetorArea').val() },
+            dataType: 'json',
+            success: function (json)
+            {
+                App.ListarEntidade('SetorArea');
+                $('#nomeSetorArea').val('');
+            }
+        });
+    },
+    AlterarSetorArea: function () {
+        $.ajax({
+            url: 'Alterar',
+            type: 'post',
+            data: { idSetorArea: $('#idSetorArea').val(), nomeSetorArea: $('#nomeSetorArea').val() },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('SetorArea');
+            }
+        });
+    },
+    ExcluirSetorArea: function (idSetorArea) {
+        $.ajax({
+            url: 'Excluir',
+            type: 'post',
+            data: { idSetorArea: idSetorArea },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('SetorArea');
+            }
+        });
+    },
     //Cargos
     getCargo: function (idCargo) {
         App.obterCargo = true;
@@ -298,16 +346,59 @@
                 data: { CargoID: idCargo },
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
                     App.openFrmCadastrarCargo();
                 }
             });
         }
     },
-    CadastrarCargo: function () { },
-    AlterarCargo: function () { },
-    ExcluirCargo: function (idCargo) { },
+    openFrmCadastrarCargo: function () {
+        var html = '<form id="frmCadastrarSetorArea">';
+        html += '<b>Cadastrar Cargo</b><input type="hidden" id="idCargo" name="idCargo" /><br/><br/>';
+        html += 'Nome:<br/><input type="text" id="nomeCargos" name="nomeCargos"/><br/><br/>';
+        html += 'Setor/Área:<br/><select id="setorArea"></select><br/><br/>'
+
+        if (App.obterCargo) {
+            html += '<br/><input type="button" id="alterarCargo" onclick="App.AlterarCargo()" value="Alterar"/> ';
+        } else {
+            html += '<br/><input type="button" id="cadastrarCargo" onclick="App.CadastrarCargo()" value="Cadastrar"/> ';
+        }
+
+        html += '<input type="button" id="cadastrarCargo" onclick="App.closeModal()" value="Cancelar"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
+        App.ListarSetoresAreas();
+    },
+    CadastrarCargo: function () {
+
+    },
+    AlterarCargo: function () {
+
+    },
+    ExcluirCargo: function (idCargo) {
+        $.ajax({
+            url: 'Excluir',
+            type: 'post',
+            data: { CargoID: idCargo },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('SetorArea');
+            }
+        });
+    },
     //global
+    ListarSetoresAreas: function () {
+        $.ajax({
+            url: 'ListarSetoresAreas',
+            type: 'post',
+            success: function (json) {
+                console.log(json);
+                $.each(eval(json), function (index, i) {
+                    $('#setorArea').append('<option value="' + json[index].SetorAreaID + '">' + json[index].NomeSetorArea + '</option>');
+                });
+            }
+        });
+    },
     ListarEntidade: function (entidade) {
         if (entidade == 'Sindicatos') {
             $.ajax({
@@ -368,8 +459,9 @@
                 success: function (json) {
                     $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
-                        $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                        $.each(eval(json), function (index, i) {
+                            $('#lista').append('<tr><td>' + json[index].SetorAreaID + '</td><td>' + json[index].NomeSetorArea + '</td><td><a href="javascript:;" title="Editar" onclick="App.getSetorArea(' + json[index].SetorAreaID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirSetorArea(' + json[index].SetorAreaID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
                     }
                 }
@@ -381,14 +473,54 @@
                 dataType: 'json',
                 success: function (json) {
                     $('#lista').find($('#lista tr')).remove();
+                    
                     if (json != null) {
-                        $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.SindicatoID + '</td><td>' + json.NomeSindicato + '</td></tr>');
+                        $.each(eval(json), function (index, i) {
+                            $('#lista').append('<tr><td>' + json[index].CargoID + '</td><td>' + json[index].NomeCargos + '</td><td><a href="javascript:;" title="Editar" onclick="App.getCargo(' + json[index].CargoID + ')"><img src="../Content/imagens/icones/b_edit.png" border="0"/></a> '
+                            + '<a href="javascript:;" onclick="App.ExcluirCargo(' + json[index].CargoID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
                     }
                 }
             });
         }
+    },
+    ListarEstados: function () {
+        $.ajax({
+            url: 'ListarEstados',
+            type: 'post',
+            success: function (json) {
+                console.log(json);
+                $.each(eval(json), function (item, index) {
+                    $('#estados').append('<option value="' + json[item].EstadoID + '">' + json[item].UF + '</option>');
+                });
+            }
+        });
+    },
+    ListarCidades: function () {
+        $.ajax({
+            url: 'ListarCidades',
+            type: 'post',
+            data: { codEstado: $('#estados').val() },
+            dataType: 'json',
+            success: function (json) {
+                $.each(eval(json), function (item, index) {
+                    $('#cidades').append('<option value="' + json[item].CidadeID + '">' + json[item].Descricao + '</option>');
+                });
+            }
+        });
+    },
+    ListarBairros: function () {
+        $.ajax({
+            url: 'ListarBairros',
+            data: { codCidade: $('#cidades').val() },
+            type: 'post',
+            dataType: 'json',
+            success: function (json) {
+                $.each(eval(json), function (item, index) {
+                    $('#bairros').append('<option value="' + json[item].BairroID + '">' + json[item].NomeBairro + '</option>');
+                });
+            }
+        });
     },
     closeModal: function () {
         App.obterUsuario = false;
