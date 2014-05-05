@@ -77,21 +77,31 @@ namespace UI.Controllers
             appEmpresa.Inserir(empresa);
         }
 
-        public void Alterar(int idEmpresa, string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato)
+        public void Alterar(int empresaID, string nome, string email, string logomarca, string endereco, string complemento, string cep, int idEstado, int idCidade, int idBairro, int idSindicato)
         {
             appEmpresa = new AppEmpresa();
             appSindicato = new AppSindicato();
+            appEndereco = new AppEndereco();
 
             sindicato = appSindicato.Obter(idSindicato);
-
+            
+            bairro = new DtoBairro() 
+            {
+                BairroID = idBairro,
+                //Cidade = appEndereco.ObterCidadePorID(idCidade),
+                //NomeBairro = appEndereco.ObterBairroID(idEstado)
+            };
+            
             empresa = new DtoEmpresa()
             {
+                EmpresaID = empresaID,
                 NomeEmpresa = nome,
                 EmailEmpresa = email,
                 Endereco = endereco,
                 Complemento = complemento,
                 Cep = cep,
-                Sindicato = sindicato,
+                Bairro = bairro,
+                Sindicato = sindicato
             };
 
             appEmpresa.Alterar(empresa);
@@ -101,6 +111,18 @@ namespace UI.Controllers
         {
             appEmpresa = new AppEmpresa();
             appEmpresa.Excluir(codEmpresa);
+        }
+
+        public JsonResult ListarSindicatos()
+        {
+            appSindicato = new AppSindicato();
+            var result = appSindicato.Listar();
+
+            return new JsonResult()
+            {
+                Data = result
+            };
+
         }
 
         public JsonResult ListarEstados() {

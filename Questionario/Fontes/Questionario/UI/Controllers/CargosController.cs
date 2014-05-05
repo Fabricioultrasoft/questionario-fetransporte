@@ -68,7 +68,7 @@ namespace UI.Controllers
             appCargo.Inserir(dtoCargo);
         }
 
-        public void Alterar(int idCargo, string nomeCargo, int setorArea)
+        public void Alterar(int CargoID, string nomeCargo, int setorArea)
         {
             appCargo = new AppCargo();
 
@@ -81,7 +81,7 @@ namespace UI.Controllers
                 SetorArea = dtoSetorArea
             };
 
-            appCargo.Alterar(idCargo,dtoCargo);
+            appCargo.Alterar(CargoID, dtoCargo);
         }
 
         public void Excluir(int idCargo)
