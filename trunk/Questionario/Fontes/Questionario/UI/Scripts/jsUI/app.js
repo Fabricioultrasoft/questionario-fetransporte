@@ -4,6 +4,7 @@
     obterEmpresa: false,
     obterSetorArea: false,
     obterCargo: false,
+    obterFuncionario: false,
     init: function () {
         
     },
@@ -47,7 +48,7 @@
         modal.open({ content: html });
     },
     ListarUsuarios: function (tipo_usuario) {
-        console.log(tipo_usuario + ": ListarUsuarios()");
+        //console.log(tipo_usuario + ": ListarUsuarios()");
        
         $.ajax({
             url: 'ListarUsuarios',
@@ -55,9 +56,9 @@
             data: { tipoUsuario: tipo_usuario },
             dataType: 'json',
             success: function (json) {
-                console.log(json);
+                //console.log(json);
                 if (json != null) {
-                    console.log('Usuários encontrados.');
+                    //console.log('Usuários encontrados.');
                     $('#lista').find($('#lista tr')).remove();
                     $.each(eval(json), function (item, index) {
                             
@@ -66,7 +67,7 @@
                             + '<a href="javascript:;" onclick="App.ExcluirUsuario('+json[item].UsuarioID+')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                     });
                 } else {
-                    console.log('Nenhum usuário cadastrado');
+                    //console.log('Nenhum usuário cadastrado');
                     $('#lista').html('<tr><td colspan="4">Não existe usuários cadastrados.</td></tr>');
                 }
             }
@@ -83,7 +84,7 @@
                 data: { UsuarioID: idUsuario },
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
+                    //console.log(json);
                     App.openFrmCadastrarUsuario();
                     $('#idUsuario').val(json[0].UsuarioID);
                     $('#nome').val(json[0].NomeUsuario);
@@ -144,7 +145,7 @@
                 data: { SindicatoID: idSindicato },
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
+                    //console.log(json);
                     App.openFrmCadastrarSindicato();
                     $('#nomeSindicato').val(json.NomeSindicato);
                 }
@@ -176,6 +177,8 @@
             dataType: 'json',
             success: function () {
                 App.ListarEntidade('Sindicatos');
+                $('#nomeSindicato').val('');
+                $('#logomarca').val('');
                 App.closeModal();
             }
         });
@@ -188,6 +191,8 @@
             dataType: 'json',
             success: function () {
                 App.ListarEntidade('Sindicatos');
+                $('#nomeSindicato').val('');
+                $('#logomarca').val('');
                 App.closeModal();
             }
         });
@@ -199,7 +204,7 @@
             data: { codSindicato: id },
             success: function () {
                 $('#lista').find($('#lista tr')).remove();
-                App.Listar('Sindicatos');
+                App.ListarEntidade('Sindicatos');
             }
         });
     },
@@ -213,7 +218,7 @@
                 data: { EmpresaID: idEmpresa },
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
+                    //console.log(json);
                     App.openFrmCadastrarEmpresa();
                     $('#idEmpresa').val(json.EmpresaID);
                     $('#nomeEmpresa').val(json.NomeEmpresa);
@@ -229,15 +234,15 @@
     openFrmCadastrarEmpresa: function () {
   
         var html = '<form id="frmCadastrarEmpresa">';
-        html += '<b>Cadastrar Empresa<b><input type="hidden" id="idEmpresa" name="idEmpresa" /><br/>';
+        html += '<b>Cadastrar Empresa<b><input type="hidden" id="idEmpresa" name="idEmpresa" /><br/><br/>';
         html += 'Nome:<br/><input type="text" id="nomeEmpresa" name="nomeEmpresa"/><br/><br/>';
         html += 'E-mail:<br/><input type="text" id="emailEmpresa" name="emailEmpresa"/><br/><br/>';
         // Buscar endereco por cep
         html += 'Cep:<br/><input type="text" id="cep" name="cep"/><br/><br/>';
         html += 'Endereço:<br/><input type="text" id="endereco" name="endereco"/><br/><br/>';
         html += 'Complemeto:<br/><input type="text" id="complemento" name="complemento"/><br/><br/>';
-        html += '<select id="estados" class="small-hard"><option>UF</option></select>';
-        html += '<select id="cidades" class="small"><option>Cidade</option></select><br/><br/>';
+        html += '<select id="estados" class="small-hard" onchange="App.ListarCidades()"><option>UF</option></select>';
+        html += '<select id="cidades" class="small" onchange="App.ListarBairros()"><option>Cidade</option></select><br/><br/>';
         html += '<select id="bairros" class="small-normal"><option>Bairro</option></select><br/><br/>';
         html += '<select id="idSindicato" class="small-normal"><option>Sindicato</option></select>';
 
@@ -252,9 +257,32 @@
 
         modal.open({ content: html });
         App.ListarEstados();
+        App.ListarSindicatos();
     },
-    CadastrarEmpresa: function () { },
-    AlterarEmpresa: function () { },
+    CadastrarEmpresa: function ()
+    {
+        $.ajax({
+            url: 'Cadastrar',
+            type: 'post',
+            data: { nome: $('#nomeEmpresa').val(), email: $('#emailEmpresa').val(), logomarca: null, endereco: $('#endereco').val(), complemento: $('#complemento').val(), cep: $('#cep').val(), idBairro: $('#bairros').val(), idSindicato: $('#idSindicato').val(), obs: null },
+            dataType: 'json',
+            success: function (json) {
+                App.closeModal();
+            }
+        });
+    },
+    AlterarEmpresa: function ()
+    {
+        $.ajax({
+            url: 'Alterar',
+            type: 'post',
+            data: { empresaID: $('#idEmpresa').val(), nome: $('#nomeEmpresa').val(), email: $('#emailEmpresa').val(), logomarca: null, endereco: $('#endereco').val(), complemento: $('#complemento').val(), cep: $('#cep').val(), idBairro: $('#bairros').val(), idSindicato: $('#idSindicato').val(), obs: null },
+            dataType: 'json',
+            success: function (json) {
+                App.closeModal();
+            }
+        });
+    },
     ExcluirEmpresa: function (idEmpresa) {
         $.ajax({
             url: 'Excluir',
@@ -308,6 +336,7 @@
             success: function (json)
             {
                 App.ListarEntidade('SetorArea');
+                $('#nomeSetorArea').val('');
                 App.closeModal();
             }
         });
@@ -345,7 +374,10 @@
                 data: { CargoID: idCargo },
                 dataType: 'json',
                 success: function (json) {
+                    //console.log(json);
                     App.openFrmCadastrarCargo();
+                    $('#idCargo').val(json.CargoID);
+                    $('#nomeCargos').val(json.NomeCargos);
                 }
             });
         }
@@ -376,7 +408,7 @@
             dataType: 'json',
             sucess: function () {
                 App.ListarEntidade('Cargos');
-                App.closeModal();
+                modal.close();
             }
         });
     },
@@ -388,7 +420,7 @@
             dataType: 'json',
             sucess: function () {
                 App.ListarEntidade('Cargos');
-                App.closeModal();
+                modal.close();
             }
         });
     },
@@ -403,13 +435,84 @@
             }
         });
     },
+    //funcionarios
+    getFuncionario: function (idFuncionario) {
+        App.obterCargo = true;
+        if (idFuncionario != 0) {
+            $.ajax({
+                url: 'ObterFuncionarioPorID',
+                type: 'post',
+                data: { FuncionarioID: idFuncionario },
+                dataType: 'json',
+                success: function (json) {
+                    //console.log(json);
+                    App.openFrmCadastrarCargo();
+                    $('#idFuncionario').val(json.FuncionarioID);
+                    $('#nome').val(json.NomeDoFuncionario);
+                    $('#email').val(json.EmailDoFuncionario);
+                }
+            });
+        }
+    },
+    openFrmCadastrarFuncionario: function () {
+        var html = '<form id="frmCadastrarFuncionario">';
+        html += '<b>Cadastrar Funcionário<b><br/><br/><input type="hidden" id="idFuncionario" name="idFuncionario" />';
+        html += 'Matrícula:<br/><br/><input type="text" id="matricula" name="matricula"/><br/><br/>';
+        html += 'Nome:<br/><br/><input type="text" id="nome" name="nome"/><br/><br/>';
+        html += 'E-mail:<br/><br/><input type="text" id="email" name="email"/><br/><br/>';
+        //html += '<input type="checkbox" id="ativo" name="ativo"/> Ativo<br/><br/>';
+        if (App.obterFuncionario) {
+            html += '<small>Para manter a senha atual deixe o campo em branco.</small>';
+            html += '<br/><br/><input type="button" id="alterarFuncionario" onclick="App.AlterarFuncionario()" value="Alterar"/> ';
+        } else {
+            html += '<br/><br/><input type="button" id="cadastrarFuncionario" onclick="App.CadastrarFuncionario()" value="Cadastrar"/> ';
+        }
+
+        html += '<input type="button" id="cadastrarFuncionario" onclick="App.closeModal()" value="Cancelar"/>';
+        html += '</form>';
+
+        modal.open({ content: html });
+    },
+    CadastrarFuncionario: function () {
+        $.ajax({
+            url: 'Cadastrar',
+            type: 'post',
+            data: { matricula: $('#matricula').val(), nome: $('#nome').val(), email: $('#email').val() },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('Funcionarios');
+            }
+        });
+    },
+    AlterarFuncionario: function () {
+        $.ajax({
+            url: 'Alterar',
+            type: 'post',
+            data: { funcionarioID: $('#idFuncionario').val(), matricula: $('#matricula').val(), nome: $('#nome').val(), email: $('#email').val() },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('Funcionarios');
+            }
+        });
+    },
+    ExcluirFuncionario: function (idFuncionario) {
+        $.ajax({
+            url: 'Excluir',
+            type: 'post',
+            data: { funcionarioID: idFuncionario },
+            dataType: 'json',
+            success: function (json) {
+                App.ListarEntidade('Funcionarios');
+            }
+        });
+    },
     //global
     ListarSetoresAreas: function () {
         $.ajax({
             url: 'ListarSetoresAreas',
             type: 'post',
             success: function (json) {
-                console.log(json);
+                $('#setorArea').append('<option>Selecione...</option>');
                 $.each(eval(json), function (index, i) {
                     $('#setorArea').append('<option value="' + json[index].SetorAreaID + '">' + json[index].NomeSetorArea + '</option>');
                 });
@@ -430,7 +533,6 @@
                             + '<a href="javascript:;" onclick="App.ExcluirSindicato(' + json[item].SindicatoID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
                     } else {
-                        console.log('Nenhum sindicato cadastrado');
                         $('#lista').html('<tr><td colspan="4">Não existe sindicatos cadastrados.</td></tr>');
                     }
                 }
@@ -441,7 +543,7 @@
                 type: 'post',
                 dataType: 'json',
                 success: function (json) {
-                    console.log(json);
+                    //console.log(json);
                     $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
@@ -449,7 +551,6 @@
                             + '<a href="javascript:;" onclick="App.ExcluirEmpresa(' + json[item].EmpresaID + ')" title="Excluir"><img src="../Content/imagens/icones/b_trash.png" border="0"/></a> </td></tr>');
                         });
                     } else {
-                        console.log('Nenhum sindicato cadastrado');
                         $('#lista').html('<tr><td colspan="4">Não existe sindicatos cadastrados.</td></tr>');
                     }
                 }
@@ -463,8 +564,10 @@
                     $('#lista').find($('#lista tr')).remove();
                     if (json != null) {
                         $.each(eval(json), function (item, index) {
-                            $('#lista').html('<tr><td>' + json.FuncionarioID + '</td><td>' + json.NomeFuncionario + '</td><td>' + json.EmailFuncionario + '</td><td>' + json.CargoFuncionario +  '</td><td>' + json.EmpresaFuncionario + + '</td></tr>');
+                            $('#lista').html('<tr><td>' + json[item].FuncionarioID + '</td><td>' + json[item].NomeFuncionario + '</td><td>' + json[item].EmailFuncionario + '</td><td>' + json[item].CargoFuncionario + '</td><td>' + json[item].EmpresaFuncionario + + '</td></tr>');
                         });
+                    } else {
+                        $('#lista').html('<tr><td colspan="4">Não existe funcionários cadastrados.</td></tr>');
                     }
                 }
             });
@@ -501,12 +604,24 @@
             });
         }
     },
+    ListarSindicatos: function () {
+        $.ajax({
+            url: 'ListarSindicatos',
+            type: 'post',
+            success: function (json) {
+                $('#idSindicato').find($('option')).remove();
+                $.each(eval(json), function (item, index) {
+                    $('#idSindicato').append('<option value="' + json[item].SindicatoID + '">' + json[item].NomeSindicato + '</option>');
+                });
+            }
+        });
+    },
     ListarEstados: function () {
         $.ajax({
             url: 'ListarEstados',
             type: 'post',
             success: function (json) {
-                console.log(json);
+                $('#estados').find($('option')).remove();
                 $.each(eval(json), function (item, index) {
                     $('#estados').append('<option value="' + json[item].EstadoID + '">' + json[item].UF + '</option>');
                 });
@@ -520,8 +635,9 @@
             data: { codEstado: $('#estados').val() },
             dataType: 'json',
             success: function (json) {
-                $.each(eval(json), function (item, index) {
-                    $('#cidades').append('<option value="' + json[item].CidadeID + '">' + json[item].Descricao + '</option>');
+                $('#cidades').find($('option')).remove();
+                $.each(eval(json), function (index, i) {
+                    $('#cidades').append('<option value="' + json[index].CidadeID + '">' + json[index].Descricao + '</option>');
                 });
             }
         });
@@ -533,14 +649,19 @@
             type: 'post',
             dataType: 'json',
             success: function (json) {
-                $.each(eval(json), function (item, index) {
-                    $('#bairros').append('<option value="' + json[item].BairroID + '">' + json[item].NomeBairro + '</option>');
+                $('#bairros').find($('option')).remove();
+                $.each(eval(json), function (index, i) {
+                    $('#bairros').append('<option value="' + json[index].BairroID + '">' + json[index].NomeBairro + '</option>');
                 });
             }
         });
     },
     closeModal: function () {
-        App.obterUsuario = false;
+        obterUsuario = false;
+        obterSindicato = false;
+        obterEmpresa = false;
+        obterSetorArea = false;
+        obterCargo = false;
         modal.close();
     }
 }

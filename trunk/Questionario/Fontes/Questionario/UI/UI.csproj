@@ -134,7 +134,7 @@
     <Compile Include="Controllers\CadastrosController.cs" />
     <Compile Include="Controllers\CargosController.cs" />
     <Compile Include="Controllers\FetransportesController.cs" />
-    <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\QuestionarioController.cs" />
