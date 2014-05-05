@@ -57,8 +57,8 @@
             dataType: 'json',
             success: function (json) {
                 if (json != null) {
-                    console.log('Usuários encontrados.');
-                    console.log(json);
+                    //console.log('Usuários encontrados.');
+                    //console.log(json);
                     $('#lista').find($('#lista tr')).remove();
                     $.each(eval(json), function (item, index) {
                             
