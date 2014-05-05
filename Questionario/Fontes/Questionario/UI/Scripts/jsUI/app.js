@@ -48,7 +48,7 @@
         modal.open({ content: html });
     },
     ListarUsuarios: function (tipo_usuario) {
-        //console.log(tipo_usuario + ": ListarUsuarios()");
+        console.log(tipo_usuario + ": ListarUsuarios()");
        
         $.ajax({
             url: 'ListarUsuarios',
@@ -56,9 +56,9 @@
             data: { tipoUsuario: tipo_usuario },
             dataType: 'json',
             success: function (json) {
-                //console.log(json);
                 if (json != null) {
-                    //console.log('Usuários encontrados.');
+                    console.log('Usuários encontrados.');
+                    console.log(json);
                     $('#lista').find($('#lista tr')).remove();
                     $.each(eval(json), function (item, index) {
                             
