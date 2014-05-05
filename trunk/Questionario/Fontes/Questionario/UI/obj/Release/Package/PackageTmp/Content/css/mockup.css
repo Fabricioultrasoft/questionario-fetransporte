@@ -174,3 +174,7 @@ a {
     opacity:0.9;
     filter:alpha(opacity=100);
 }
+
+.small-hard { width: 50px; margin-right: 5px; }
+.small { width: 204px; }
+.small-normal { width: 258px; }

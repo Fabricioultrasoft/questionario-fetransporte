@@ -8,3 +8,12 @@ D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Enti
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
 D:\Projetos\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll.config
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.SqlServer.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.xml
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.SqlServer.xml
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
+H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
