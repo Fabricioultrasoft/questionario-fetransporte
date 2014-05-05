@@ -1,0 +1,4 @@
+ObterCidadePorID
+ObterBairoPorID
+
+DtoFuncionario não possui o campo Ativo existente na tabela Funcionarios
