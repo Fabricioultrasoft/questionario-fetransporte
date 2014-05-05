@@ -4,7 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link href="~/Scripts/jsUI/plugins/modal/modal.css" rel="stylesheet" />
+<link href="~/Content/css/normalize.css" rel="stylesheet" />
+<link href="~/Content/css/mockup.css" rel="stylesheet" />
+<link href="~/Content/css/ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.json-2.4.js"></script>
+<script src="~/Scripts/jsUI/plugins/modal/modal.js"></script>
+<script type="text/javascript" src="~/Scripts/jsUI/dataExport.js"></script>
+<script type="text/javascript" src="~/Scripts/jsUI/app.js"></script>
+<script type="text/javascript">
+    App.init();
+
+
+    $('#openFrmSindicato').bind('click', App.openFrmCadastrarSindicado);
+    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
+    $('#openFrmCadastrarfuncionario').bind('click', App.openFrmCadastrarfuncionario);
+    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
+    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
+    $('#openFrmCadastrarUsuario').bind('click', App.openFrmCadastrarUsuario);
+    $('#openFrmCadastrarSindicato').bind('click', App.openFrmCadastrarSindicato);
+    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
+    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
+    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
+    $('#openFrmCadastrarFuncionario').bind('click', App.openFrmCadastrarFuncionario);
+    $('#btnCancelar').bind('click', App.closeModal);
+</script>
 @*    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")*@
 </head>
@@ -35,31 +61,5 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-<link href="~/Scripts/jsUI/plugins/modal/modal.css" rel="stylesheet" />
-<link href="~/Content/css/normalize.css" rel="stylesheet" />
-<link href="~/Content/css/mockup.css" rel="stylesheet" />
-<link href="~/Content/css/ui.css" rel="stylesheet" />
 
-@*<script src="~/Scripts/jquery-1.8.2.js"></script>*@
-<script src="~/Scripts/jquery.json-2.4.js"></script>
-<script src="~/Scripts/jsUI/plugins/modal/modal.js"></script>
-<script type="text/javascript" src="~/Scripts/jsUI/dataExport.js"></script>
-<script type="text/javascript" src="~/Scripts/jsUI/app.js"></script>
-<script type="text/javascript">
-    App.init();
-
-
-    $('#openFrmSindicato').bind('click', App.openFrmCadastrarSindicado);
-    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
-    $('#openFrmCadastrarfuncionario').bind('click', App.openFrmCadastrarfuncionario);
-    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
-    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
-    $('#openFrmCadastrarUsuario').bind('click', App.openFrmCadastrarUsuario);
-    $('#openFrmCadastrarSindicato').bind('click', App.openFrmCadastrarSindicato);
-    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
-    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
-    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
-    $('#openFrmCadastrarFuncionario').bind('click', App.openFrmCadastrarFuncionario);
-    $('#btnCancelar').bind('click', App.closeModal);
-</script>
 
