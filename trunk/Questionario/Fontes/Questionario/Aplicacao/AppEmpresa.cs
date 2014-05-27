@@ -47,6 +47,14 @@ namespace Aplicacao
             Empresa.EmailEmpresa = DtoEmpresa.EmailEmpresa;
             Empresa.LogoMarca = DtoEmpresa.LogoMarca;
             Empresa.Observacao = DtoEmpresa.Observacao;
+            Empresa.Complemento = DtoEmpresa.Complemento;
+            Empresa.Cep = DtoEmpresa.Cep;
+            Empresa.Endereco = DtoEmpresa.Endereco;
+
+            Empresa.Bairro = (from s in Banco.Bairro
+                            where s.BairroID == DtoEmpresa.Bairro.BairroID
+                            select s).FirstOrDefault();
+            
 
             Banco.Empresa.Add(Empresa);
             Banco.SaveChanges();
@@ -77,7 +85,19 @@ namespace Aplicacao
                                             select new DtoBairro
                                             {
                                                 BairroID = x.BairroID,
-                                                NomeBairro = x.NomeBairro
+                                                NomeBairro = x.NomeBairro,
+                                                Cidade = new DtoCidade
+                                                {
+                                                    CidadeID = x.Cidade.CidadeID,
+                                                    Descricao = x.Cidade.Descricao,
+                                                    Estado = new DtoEstado
+                                                    {
+                                                        EstadoID = x.Cidade.Estado.EstadoID,
+                                                        NomeEstado = x.Cidade.Estado.NomeEstado,
+                                                        UF = x.Cidade.Estado.UF
+                                                    }
+
+                                                }
                                             }).FirstOrDefault(),
                                   Complemento = s.Complemento,
                                   Cep = s.Cep,

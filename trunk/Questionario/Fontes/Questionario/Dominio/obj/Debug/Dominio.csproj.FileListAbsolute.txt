@@ -17,3 +17,12 @@ H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.SqlServer.xml
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll.config
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.dll
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\Dominio.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.dll
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.xml
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.dll
+E:\Projetos\Questionario\Fontes\Questionario\Dominio\obj\Debug\Dominio.pdb
