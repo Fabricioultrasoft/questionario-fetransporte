@@ -69,7 +69,7 @@ namespace UI.Controllers
                 Endereco = endereco,
                 Cep = cep,
                 Complemento = complemento,
-                Bairro = null,
+                Bairro = new DtoBairro() { BairroID = idBairro },
                 Sindicato = sindicato,
                 Observacao = obs
             };
@@ -77,7 +77,7 @@ namespace UI.Controllers
             appEmpresa.Inserir(empresa);
         }
 
-        public void Alterar(int empresaID, string nome, string email, string logomarca, string endereco, string complemento, string cep, int idEstado, int idCidade, int idBairro, int idSindicato)
+        public void Alterar(int empresaID, string nome, string email, string logomarca, string endereco, string complemento, string cep, int idBairro, int idSindicato)
         {
             appEmpresa = new AppEmpresa();
             appSindicato = new AppSindicato();

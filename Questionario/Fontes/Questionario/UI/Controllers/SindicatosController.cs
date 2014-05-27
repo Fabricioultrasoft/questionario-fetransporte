@@ -62,14 +62,19 @@ namespace UI.Controllers
             appSindicato.Inserir(sindicato);
         }
 
-        public void Alterar(int idSindicato,string nome, string logomarca)
+        public JsonResult Alterar(int idSindicato,string nome, string logomarca)
         {
             appSindicato = new AppSindicato();
+            var sindicato = appSindicato.Obter(idSindicato);
 
-            DtoSindicato sindicato = new DtoSindicato()
+            sindicato.NomeSindicato = nome;
+
+            //TODO: fazer funcao para atualizar o sindicato
+            //appSindicato.Alterar(sindicato);
+
+            return new JsonResult()
             {
-                NomeSindicato = nome ,
-                
+                Data = sindicato
             };
             
         }
