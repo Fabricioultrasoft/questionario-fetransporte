@@ -33,7 +33,7 @@
             <input type="password" id="Senha" name="senha" placeholder="Senha"/>
         </div>
         <div class="campo-unico clear">
-            <input type="button" id="efetuarLogin" onclick="App.efetuarLogin()" value="Acessar" class="btn radius"/>
+            <input type="submit" id="efetuarLogin" onclick="App.efetuarLogin()" value="Acessar" class="btn radius"/>
             &nbsp; <input type="checkbox" /> Esqueci minha senha.
         </div>
     </div>
@@ -45,8 +45,9 @@
 <script src="~/Scripts/jsUI/plugins/modal/modal.js"></script>
 <script src="~/Scripts/jsUI/app.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#export').exToData({ data: usuarios });
+    $(function () {
+        //('#export').exToData({ data: usuarios });
+        App.init();
     });
 </script>
 

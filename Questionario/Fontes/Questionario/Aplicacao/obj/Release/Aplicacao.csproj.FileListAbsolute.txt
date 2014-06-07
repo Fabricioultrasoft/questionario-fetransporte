@@ -26,3 +26,17 @@ H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\bin\Rele
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.csprojResolveAssemblyReference.cache
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.dll
 H:\Projetos\Web\Questionario\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.dll.config
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Aplicacao.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Dominio.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.SqlServer.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Repositorio.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Dominio.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\Repositorio.pdb
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.xml
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\bin\Release\EntityFramework.SqlServer.xml
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.csprojResolveAssemblyReference.cache
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.dll
+E:\Projetos\Questionario\Fontes\Questionario\Aplicacao\obj\Release\Aplicacao.pdb

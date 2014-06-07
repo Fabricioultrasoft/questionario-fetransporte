@@ -6,9 +6,11 @@
     obterCargo: false,
     obterFuncionario: false,
     init: function () {
-        
+        $('#frmLogin').bind('submit', App.efetuarLogin);
     },
-    efetuarLogin: function () {
+    efetuarLogin: function (e) {
+        e && e.preventDefault();
+
         $.ajax({
             url: '/Login/Efetuarlogin',
             data: { usuario: $('#Usuario').val(), senha: $("#Senha").val() },
@@ -27,7 +29,8 @@
         });
     },
     //usuarios
-    openFrmCadastrarUsuario: function () {    
+    openFrmCadastrarUsuario: function (tipo_usuario) {
+        console.log(tipo_usuario);
         var html = '<form id="frmCadastrarUsuario">';
         html += '<b>Cadastrar Usuário<b><br/><br/><input type="hidden" id="idUsuario" name="idUsuario" />'
             +'<input type="hidden" id="tipoUsuario" name="tipoUsuario" value="' + tipo_usuario + '"/>';
@@ -56,10 +59,9 @@
             data: { tipoUsuario: tipo_usuario },
             dataType: 'json',
             success: function (json) {
-                console.log(json);
                 if (json != null) {
-                    console.log('Usuários encontrados.');
-                    
+                    //console.log('Usuários encontrados.');
+                    //console.log(json);
                     $('#lista').find($('#lista tr')).remove();
                     $.each(eval(json), function (item, index) {
                             
@@ -127,6 +129,8 @@
         });
     },
     ExcluirUsuario: function (id) {
+        if (!confirm("Deseja realmente excluir o usuário?")) return;
+
         $.ajax({
             url: 'ExcluirUsuario',
             type: 'post',
@@ -147,15 +151,19 @@
                 dataType: 'json',
                 success: function (json) {
                     //console.log(json);
-                    App.openFrmCadastrarSindicato();
+                    App.openFrmCadastrarSindicato(idSindicato);
                     $('#nomeSindicato').val(json.NomeSindicato);
                 }
             });
         }
     },
-    openFrmCadastrarSindicato: function () {
+    openFrmCadastrarSindicato: function (idSindicato) {
         var html = '<form id="frmCadastrarSindicato">';
-        html += '<b>Cadastrar Sindicato<b><br/><br/><input type="hidden" id="idSindicato" name="idSindicato" />';
+        html += '<b>Cadastrar Sindicato<b><br/><br/><input type="hidden" id="idSindicato" name="idSindicato" ' +
+                ((typeof idSindicato === 'number') ?
+                    ('value="' + idSindicato + '"')
+                    : ''
+                ) + '/>';
         html += 'Nome:<br/><br/><input type="text" id="nomeSindicato" name="nomeSindicato"/><br/><br/>';
         html += 'Logomarca:<br/><br/><input type="file" id="logomarca" name="logomarca"/><br/><br/><small id="logo">(Deixe o campo vazio para manter a logo atual)</small><br/>';
 
@@ -220,7 +228,7 @@
                 dataType: 'json',
                 success: function (json) {
                     //console.log(json);
-                    App.openFrmCadastrarEmpresa();
+                    App.openFrmCadastrarEmpresa(json);
                     $('#idEmpresa').val(json.EmpresaID);
                     $('#nomeEmpresa').val(json.NomeEmpresa);
                     $('#emailEmpresa').val(json.EmailEmpresa);
@@ -232,8 +240,7 @@
             });
         }
     },
-    openFrmCadastrarEmpresa: function () {
-  
+    openFrmCadastrarEmpresa: function (empresa) {
         var html = '<form id="frmCadastrarEmpresa">';
         html += '<b>Cadastrar Empresa<b><input type="hidden" id="idEmpresa" name="idEmpresa" /><br/><br/>';
         html += 'Nome:<br/><input type="text" id="nomeEmpresa" name="nomeEmpresa"/><br/><br/>';
@@ -247,7 +254,7 @@
         html += '<select id="bairros" class="small-normal"><option>Bairro</option></select><br/><br/>';
         html += '<select id="idSindicato" class="small-normal"><option>Sindicato</option></select>';
 
-        if (App.obterEmpresa) {
+        if (empresa) {//App.obterEmpresa) {
             html += '<br/><br/><input type="button" id="alterarEmpresa" onclick="App.AlterarEmpresa()" value="Alterar"/> ';
         } else {
             html += '<br/><br/><input type="button" id="cadastrarEmpresa" onclick="App.CadastrarEmpresa()" value="Cadastrar"/> ';
@@ -257,7 +264,7 @@
         html += '</form>';
 
         modal.open({ content: html });
-        App.ListarEstados();
+        App.ListarEstados(empresa.Bairro);
         App.ListarSindicatos();
     },
     CadastrarEmpresa: function ()
@@ -268,6 +275,7 @@
             data: { nome: $('#nomeEmpresa').val(), email: $('#emailEmpresa').val(), logomarca: null, endereco: $('#endereco').val(), complemento: $('#complemento').val(), cep: $('#cep').val(), idBairro: $('#bairros').val(), idSindicato: $('#idSindicato').val(), obs: null },
             dataType: 'json',
             success: function (json) {
+                App.ListarEntidade("Empresas");
                 App.closeModal();
             }
         });
@@ -617,19 +625,40 @@
             }
         });
     },
-    ListarEstados: function () {
+    ListarEstados: function (bairro) {
+        var estado;
+
+        if (bairro) {
+            estado = bairro.Cidade.Estado;
+        }
+
         $.ajax({
             url: 'ListarEstados',
             type: 'post',
             success: function (json) {
                 $('#estados').find($('option')).remove();
-                $.each(eval(json), function (item, index) {
-                    $('#estados').append('<option value="' + json[item].EstadoID + '">' + json[item].UF + '</option>');
+                $.each(eval(json), function (index, item) {
+                    var selected = (estado) ? 
+                        (item.EstadoID === estado.EstadoID)
+                        : (index === 0);
+
+                    $('#estados').append('<option value="' + item.EstadoID + '" '
+                        + (selected ? ' selected' : '')
+                        + '>' + item.UF + '</option>');
+
+                    //quando tiver preenchido todos os estados
+                    if (index === (json.length - 1)) App.ListarCidades(bairro);
                 });
             }
         });
     },
-    ListarCidades: function () {
+    ListarCidades: function (bairro) {
+        var cidade;
+
+        if (cidade) {
+            cidade = bairro.Cidade;
+        }
+
         $.ajax({
             url: 'ListarCidades',
             type: 'post',
@@ -637,13 +666,21 @@
             dataType: 'json',
             success: function (json) {
                 $('#cidades').find($('option')).remove();
-                $.each(eval(json), function (index, i) {
-                    $('#cidades').append('<option value="' + json[index].CidadeID + '">' + json[index].Descricao + '</option>');
+                $.each(eval(json), function (index, item) {
+                    var selected = (cidade) ?
+                        (item.CidadeID === cidade.CidadeID)
+                        : (index === 0);
+
+                    $('#cidades').append('<option value="' + item.CidadeID + '" '
+                        + (selected ? ' selected' : '')
+                        + '>' + item.Descricao + '</option>');
                 });
+
+                App.ListarBairros(bairro);
             }
         });
     },
-    ListarBairros: function () {
+    ListarBairros: function (bairro) {
         $.ajax({
             url: 'ListarBairros',
             data: { codCidade: $('#cidades').val() },
@@ -651,8 +688,14 @@
             dataType: 'json',
             success: function (json) {
                 $('#bairros').find($('option')).remove();
-                $.each(eval(json), function (index, i) {
-                    $('#bairros').append('<option value="' + json[index].BairroID + '">' + json[index].NomeBairro + '</option>');
+                $.each(eval(json), function (index, item) {
+                    var selected = (bairro) ?
+                        (item.BairroID === bairro.BairroID)
+                        : (index === 0);
+
+                    $('#bairros').append('<option value="' + item.BairroID + '" '
+                        + (selected ? ' selected' : '')
+                        + '>' + item.NomeBairro + '</option>');
                 });
             }
         });
