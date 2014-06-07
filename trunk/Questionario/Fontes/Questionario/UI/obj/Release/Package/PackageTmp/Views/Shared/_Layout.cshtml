@@ -15,21 +15,22 @@
 <script type="text/javascript" src="~/Scripts/jsUI/dataExport.js"></script>
 <script type="text/javascript" src="~/Scripts/jsUI/app.js"></script>
 <script type="text/javascript">
-    App.init();
+    $(function () {
+        App.init();
 
-
-    $('#openFrmSindicato').bind('click', App.openFrmCadastrarSindicado);
-    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
-    $('#openFrmCadastrarfuncionario').bind('click', App.openFrmCadastrarfuncionario);
-    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
-    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
-    $('#openFrmCadastrarUsuario').bind('click', App.openFrmCadastrarUsuario);
-    $('#openFrmCadastrarSindicato').bind('click', App.openFrmCadastrarSindicato);
-    $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
-    $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
-    $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
-    $('#openFrmCadastrarFuncionario').bind('click', App.openFrmCadastrarFuncionario);
-    $('#btnCancelar').bind('click', App.closeModal);
+        $('#openFrmSindicato').bind('click', App.openFrmCadastrarSindicado);
+        $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
+        $('#openFrmCadastrarfuncionario').bind('click', App.openFrmCadastrarfuncionario);
+        $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
+        $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
+        $('#openFrmCadastrarUsuario').bind('click', App.openFrmCadastrarUsuario);
+        $('#openFrmCadastrarSindicato').bind('click', App.openFrmCadastrarSindicato);
+        $('#openFrmCadastrarEmpresa').bind('click', App.openFrmCadastrarEmpresa);
+        $('#openFrmCadastrarSetorArea').bind('click', App.openFrmCadastrarSetorArea);
+        $('#openFrmCadastrarCargo').bind('click', App.openFrmCadastrarCargo);
+        $('#openFrmCadastrarFuncionario').bind('click', App.openFrmCadastrarFuncionario);
+        $('#btnCancelar').bind('click', App.closeModal);
+    });
 </script>
 @*    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")*@
